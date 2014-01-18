@@ -8,7 +8,7 @@ BOOKS = p000 p001 p002 p003 p004 p005 p006 p007 p008 p009 p010 p011 p012 p013 p0
 
 MISCFILES = tex/intro.tex tex/title.tex tex/paper-titles.tex tex/urantia-core.tex tex/urantia-hyphen-en.tex
 
-WORKDIR = /tmp/urantia-study-edition
+WORKDIR = /tmp/$(MOD)
 
 LATEX = xelatex -output-directory=$(WORKDIR) -halt-on-error $(MOD) < /dev/null > /dev/null 2>&1
 
