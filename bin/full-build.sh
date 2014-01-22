@@ -64,8 +64,7 @@ function set_pgnexus7()
 	set_tag pgnexus7
 }
 
-mkdir -p pdf > /dev/null 2>&1
-rm -f pdf/${MOD}*.pdf
+rm -rf pdf ; mkdir pdf
 
 set_pgkindledx
 make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KindleDX.pdf
