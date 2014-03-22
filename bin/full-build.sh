@@ -74,3 +74,13 @@ make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Android.pdf
 
 set_pghanlin
 make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Kindle.pdf
+
+patch -p1 < patches/kobo-aurahd.patch
+make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KoboAuraHD.pdf
+
+patch -R -p1 < patches/kobo-aurahd.patch
+patch -p1 < patches/kobo-mini.patch
+make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KoboMini.pdf
+
+patch -R -p1 < patches/kobo-mini.patch
+make vclean
