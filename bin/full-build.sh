@@ -43,6 +43,7 @@ function set_pgkindledx()
 	set_doublecol
 	unset_tag pgnexus7
 	unset_tag pghanlin
+	unset_tag pgkoboaurahd
 	set_tag pgkindledx
 }
 
@@ -52,7 +53,18 @@ function set_pghanlin()
 	unset_doublecol
 	unset_tag pgkindledx
 	unset_tag pgnexus7
+	unset_tag pgkoboaurahd
 	set_tag pghanlin
+}
+
+function set_pgkoboaurahd()
+{
+	echo "Building Kobo Aura HD PDF"
+	unset_doublecol
+	unset_tag pgkindledx
+	unset_tag pgnexus7
+	unset_tag pghanlin
+	set_tag pgkoboaurahd
 }
 
 function set_pgnexus7()
@@ -61,6 +73,7 @@ function set_pgnexus7()
 	unset_doublecol
 	unset_tag pgkindledx
 	unset_tag pghanlin
+	unset_tag pgkoboaurahd
 	set_tag pgnexus7
 }
 
@@ -75,12 +88,7 @@ make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Android.pdf
 set_pghanlin
 make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Kindle.pdf
 
-patch -p1 < patches/kobo-aurahd.patch
+set_pgkoboaurahd
 make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KoboAuraHD.pdf
 
-patch -R -p1 < patches/kobo-aurahd.patch
-patch -p1 < patches/kobo-mini.patch
-make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KoboMini.pdf
-
-patch -R -p1 < patches/kobo-mini.patch
 make vclean
