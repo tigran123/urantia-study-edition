@@ -29,8 +29,9 @@ Likewise, the time designations like "fifteen minutes past four o’clock" now r
 
 * Possible textual corruptions are indicated in the footnotes.
 
-For deriving etymology of the words coined by the revelators, I acknowledge the use of the notes by Dr Chris Halvorson.
-Many thanks to my friend Mitch Austin for helpful suggestions and comments, some of which have been incorporated into the study notes of the present edition.
+The online interactive quiz based on this book and called The Cosmic Citizenship Quiz is freely accessible from our website: http://www.bibles.org.uk
+
+I invite all the readers to test their comprehension by participating in the quiz.
 
 Tigran Aivazian
 London, England
