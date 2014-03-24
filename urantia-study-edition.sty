@@ -3,12 +3,17 @@
 \RequirePackage[parvs,lettrine]{ubook}
 
 % various page sizes
-\tunemarkuptag{pghanlin}
+%\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
 %\tunemarkuptag{pgkindledx}
+\tunemarkuptag{pgkoboaurahd}
 
 % various font families
+% (for now support just Adobe Garamond Premier Pro Opticals)
 \tunemarkuptag{garamond}
+
+% comment out for public PDF build
+%\tunemarkuptag{private}
 
 \setdefaultlanguage{english}
 
@@ -28,12 +33,14 @@
 \input tex/urantia-hyphen-en.tex
 
 \setlength{\columnsep}{3.5mm}
+\setlength\parindent{8\p@}
 \renewcommand{\bibcontname}{The Titles of the Papers}
 \renewcommand{\bibfnvsnumspace}{.\nobreakspace}
 \let\textcolour\textcolor
 
-\renewcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large ahb\end{center}}
+\newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
+\newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=2.0,WordSpace=1.5}}
 
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%
@@ -46,15 +53,25 @@
 }
 
 \tunemarkup{pghanlin}{%
+\newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
+\newcommand{\bibpaperfont}{\normalsize}
+\newcommand{\bibpapertitlefont}{\large}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\renewcommand{\headrulewidth}{0mm}
+\renewcommand{\bibfnchapsize}{\headerfont\Large}
+\renewcommand{\bibfnvssize}{\headerfont\large}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\renewcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
-\renewcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
-\renewcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\huge ahb\end{center}}
+\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\huge ahb\end{center}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
 \newcommand{\parttitlefontsize}{\large}
-\renewcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
+\newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
 \newcommand{\urantiamainfontsize}{16.4/18.5}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{11}{11}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{10}{11}\selectfont}
@@ -71,18 +88,58 @@
 }
 }
 
+\tunemarkup{pgkoboaurahd}{%
+\newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
+\newcommand{\bibpaperfont}{\large}
+\newcommand{\bibpapertitlefont}{\Large}
+\definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
+\renewcommand{\bibfnchapsize}{\headerfont\Large}
+\renewcommand{\bibfnvssize}{\headerfont\large}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
+\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\LARGE ahb\end{center}}
+\newcommand{\subfont}{\fontsize{11}{10}\itshape}
+\newcommand{\parttitlefontsize}{\large}
+\newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
+\newcommand{\urantiamainfontsize}{16.4/18.5}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{11}{11}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{10}{11}\selectfont}
+\renewcommand{\author}[1]{{\fontsize{13}{9}\bfseries\itshape\begin{center}#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}}
+\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+\renewcommand{\usectiontitle}[3]{%
+   {
+     \bibsectitlefont
+     \makebox[0.08\linewidth][r]{#2. }%
+     \makebox[0.85\linewidth][l]{#3\bibdf}%
+     \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
+   }\vspace{-0.9ex}\linebreak
+}
+}
+
 \tunemarkup{pgnexus7}{%
 \definecolor{ubpagecolor}{rgb}{0.0, 0.5, 1.0}
-\renewcommand{\headrulewidth}{0mm}
+\definecolor{ubpagebg}{rgb}{0.9, 0.9, 0.75}
+\pagecolor{ubpagebg}
+\definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{ubdarkred}{rgb}{0.5, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
-\renewcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
-\renewcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
-\renewcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large\textcolor{ubgreen}{ahb}\end{center}}
+\newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
+\newcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
+\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large\textcolor{ubgreen}{ahb}\end{center}}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
-\renewcommand{\author}[1]{\begin{center}\fontsize{10}{10}\bfseries\itshape#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
+\renewcommand{\author}[1]{\begin{center}\fontsize{11}{10}\bfseries\itshape\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{15}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{9.8}{12}\selectfont}
-\renewcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
@@ -90,26 +147,40 @@
 \newcommand{\parttitlefontsize}{\large}
 \newcommand{\bibsectitlefont}{\fontsize{10}{12}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibbookend}{\fontsize{16.5}{18.5}\selectfont}
-\newcommand{\urantiamainfontsize}{16.5/18.5}
+\newcommand{\bibbookend}{\fontsize{16}{17.5}\selectfont}
+\newcommand{\urantiamainfontsize}{16/17.5}
 }
 
 \tunemarkup{pgkindledx}{%
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
+\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large ahb\end{center}}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\Huge ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{15}\selectfont}
-\renewcommand{\bibtocfont}{\fontsize{10.8}{14}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{10.8}{15}\selectfont}
 \newcommand{\subfont}{\fontsize{13}{15}\itshape}
 \newcommand{\parttitlefontsize}{\LARGE}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibbookend}{\fontsize{16}{18}\selectfont}
+\newcommand{\bibbookend}{\fontsize{16}{18}\selectfont}
 \newcommand{\urantiamainfontsize}{16/18}
+\newcommand{\bibpaperfont}{\fontsize{15.0}{17}\selectfont}
+\newcommand{\bibpapertitlefont}{\fontsize{16.0}{18.0}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{9.6}{9.6}\bfseries}
+\newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibfnchapsize}{\Large\bfseries}
+\renewcommand{\bibfnvssize}{\large\bfseries}
+\newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 }
 
 \AtBeginDocument{%
 \hypersetup{%
   pdftitle={The British Study Edition of the Urantia Papers},%
-  pdfauthor={Tigran Aivazian <aivazian.tigran@gmail.com>},%
+  pdfauthor={Tigran Aivazian <tigran@bibles.org.uk>},%
   pdfcreator={Bibles.org.uk Typesetting Environment},%
   pdfsubject={The Urantia Papers in British English (also known as "The Urantia Book")},%
   pdfkeywords={Earth,Urantia,Truth,History,Religion,English,English UK,Revelation,God,Jesus},%
@@ -155,7 +226,7 @@
 \def\partivsubone{This group of papers was sponsored by a commission of twelve Urantia midwayers acting under the supervision of a Melchizedek revelatory director.}
 \def\partivsubtwo{The basis of this narrative was supplied by a secondary midwayer who was onetime assigned to the superhuman watchcare of the Apostle Andrew.}
 
-\renewcommand{\bibpaperdisplay}[2]{%
+\newcommand{\bibpaperdisplay}[2]{%
    \begin{center}%
       \ifnum #1=32
         \partii
@@ -168,18 +239,16 @@
       \fi
       \headerfont\bibpaperfont\papertxt\ №\,#1\\[3pt]
       \addfontfeatures{WordSpace=2.0}\bibpapertitlefont\MakeUppercase{#2}\\
-      \tunemarkup{pghanlin}{\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-1ex}}%
-      \tunemarkup{pgnexus7}{\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-1ex}}%
+      \vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-1ex}%
    \end{center}%
 }
 
-\renewcommand{\uforeword}{%
+\newcommand{\uforeword}{%
 \newpage\thispagestyle{empty}%
 \begin{center}
 \parti
 \headerfont\bibpapertitlefont\forewordup
-\tunemarkup{pghanlin}{\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-2ex}}%
-\tunemarkup{pgnexus7}{\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-2ex}}%
+\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-2ex}%
 \end{center}%
 \ubookdescr{p0}{
    toc={\makebox[0.04\linewidth][l]{№}\makebox[0.08\linewidth][r]{0. }\makebox[0.77\linewidth][l]{\forewordtoc\bibdf}},
@@ -209,28 +278,28 @@
 \bib@raise@anchor{\bibpdfbookmark[2]{0. #2}{p#1_0}}%
 }
 
-\renewcommand{\parti}{%
+\newcommand{\parti}{%
 \parttitlefontsize
 {\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partitxt\\\partiup}\\[2ex]
 {\subfont\partisub}\\[2ex]
 \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
 }
 
-\renewcommand{\partii}{%
+\newcommand{\partii}{%
 \parttitlefontsize
 {\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partiitxt\\\partiiup}\\[2ex]
 {\subfont\partiisub}\\[2ex]
 \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
 }
 
-\renewcommand{\partiii}{%
+\newcommand{\partiii}{%
 \parttitlefontsize
 {\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partiiitxt\\\partiiiup}\\[2ex]
 {\subfont\partiiisub}\\[2ex]
 \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
 }
 
-\renewcommand{\partiv}{%
+\newcommand{\partiv}{%
 \parttitlefontsize
 {\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partivtxt\\\partivup}\\[2ex]
 {\subfont\partivsubone\\[0.5ex]
