@@ -1,13 +1,13 @@
 %
-% XeLaTeX package for typesetting the Urantia Book in various languages.
-% Copyright (c) 2002-2014 Tigran Aivazian <aivazian.tigran@gmail.com>
+% XeLaTeX package for typesetting the British Study Edition of the Urantia Papers
+% Copyright (c) 2002-2014 Tigran Aivazian <tigran@bibles.org.uk>
 %
 
 \NeedsTeXFormat{LaTeX2e}[2000/06/01]
 \ProvidesPackage{ubook}[2013/09/10 v1.0]
 
 \@for\tmp@a:=%
-  parvs,lettrine,dropcaps,nofn,doublecol,xrefs,nohyperref,english%
+  parvs,lettrine,nofn,doublecol,xrefs,nohyperref,english%
 \do{%
   \expandafter\newif\csname if\tmp@a\endcsname
   \edef\tmp@b{{\tmp@a}{\expandafter\noexpand\csname \tmp@a true\endcsname}}%
@@ -57,12 +57,6 @@
 \newcommand{\bibvar}[1]{[#1]}
 \newcommand{\bibempty}{\ensuremath{\varnothing}}
 \newcommand{\bibfnvsnumspace}{\nobreakspace}
-
-% these hooks allow to execute some commands before and after the main
-% content of \bibbook[descr].
-% For example, using \bibbookend one can change the font of the main text.
-\newcommand{\bibbookbegin}{}
-\newcommand{\bibbookend}{}
 
 \newcommand{\te}[1]{\textlatin{#1}}
 \newcommand{\ti}[1]{\textlatin{\itshape #1}}
@@ -116,10 +110,6 @@
 \newlength\fnsymskip
 \setlength\fnsymskip{2pt}
 
-\ifdropcaps
-\RequirePackage{yfonts}
-\fi
-
 \iflettrine
 \RequirePackage{lettrine}
 \setcounter{DefaultLines}{3}
@@ -127,7 +117,6 @@
 
 \newif\if@lettrine@or@dropcaps
 \iflettrine\@lettrine@or@dropcapstrue\fi
-\ifdropcaps\@lettrine@or@dropcapstrue\fi
 
 \def\bibchap{\noindent\textlatin{\Large\bfseries\upshape\thechnum}\space}
 
@@ -218,8 +207,6 @@ urlcolor=black
 \def\need@ht@a#1 #2:#3\relax{\global\@namedef{do@ht@#1@#2@#3}{}}
 \providecommand\vsfmt[3]{\bk{#1}\nobreakspace#2.#3}
 
-\setlength\parindent{15\p@}
-
 \newif\if@firstvs@ch
 \newif\if@firstvs@bk
 \newcounter{chnum}
@@ -283,12 +270,8 @@ urlcolor=black
   \vs@d
 }
 \def\vs@d{%
-  \ifdropcaps
-    \yinipar{\textcolor{\bibdropcapscolor}{\process@lettrine{\vs@dc}}}%
-  \else
-    \iflettrine
-      \lettrine{\textcolor{\bibdropcapscolor}{\process@lettrine{\vs@dc}}}{}%
-    \fi
+  \iflettrine
+    \lettrine{\textcolor{\bibdropcapscolor}{\process@lettrine{\vs@dc}}}{}%
   \fi
   \vs@e
 }
