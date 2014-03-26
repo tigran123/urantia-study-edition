@@ -10,10 +10,10 @@
 
 % various font families
 % (for now support just Adobe Garamond Premier Pro Opticals)
-\tunemarkuptag{garamond}
+%\tunemarkuptag{garamond}
 
 % comment out for public PDF build
-%\tunemarkuptag{private}
+\tunemarkuptag{private}
 
 \setdefaultlanguage{english}
 
@@ -41,6 +41,7 @@
 \newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
 \newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=2.0,WordSpace=1.5}}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%
@@ -66,7 +67,6 @@
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\huge ahb\end{center}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
@@ -102,7 +102,6 @@
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\LARGE ahb\end{center}}
 \newcommand{\subfont}{\fontsize{11}{10}\itshape}
