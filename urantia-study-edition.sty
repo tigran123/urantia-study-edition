@@ -1,19 +1,24 @@
 \NeedsTeXFormat{LaTeX2e}[2000/06/01]
 \ProvidesPackage{urantia-study-edition}[2010/05/25 v1.0]
-\RequirePackage[parvs,lettrine]{ubook}
+
+% conditional markup tuning, to maintain more than 1 version of module sources with hand-tuned markup
+\def\tunemarkuptag#1{\@namedef{tune@markup@#1}{}}
+\def\tunemarkup#1#2{\@ifundefined{tune@markup@#1}{}{#2}}
 
 % various page sizes
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
-%\tunemarkuptag{pgkindledx}
 \tunemarkuptag{pgkoboaurahd}
+%\tunemarkuptag{pgkindledx}
+
+\RequirePackage[\tunemarkup{pgkindledx}{doublecol,}parvs,lettrine]{ubook}
 
 % various font families
 % (for now support just Adobe Garamond Premier Pro Opticals)
 \tunemarkuptag{garamond}
 
 % comment out for public PDF build
-%\tunemarkuptag{private}
+\tunemarkuptag{private}
 
 \setdefaultlanguage{english}
 
@@ -125,10 +130,10 @@
 
 \tunemarkup{pgnexus7}{%
 \definecolor{ubpagecolor}{rgb}{0.0, 0.5, 1.0}
-\definecolor{ubpagebg}{rgb}{0.9, 0.9, 0.75}
+\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.9}
 \pagecolor{ubpagebg}
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
-\definecolor{ubdarkred}{rgb}{0.5, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.6, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
 \newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}

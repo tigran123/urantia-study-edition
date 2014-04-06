@@ -27,7 +27,7 @@
 \protected\def\hyph#1#2#3{\discretionary{#1\char\hyphenchar\font}{#2}{#3}}
 
 \RequirePackage[perpage]{footmisc}
-\RequirePackage{fancyhdr,color,etex,fixltx2e,multicol,amssymb,xltxtra,polyglossia,hyphenat,ulem,fancybox,xcolor,pagecolor,afterpage}
+\RequirePackage{fancyhdr,color,etex,fixltx2e,multicol,amssymb,xltxtra,polyglossia,hyphenat,ulem,fancybox,xcolor,pagecolor,afterpage,float}
 
 \renewcommand{\headrulewidth}{0mm}
 \setlength{\parskip}{0mm}
@@ -560,7 +560,3 @@ urlcolor=black
 \RequirePackage{datetime}
 \def\DTtoday{\formatdate{\day}{\month}{\year}}
 \def\shorttoday{{\shortdate\showdowfalse\formatdate{\day}{\month}{\year}}}
-
-% conditional markup tuning, to maintain more than 1 version of module sources with hand-tuned markup
-\def\tunemarkuptag#1{\@namedef{tune@markup@#1}{}}
-\def\tunemarkup#1#2{\@ifundefined{tune@markup@#1}{}{#2}}
