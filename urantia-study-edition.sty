@@ -58,6 +58,11 @@
    }\vspace{-0.5ex}\linebreak
 }
 
+% for TOC entries horizontal spacing
+\newcommand{\now}{0.04\linewidth}
+\newcommand{\numw}{0.08\linewidth}
+\newcommand{\txtw}{0.77\linewidth}
+
 \tunemarkup{pghanlin}{%
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
@@ -94,6 +99,9 @@
 }
 
 \tunemarkup{pgkoboaurahd}{%
+\renewcommand{\now}{0.04\linewidth}
+\renewcommand{\numw}{0.07\linewidth}
+\renewcommand{\txtw}{0.81\linewidth}
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
@@ -113,8 +121,8 @@
 \newcommand{\parttitlefontsize}{\large}
 \newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
 \newcommand{\urantiamainfontsize}{16.4/18.5}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{11}{11}\selectfont}
-\renewcommand{\bibtocfont}{\fontsize{10}{11}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{11.6}{15}\selectfont}
 \renewcommand{\author}[1]{{\fontsize{13}{9}\bfseries\itshape\begin{center}#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -255,7 +263,7 @@
 \vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-2ex}%
 \end{center}%
 \ubookdescr{p0}{
-   toc={\makebox[0.04\linewidth][l]{№}\makebox[0.08\linewidth][r]{0. }\makebox[0.77\linewidth][l]{\forewordtoc\bibdf}},
+   toc={\makebox[\now][l]{№}\makebox[\numw][r]{0.\,}\makebox[\txtw][l]{\forewordtoc\bibdf}},
    bookmark={\forewordbmk},
    header={\forewordhdr},
    abbr={p0}
@@ -273,7 +281,7 @@
 \setcounter{secnum}{0}%
 \bibpaperdisplay{#1}{#2}%
  \ubookdescr{p#1}{
-   toc={\makebox[0.04\linewidth][l]{№}\makebox[0.08\linewidth][r]{#1. }\makebox[0.77\linewidth][l]{#2\bibdf}},
+   toc={\makebox[\now][l]{№}\makebox[\numw][r]{#1.\,}\makebox[\txtw][l]{#2\bibdf}},
    bookmark={#1. #2},
    header={#2},
    abbr={p#1}
