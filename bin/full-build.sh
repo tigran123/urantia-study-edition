@@ -2,6 +2,7 @@
 
 MOD=urantia-study-edition
 STYFILE=${MOD}.sty
+OUT=pdf
 
 function set_tag()
 {
@@ -57,18 +58,18 @@ function set_pgnexus7()
 	set_tag pgnexus7
 }
 
-rm -rf pdf ; mkdir pdf
+rm -rf $OUT ; mkdir $OUT
 
 set_pgkindledx
-make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KindleDX.pdf
+make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-KindleDX.pdf
 
 set_pgnexus7
-make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Android.pdf
+make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-Android.pdf
 
 set_pghanlin
-make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-Kindle.pdf
+make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-Kindle.pdf
 
 set_pgkoboaurahd
-make vclean ; make && mv -f ${MOD}.pdf pdf/${MOD}-KoboAuraHD.pdf
+make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-KoboAuraHD.pdf
 
 make vclean
