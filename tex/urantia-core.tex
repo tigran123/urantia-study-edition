@@ -13,10 +13,6 @@
 % Kobo Mini 5"
 \tunemarkup{pgkobomini}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={75.0mm,100.0mm}]{geometry}}
 
-% fix page dimentions in xelatex - can be dropped when geometry.sty
-% will become xetex-aware and/or geometry.cfg in texlive will be fixed
-%\@ifundefined{XeTeXversion}{}{\def\Gm@checkdrivers{\Gm@setdriver{pdftex}}}
-
 % for typesetting fractions: 1/2, 1/6, etc.
 \newcommand{\bibfrac}[2]{{\addfontfeature{Fractions=On}#1/#2}}
 % for fonts which have no support for fractions uncomment these two lines
@@ -124,20 +120,13 @@
 
 \def\bibnobreakspace{\kern5pt\relax}
 \newcommand{\separatorline}{\begin{center}*\ \ *\ \ *\ \ *\ \ *\end{center}}
-\newcommand{\bibtextbf}[1]{\textbf{#1}}
 
 \newcommand{\bibtextul}[1]{\uline{#1}}
 \newcommand{\bibexpl}[1]{{\explfont #1}}
-\providecommand{\latintext}{}
 \providecommand{\textlatin}[1]{{#1}}
-
-\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\headrulewidth}{0pt}
 \renewcommand{\bibdropcapscolor}{ubdarkred}
-
 \columnseprule=0.0pt
-\renewcommand{\bibfnvsmark}{}
-
-% uncomment for a more fancy lettrine font (also uncomment \lettrinefont)
 \renewcommand{\LettrineFontHook}{\lettrinefont}
 
 \def\mytoday{{\ddmmyyyydate\today}}

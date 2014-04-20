@@ -7,7 +7,7 @@
 \ProvidesPackage{ubook}[2013/09/10 v1.0]
 
 \@for\tmp@a:=%
-  parvs,lettrine,nofn,doublecol,nohyperref%
+  parvs,doublecol%
 \do{%
   \expandafter\newif\csname if\tmp@a\endcsname
   \edef\tmp@b{{\tmp@a}{\expandafter\noexpand\csname \tmp@a true\endcsname}}%
@@ -20,79 +20,25 @@
 }
 \ProcessOptions
 
-\RequirePackage{fix-cm} % as early as possible
-
 % to be able to use \hyphenchar other than ASCII "-" we use
 % \hyph{a}{b}{c} instead of \discretionary{a-}{b}{c} (see zohrab/tex/*.tex)
 \protected\def\hyph#1#2#3{\discretionary{#1\char\hyphenchar\font}{#2}{#3}}
 
 \RequirePackage[perpage]{footmisc}
-\RequirePackage{fancyhdr,color,etex,fixltx2e,multicol,amssymb,xltxtra,polyglossia,hyphenat,ulem,fancybox,xcolor,pagecolor,afterpage,float}
+\RequirePackage{fancyhdr,color,etex,multicol,amssymb,xltxtra,polyglossia,hyphenat,ulem,fancybox,xcolor,pagecolor,afterpage,float}
 \RequirePackage[figure]{totalcount}
 
-\renewcommand{\headrulewidth}{0mm}
-\setlength{\parskip}{0mm}
-
-\definecolor{grey}{rgb}{0.4, 0.4, 0.4}
 \newcommand{\bibdropcapscolor}{black}
-\newcommand{\bibtitlemain}[1]{\begingroup\vspace{1ex}\Huge\bfseries\MakeUppercase{#1}\endgroup}
 \newcommand{\bibtocfont}{\fontsize{11}{13.2}\selectfont}
 \newcommand{\bibtocheadfont}{\Large\scshape}
 \newcommand{\bibfnchapsize}{\bfseries\normalsize}
 \newcommand{\bibfnvssize}{\bfseries\small}
-\newcommand{\bibfnvsmark}{\textlatin{v.}}
-\newcommand{\bibtitlefont}{\huge\scshape}
-\newcommand{\bibqtfont}{\bfseries\slshape}
-\newcommand{\bibmarnchfont}{\large\bfseries\upshape}
-\newcommand{\bibmarnvsfont}{\footnotesize\mdseries\upshape}
 \newcommand{\bibheadfont}{\normalsize\scshape}
 \newcommand{\bibheadchapsize}{\normalfont\normalsize}
 \newcommand{\bibheadversesize}{\normalfont\footnotesize}
 \newcommand{\bibheadpagesize}{\normalfont\footnotesize}
 \newcommand{\bibpage}{\pagename}
-\newcommand{\bibpsalmname}{Psalm}
-\newcommand{\bibchapname}{\chaptername}
-\newcommand{\bibversename}{Verse}
-\newcommand{\bibcontname}{\contentsname}
-\newcommand{\bibnotelang}[1]{#1}
-\newcommand{\bibvar}[1]{[#1]}
-\newcommand{\bibempty}{\ensuremath{\varnothing}}
-\newcommand{\bibfnvsnumspace}{\nobreakspace}
-
-\newcommand{\te}[1]{\textlatin{#1}}
-\newcommand{\ti}[1]{\textlatin{\itshape #1}}
-\newcommand{\bibcline}[1]{\vspace{4ex}\begin{center}\normalsize\scshape#1\end{center}\vspace{1ex}}
-
-\newcommand{\bibssfont}{}
-
-\def\process@lettrine#1{\MakeUppercase{#1}}
-
-% \src macro to print source names
-\def\src#1{\src@do@vbar#1|\relax|}
-\def\src@do@vbar#1|{%
-  \ifx\relax#1%
-    \empty
-  \else
-    \bib@src#1[]\relax
-    \expandafter\src@maybe@put@sep
-  \fi
-}
-\def\src@maybe@put@sep#1|{\ifx\relax#1\empty\else\bib@srcsep\fi\src@do@vbar#1|}
-\def\bib@src#1[#2]{%
-  \def\@tempa{#2}%
-  \@ifundefined{bib@src@#1}{\te{#1}}{\@nameuse{bib@src@#1}}%
-  \ifx\@tempa\@empty\else
-    \@ifundefined{bib@srcarg@#1}{\bib@srcarg@default{#2}}{\@nameuse{bib@srcarg@#1}{#2}}%
-  \fi
-  \ifx\@tempa\@empty\else\expandafter\@gobblebraces\fi
-}
-\def\@gobblebraces[]{}
-\def\declarebibsrc#1#2{%
-  \@namedef{bib@src@#1}{#2}%
-  \@ifnextchar[{\define@bibsrc@arg{#1}}{}}
-\def\define@bibsrc@arg#1[#2]{\@namedef{bib@srcarg@#1}##1{#2}}
-\def\bib@srcarg@default#1{\ts{\te{\bibssfont#1}}}
-\def\bib@srcsep{\hspace{\fnsymskip}}
+\newcommand{\bibcontname}{The Titles of the Papers}
 
    \long\def\makefootnoteparagraph{\unvbox\footins \makehboxofhboxes
     \setbox\FN@tempboxa=\hbox{\unhbox\FN@tempboxa \removehboxes}
@@ -108,51 +54,10 @@
     #1% removed \hskip.5em\relax before #1
   }
 
-\newlength\fnsymskip
-\setlength\fnsymskip{2pt}
-
-\iflettrine
 \RequirePackage{lettrine}
 \setcounter{DefaultLines}{3}
-\fi
 
-\newif\if@lettrine@or@dropcaps
-\iflettrine\@lettrine@or@dropcapstrue\fi
-
-\def\bibchap{\noindent\textlatin{\Large\bfseries\upshape\thechnum}\space}
-
-\ifnohyperref
-\def\hyperlink#1#2{#2}
-\def\hypertarget#1#2{#2}
-\def\bib@raise@anchor#1{}
-\def\acc#1{\'{#1}}
-\protected\def\mpr@ch#1#2{\bibmarnchfont#2}
-\newcommand*{\bibmetadata}[5]{}
-\newcommand*{\bibpr}[1]{\textlatin{\pageref{#1}}}
-\newcommand*{\bibpdfbookmark}[3][0]{}
-% FIXME these \selectlanguage should be changed to \textlatin
-\newcommand*{\biburl}[1]{{\selectlanguage{british}\normalsize\upshape #1}}
-\newcommand*{\biblesorguk}{\selectlanguage{british}\Large\upshape Bibles.org.uk, London.}
-\newcommand*{\bibht}{}
-\newcommand*{\bibhl}[2]{#2}
-\newcommand*{\rref}[3]{#1\nobreakspace#2.#3}
-\newcommand*{\lref}[3]{#1\nobreakspace#2.#3}
-\newcommand*{\href}[2]{#2}
-\newcommand*{\bibpdfdest}[1]{}
-\else
-\RequirePackage[plainpages=false,hyperfootnotes=false,pdfpagelabels,
-colorlinks,
-linkcolor=black,
-anchorcolor=black,
-citecolor=black,
-filecolor=black,
-menucolor=black,
-pagecolor=black,
-urlcolor=black
-]{hyperref}
-\protected\def\mpr@ch#1#2{%
-  \href{run:mp3/\jobname/#1/#1#2.mp3}{\bibmarnchfont#2}%
-}
+\RequirePackage[plainpages=false,hyperfootnotes=false,pdfpagelabels,colorlinks,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,pagecolor=black,urlcolor=black]{hyperref}
 
 \protected\def\bib@raise@anchor#1{%
   \ifhmode
@@ -174,26 +79,9 @@ urlcolor=black
 \newcommand*{\bibpdfbookmark}[3][0]{\pdfbookmark[#1]{#2}{#3}}
 \newcommand*{\rref}[3]{\href{tnk.pdf\##1#2_#3}{#1\nobreakspace#2.#3}}
 \newcommand*{\lref}[3]{\hyperlink{#1#2_#3}{#1\nobreakspace#2.#3}}
-\newcommand*{\bibht}{%
-  \bib@raise@anchor{\hypertarget{\bkname\thechnum_\curr@vs}{}}%
-  \nobreak\hskip\z@skip
-}
+\newcommand*{\bibht}{\bib@raise@anchor{\hypertarget{\bkname\thechnum_\curr@vs}{}}\nobreak\hskip\z@skip}
 \newcommand*{\bibhl}[2]{\hyperlink{#1}{#2}}
-% FIXME these \selectlanguage should be changed to \textlatin
-\newcommand*{\biburl}[1]{{\selectlanguage{british}\normalsize\upshape\url{#1}}}
 \newcommand*{\bibpdfdest}[1]{\pdfdest name {#1} fit}
-
-% \acc macro to print vowel with acute
-% note that the generated PDF will rely on the "Replacement Text" feature in PDF 1.5
-% so one needs to specify \pdfminorversion=5 is such \acc macro is used.
-%\RequirePackage{accsupp} % XXX re-enable when TeX Live is upgraded!
-%\def\acc#1{\BeginAccSupp{method=pdfstringdef,unicode,ActualText={\'{#1}}}\'{#1}\EndAccSupp{}}
-\DeclareTextCommand{\combacute}{PU}{\83\001}
-%\def\acc#1{\BeginAccSupp{method=pdfstringdef,unicode,ActualText={#1\combacute}}\'{#1}\EndAccSupp{}} % XXX re-enable when TeX Live is upgraded!
-% we used the above definition to allow copying from PDF to work properly,
-% instead of the following simplified definition:
-\def\acc#1{\'{#1}}
-\fi
 
 \def\bk#1{\@ifundefined{bibbooks@#1@abbr}{#1}{\@nameuse{bibbooks@#1@abbr}}}
 \def\bibref{\@ifnextchar[{\bibref@c}{\bibref@a}}
@@ -230,7 +118,7 @@ urlcolor=black
   \def\test@ch{#2}%
   \ifx\curr@ch\test@ch\else\global\@firstvs@chtrue\fi
   \if@firstvs@bk
-      \if@lettrine@or@dropcaps\@vs@dc@dotrue\fi
+      \@vs@dc@dotrue
   \fi
   \if@firstvs@ch
       \par\if@vs@dc@do\else\leavevmode\fi
@@ -271,9 +159,7 @@ urlcolor=black
   \vs@d
 }
 \def\vs@d{%
-  \iflettrine
-    \lettrine{\textcolor{\bibdropcapscolor}{\process@lettrine{\vs@dc}}}{}%
-  \fi
+  \lettrine{\textcolor{\bibdropcapscolor}{\vs@dc}}{}%
   \vs@e
 }
 \def\vs@zero{0}
@@ -301,24 +187,8 @@ urlcolor=black
   \nobreak\hskip\z@skip
   \vs@emph
 }
-\protected\def\mpr@vs#1#2#3{\bibmarnvsfont #3}
-\protected\def\print@vssup#1{\@textsuperscript{\latintext\fontsize{6}{7}\selectfont#1}\kern0.1em\relax}
 \protected\def\printvssup#1{\print@vssup{#1}}
 
-% override the default chapter name shown in bookmarks, for specific books
-\@namedef{bib@bm@ch@Psa}{\bibpsalmname}
-\@namedef{bib@bm@ch@Pss}{\bibpsalmname}
-%\def\bookmarkchname{\bkname} % convenient default for eBook readers
-% other choices:
-% previous default - \bibchapname with special name for Psa, Pss:
-\def\bookmarkchname{\@ifundefined{bib@bm@ch@\bkname}{\bibchapname}{\@nameuse{bib@bm@ch@\bkname}}}
-
-\def\vs@range{%
-  \@ifundefined{mark@vs@\thepage}{}{%
-    \expandafter\expandafter\expandafter
-      \vs@range@a\csname mark@vs@\thepage\endcsname
-  }%
-}
 \def\vs@range@a#1#2#3#4{\vs@range@b#2#4}
 \def\vs@range@b#1#2#3#4{%
   \ifnum #1=#3
@@ -347,10 +217,6 @@ urlcolor=black
 
 \bibnewmark{book}
 
-\fancyhead[LE,RO]{\bibheadfont\vs@range}
-\fancyhead[LO,RE]{\bibheadpagesize\textlatin{\thepage}}
-\fancyhead[C]{\bibheadfont\bibfirstmark{book}}
-
 \newcommand{\clp}{\clearpage{\pagestyle{empty}\cleardoublepage}}
 
 \def\@makefnmark{}
@@ -362,25 +228,7 @@ urlcolor=black
 \newcommand{\tb}[1]{\textsubscript{#1}}
 \def\overprint#1#2{\setbox\z@\hbox{#1}\rlap{\hb@xt@\wd\z@{\hss#2\hss}}#1}
 \def\backslashed#1{\overprint{#1}{\textbackslash}}
-\def\chhdr#1{\begin{center}\bibemph{#1}\end{center}}
-
-\def\bibseprule{%
-  \rule{0.1\linewidth}{0.5pt}%
-  \kern-0.5pt%
-  \lower2.3pt
-    \hbox{\scriptsize\ding{71}}%
-  \kern-0.7pt%
-  \rule{0.1\linewidth}{0.5pt}%
-}
-
-\newcommand{\bibbook}[4]{%
-  \@ifnextchar[{\@bibbook{#1}{#2}{#3}{#4}}{\@bibbook{#1}{#2}{#3}{#4}[#3]}%
-}
-
-\newlength{\bibtitlepreskip}
-\newlength{\bibtitlepostskip}
-\setlength{\bibtitlepreskip}{2ex}
-\setlength{\bibtitlepostskip}{1ex}
+\newcommand{\nocopyright}{\overprint{\textcopyright}{{\LARGE\texttimes}}}
 
 \def\@ubook#1#2#3#4[#5]{%
   % #1 title to go on the first page.
@@ -423,24 +271,15 @@ urlcolor=black
 \protected\def\bib@footnote#1{\fn@chk@a\footnote{\fn@chk@b #1}}
 \protected\def\bib@footnotetext#1{\fn@chk@a\footnotetext{\fn@chk@b #1}}
 
-\def\fnt#1{%
-  \leavevmode\unskip
-  \ifnofn\else
-    \bib@footnotetext{\bibnotelang{#1}}%
-  \fi
-}
-
 \def\fn#1{%
   \leavevmode\unskip
-  \ifnofn\else
-    \stepcounter{nnotes}%
-    \ifnum\c@nnotes=1 % first note in this chapter
-        \bib@footnotetext{%
-          {\bibfnchapsize\thechnum.}{\bibfnvssize\bibfnvsmark\curr@vs}\bibfnvsnumspace\bibnotelang{#1}}%
-    \else
-        \bib@footnotetext{%
-          {\bibfnvssize\bibfnvsmark\curr@vs}\bibfnvsnumspace\bibnotelang{#1}}%
-    \fi
+  \stepcounter{nnotes}%
+  \ifnum\c@nnotes=1 % first note in this chapter
+      \bib@footnotetext{%
+        {\bibfnchapsize\thechnum.}{\bibfnvssize\curr@vs}.\nobreakspace#1}%
+  \else
+      \bib@footnotetext{%
+        {\bibfnvssize\curr@vs}.\nobreakspace#1}%
   \fi
 }
 
