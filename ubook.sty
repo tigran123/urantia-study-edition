@@ -430,9 +430,6 @@ urlcolor=black
   \fi
 }
 
-\newif\ifenumfn
-\enumfntrue
-
 \def\fn#1{%
   \leavevmode\unskip
   \ifnofn\else
@@ -447,7 +444,6 @@ urlcolor=black
   \fi
 }
 
-% footnote with a little circle in the text.
 \def\fnc#1{\r{}\fn{#1}}
 \def\fnst#1{\ignorespaces\ts{*}\fn{#1}}
 
