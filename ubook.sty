@@ -7,7 +7,7 @@
 \ProvidesPackage{ubook}[2013/09/10 v1.0]
 
 \@for\tmp@a:=%
-  parvs,lettrine,nofn,doublecol,xrefs,nohyperref,english%
+  parvs,lettrine,nofn,doublecol,nohyperref%
 \do{%
   \expandafter\newif\csname if\tmp@a\endcsname
   \edef\tmp@b{{\tmp@a}{\expandafter\noexpand\csname \tmp@a true\endcsname}}%
@@ -297,7 +297,6 @@ urlcolor=black
     \write@mark{vs}{{\thechnum}{\curr@vs}}%
   \fi
   \ifcsname do@ht@\bkname @\curr@ch @\curr@vs\endcsname\bibht\fi
-  \ifxrefs\ifcsname vs@xr@\bkname @\curr@ch @\curr@vs\endcsname\fnxref{\@nameuse{vs@xr@\bkname @\curr@ch @\curr@vs}}\fi\fi
   \nobreak\hskip\z@skip
   \vs@emph
 }
@@ -446,27 +445,6 @@ urlcolor=black
     \fi
   \fi
 }
-
-\ifxrefs
-% FIXME: would it be better to remove "parindent" in the xref footnotes, i.e. flush them to the left?
-% (tried redefining \FN@par and \FN@indent but that didn't work - need to look more)
-\DeclareNewFootnote[para]{XREF}
-\def\thefootnoteXREF{}
-\def\fnxref#1{%
-  \leavevmode\unskip
-  \stepcounter{nnotes}%
-  \fn@chk@a\footnotetextXREF{\fn@chk@b
-    \parindent\z@
-    %\ifnum\c@nnotes=\@ne{\bibfnchapsize\bibchapname\nobreakspace\thechnum. }\fi % first note in this chapter
-    {\bibfnvssize[\ifnum\c@nnotes=\@ne\thechnum:\fi\curr@vs]}\nobreakspace\bibnotelang{#1}}%
-}
-\def\bibxra#1#2#3#4{\bibref@c[\bk{#1} #4]{#1 #2:#3}}
-\def\bibxrb#1#2#3#4{\bibref@c[#4]{#1 #2:#3}}
-\def\bibxrc#1#2{\hyperlink{#1_#2.2}{\bk{#1} #2}}
-\def\bibxrd#1#2#3{\hyperlink{#1_#2.2}{#3}}
-\input xrefs.tex
-\fi
-\protected\def\bookxref#1{\ifxrefs\textsuperscript{\small\upshape (\cyra)}\footnotetextXREF{{\bibfnvssize [\cyra]}\nobreakspace\bibref{#1}}\fi}
 
 % footnote with a little circle in the text.
 \def\fnc#1{\r{}\fn{#1}}
