@@ -58,18 +58,26 @@ function set_pgnexus7()
 	set_tag pgnexus7
 }
 
-rm -rf $OUT ; mkdir $OUT
+function build_all()
+{
+	local outdir=${OUT}/$1
 
-set_pgkindledx
-make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-KindleDX.pdf
+	set_pgkindledx
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KindleDX.pdf
 
-set_pgnexus7
-make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-Android.pdf
+	set_pgnexus7
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-Android.pdf
 
-set_pghanlin
-make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-Kindle.pdf
+	set_pghanlin
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-Kindle.pdf
 
-set_pgkoboaurahd
-make vclean ; make && mv -f ${MOD}.pdf ${OUT}/${MOD}-KoboAuraHD.pdf
+	set_pgkoboaurahd
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboAuraHD.pdf
+}
 
+rm -rf $OUT ; mkdir -p $OUT/{public,private}
+unset_tag private
+build_all public
+set_tag private
+build_all private
 make vclean
