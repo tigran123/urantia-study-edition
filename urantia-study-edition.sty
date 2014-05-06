@@ -4,6 +4,7 @@
 % conditional markup tuning, to maintain more than 1 version of module sources with hand-tuned markup
 \def\tunemarkuptag#1{\@namedef{tune@markup@#1}{}}
 \def\tunemarkup#1#2{\@ifundefined{tune@markup@#1}{}{#2}}
+\def\tunemarkuptwo#1#2#3{\@ifundefined{tune@markup@#1}{#3}{#2}}
 
 % various page sizes
 %\tunemarkuptag{pghanlin}
