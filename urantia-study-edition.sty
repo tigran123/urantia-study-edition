@@ -18,7 +18,19 @@
 \tunemarkuptag{garamond}
 
 % comment out for public PDF build
-\tunemarkuptag{private}
+%\tunemarkuptag{private}
+
+% comment out to disable pictures
+%\tunemarkuptag{pictures}
+
+% comment out to enable footnotes
+\tunemarkuptag{nofnt}
+
+% comment out to disable fancy lettrine letters
+%\tunemarkuptag{fancylettrine}
+
+% comment out to disable Introduction
+%\tunemarkuptag{introinclude}
 
 \setdefaultlanguage{english}
 
@@ -45,6 +57,11 @@
 \newcommand{\vsetspace}{\vspace{1ex}}
 \newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=2.0,WordSpace=1.5}}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
+
+\tunemarkup{nofnt}{%
+\def\fnc#1{}
+\def\fnst#1{}
+}
 
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%

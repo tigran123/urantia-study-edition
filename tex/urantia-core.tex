@@ -33,7 +33,6 @@
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
 \newfontfamily\libertinefont[Mapping=tex-text]{Linux Libertine O}
 \newcommand{\tux}{{\libertinefont ^^^^e000}}
-\newfontfamily\lettrinefont[Mapping=tex-text]{Goudy Initialen}
 
 \newcounter{paper}
 \newcounter{secnum}
@@ -127,7 +126,11 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\bibdropcapscolor}{ubdarkred}
 \columnseprule=0.0pt
+
+\tunemarkup{fancylettrine}{%
+\newfontfamily\lettrinefont[Mapping=tex-text]{Goudy Initialen}
 \renewcommand{\LettrineFontHook}{\lettrinefont}
+}
 
 \def\mytoday{{\ddmmyyyydate\today}}
 \def\bibchap{\printvssup{\curr@vs}}
