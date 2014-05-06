@@ -32,6 +32,9 @@
 % comment out to disable Introduction
 %\tunemarkuptag{introinclude}
 
+% comment out to disable fancy page decorations
+\tunemarkuptag{nofancydecor}
+
 \setdefaultlanguage{english}
 
 \tunemarkup{garamond}{%
@@ -202,6 +205,10 @@
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
+}
+
+\tunemarkup{nofancydecor}{%
+\renewcommand{\vsetoff}{\vspace*{1ex}}
 }
 
 \AtBeginDocument{%
