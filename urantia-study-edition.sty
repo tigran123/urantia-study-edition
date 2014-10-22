@@ -12,6 +12,7 @@
 \tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgkindledx}
 
+\RequirePackage[figure,curq]{totalcount}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}parvs]{ubook}
 
 % various font families
@@ -19,25 +20,25 @@
 \tunemarkuptag{garamond}
 
 % comment out for public PDF build
-%\tunemarkuptag{private}
+\tunemarkuptag{private}
 
 % comment out to disable pictures
-%\tunemarkuptag{pictures}
+\tunemarkuptag{pictures}
 
 % comment out to enable footnotes
-\tunemarkuptag{nofnt}
+%\tunemarkuptag{nofnt}
 
 % comment out to disable fancy lettrine letters
-%\tunemarkuptag{fancylettrine}
+\tunemarkuptag{fancylettrine}
 
 % comment out to disable Introduction
-%\tunemarkuptag{introinclude}
+\tunemarkuptag{introinclude}
 
 % comment out to enable fancy page decorations
-\tunemarkuptag{nofancydecor}
+%\tunemarkuptag{nofancydecor}
 
 % comment out to disable cover image
-%\tunemarkuptag{coverimage}
+\tunemarkuptag{coverimage}
 
 \setdefaultlanguage{english}
 
@@ -59,6 +60,116 @@
 \setlength{\columnsep}{3.5mm}
 \setlength\parindent{8\p@}
 \let\textcolour\textcolor
+
+% Cosmic Citizenship Quiz macros
+
+\newcommand{\questionfont}{\fontsize{16}{19}\bfseries}
+\newcommand{\answersfont}{\fontsize{16}{19}\selectfont}
+
+\newcommand{\quizheader}{%
+   \newpage\pagestyle{empty}%
+   \bibpart{COSMIC CITIZENSHIP QUIZ}{COSMIC CITIZENSHIP QUIZ}{qz}%
+   \vspace*{\stretch{0.2}}%
+   \begin{center}\titlefont\fontsize{28}{34}\selectfont COSMIC CITIZENSHIP QUIZ\end{center}%
+   \vspace*{\stretch{0.7}}%
+   \newpage
+}
+
+\newcommand{\quizpart}[1]{%
+   \newpage
+   \vspace*{\stretch{0.2}}%
+   \ifnum #1=1
+      \ubookdescr{qb1}{toc={\MakeUppercase{\partimix}},bookmark=\partimix,abbr={qp1}}%
+      \begin{center}\titlefont\huge\MakeUppercase{\partimix}\end{center}%
+   \fi
+   \ifnum #1=2
+      \ubookdescr{qb2}{toc={\MakeUppercase{\partiimix}},bookmark=\partiimix,abbr={qp2}}%
+      \begin{center}\titlefont\huge\MakeUppercase{\partiimix}\end{center}%
+   \fi
+   \ifnum #1=3
+      \ubookdescr{qb3}{toc={\MakeUppercase{\partiiimix}},bookmark=\partiiimix,abbr={qp3}}%
+      \begin{center}\titlefont\huge\MakeUppercase{\partiiimix}\end{center}%
+   \fi
+   \ifnum #1=4
+      \ubookdescr{qb4}{toc={\MakeUppercase{\partivmix}},bookmark=\partivmix,abbr={qp4}}%
+      \begin{center}\titlefont\huge\MakeUppercase{\partivmix}\end{center}%
+   \fi
+   \vspace*{\stretch{0.7}}%
+   \newpage
+}
+
+\newcommand{\quizchap}[2]{%
+   \newpage
+   \vspace*{\stretch{0.2}}%
+   \bib@raise@anchor{\bibpdfbookmark[2]{#1. #2}{qc#1}\label{qp\thepaper_\thesecnum}\hypertarget{qp\thepaper_\thesecnum}{}}%
+   \begin{center}\titlefont\LARGE#1.\nobreakspace\MakeUppercase{#2}\end{center}
+   \vspace*{\stretch{0.7}}%
+   \newpage
+}
+
+\newcounter{curq}
+\newcounter{cans}
+
+\newcommand{\printquestion}{\begin{center}\questionfont\question\end{center}}
+
+\newcommand{\qstart}[2]{%
+  \newpage
+  \setcounter{cans}{0}%
+  \stepcounter{curq}%
+  \gdef\question{#1}%
+  \ifx #2\relax\gdef\references{NONE}\else\gdef\references{#2}\fi
+  \printquestion
+  \begin{itemize}%
+  \answersfont
+  \@answers
+}
+
+\newcommand\@answers{\@ifnextchar\qstop{\@answersend}{\@nextanswer}}
+
+\newcommand\@nextanswer[2]{%
+  \stepcounter{cans}%
+  \item \hyperlink{ans\thecurq}{#1}%
+  \ifnum \value{cans}=1 \gdef\answerone{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=2 \gdef\answertwo{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=3 \gdef\answerthree{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=4 \gdef\answerfour{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=5 \gdef\answerfive{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=6 \gdef\answersix{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=7 \gdef\answerseven{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=8 \gdef\answereight{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=9 \gdef\answernine{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \ifnum \value{cans}=10 \gdef\answerten{#1 \ifnum #2=1 \cmark\else\xmark\fi}\fi
+  \@answers
+}
+
+\def\none{NONE}
+
+\newcommand\@answersend[1]{%
+  \end{itemize}
+  \newpage
+  \hypertarget{ans\thecurq}{}%
+  \printquestion
+  \begin{itemize}%
+  \answersfont
+  \item \answerone
+  \ifnum \value{cans}>1 \item \answertwo\fi
+  \ifnum \value{cans}>2 \item \answerthree\fi
+  \ifnum \value{cans}>3 \item \answerfour\fi
+  \ifnum \value{cans}>4 \item \answerfive\fi
+  \ifnum \value{cans}>5 \item \answersix\fi
+  \ifnum \value{cans}>6 \item \answerseven\fi
+  \ifnum \value{cans}>7 \item \answereight\fi
+  \ifnum \value{cans}>8 \item \answernine\fi
+  \ifnum \value{cans}>9 \item \answerten\fi
+  \end{itemize}%
+  \ifx\references\none\else\vspace*{2ex}\hmark\ \references\fi
+}
+
+\newcommand{\cmark}{\textcolor{ubgreen}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{ubdarkred}{\ding{55}}}
+\newcommand{\hmark}{\textcolor{ubdarkblue}{\ding{43}}}
+\newcommand{\nextq}{\textcolor{ubdarkblue}{\ding{223}}}
+\newcommand{\prevq}{\textcolor{ubdarkblue}{\reflectbox{\ding{223}}}}
 
 \newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
@@ -93,6 +204,7 @@
 \newcommand{\bibpaperfont}{\normalsize}
 \newcommand{\bibpapertitlefont}{\large}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
@@ -131,6 +243,7 @@
 \newcommand{\bibpapertitlefont}{\Large}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
@@ -169,8 +282,8 @@
 \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large\textcolor{ubgreen}{ahb}\end{center}}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
 \renewcommand{\author}[1]{\begin{center}\fontsize{11}{10}\bfseries\itshape\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{15}\bfseries}
-\renewcommand{\bibtocfont}{\fontsize{9.8}{13.5}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{16}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
@@ -184,7 +297,9 @@
 }
 
 \tunemarkup{pgkindledx}{%
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large ahb\end{center}}
