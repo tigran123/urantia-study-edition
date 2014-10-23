@@ -98,11 +98,14 @@
    \newpage
 }
 
-\newcommand{\quizchap}[2]{%
+\newcounter{quizchapter}
+
+\newcommand{\quizchap}[1]{%
    \newpage
+   \stepcounter{quizchapter}%
    \vspace*{\stretch{0.2}}%
-   \bib@raise@anchor{\bibpdfbookmark[2]{#1. #2}{qc#1}\label{qp\thepaper_\thesecnum}\hypertarget{qp\thepaper_\thesecnum}{}}%
-   \begin{center}\titlefont\LARGE#1.\nobreakspace\MakeUppercase{#2}\end{center}
+   \bib@raise@anchor{\bibpdfbookmark[2]{\thequizchapter. #1}{qc\thequizchapter}\label{qc\thequizchapter}\hypertarget{qc\thequizchapter}{}}%
+   \begin{center}\titlefont\LARGE\thequizchapter.\nobreakspace\MakeUppercase{#1}\end{center}
    \vspace*{\stretch{0.7}}%
    \newpage
 }
