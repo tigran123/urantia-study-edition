@@ -356,10 +356,6 @@
 
 \def\ackn{Acknowledgement}
 \def\continuedtxt{(continued)}
-\def\forewordup{FOREWORD}
-\def\forewordtoc{Foreword}
-\def\forewordbmk{Foreword}
-\def\forewordhdr{foreword}
 \def\urantiabook{THE URANTIA PAPERS}
 \def\papertxt{PAPER}
 \def\partitxt{PART I}
@@ -382,38 +378,14 @@
 
 \newcommand{\bibpaperdisplay}[2]{%
    \begin{center}%
-      \ifnum #1=32
-        \partii
-      \fi
-      \ifnum #1=57
-        \partiii
-      \fi
-      \ifnum #1=120
-        \partiv
-      \fi
-      \headerfont\bibpaperfont\papertxt\ #1\\[3pt]
+      \ifnum #1=0\parti\fi
+      \ifnum #1=32\partii\fi
+      \ifnum #1=57\partiii\fi
+      \ifnum #1=120\partiv\fi
+      \ifnum #1>0 \headerfont\bibpaperfont\papertxt\ #1\\[3pt]\fi
       \addfontfeatures{WordSpace=2.0}\bibpapertitlefont\MakeUppercase{#2}\\
       \vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-1ex}%
    \end{center}%
-}
-
-\newcommand{\uforeword}{%
-\newpage\thispagestyle{empty}%
-\begin{center}
-\parti
-\headerfont\bibpapertitlefont\forewordup
-\vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-2ex}%
-\end{center}%
-\ubookdescr{p0}{
-   toc={\makebox[\numw][r]{0.\,}\makebox[\txtw][l]{\forewordtoc\bibdf}},
-   bookmark={\forewordbmk},
-   header={\forewordhdr},
-   abbr={p0}
-}%
-\setcounter{paper}{0}%
-\setcounter{secnum}{0}%
-\fancyhead[CO]{\bibheadfont\forewordup}%
-\bib@raise@anchor{\bibpdfbookmark[2]{0. \forewordbmk}{Foreword_0}}%
 }
 
 \newcommand{\upaper}[2]{%
