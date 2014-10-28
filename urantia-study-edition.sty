@@ -115,12 +115,11 @@
 
 \newcommand{\printquestion}{\begin{center}\questionfont\question\end{center}}
 
-\newcommand{\qstart}[2]{%
+\newcommand{\qstart}[1]{%
   \newpage
   \setcounter{cans}{0}%
   \stepcounter{curq}%
   \gdef\question{#1}%
-  \ifx #2\relax\gdef\references{NONE}\else\gdef\references{#2}\fi
   \printquestion
   \begin{itemize}%
   \answersfont
@@ -165,12 +164,10 @@
   \ifnum \value{cans}>8 \item \answernine\fi
   \ifnum \value{cans}>9 \item \answerten\fi
   \end{itemize}%
-  \ifx\references\none\else\vspace*{2ex}\hmark\ \references\fi
 }
 
 \newcommand{\cmark}{\textcolor{ubgreen}{\ding{51}}}
 \newcommand{\xmark}{\textcolor{ubdarkred}{\ding{55}}}
-\newcommand{\hmark}{\textcolor{ubdarkblue}{\ding{43}}}
 \newcommand{\nextq}{\textcolor{ubdarkblue}{\ding{223}}}
 \newcommand{\prevq}{\textcolor{ubdarkblue}{\reflectbox{\ding{223}}}}
 
