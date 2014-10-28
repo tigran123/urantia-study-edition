@@ -68,7 +68,7 @@
 
 \newcommand{\quizheader}{%
    \newpage\pagestyle{empty}%
-   \bibpart{COSMIC CITIZENSHIP QUIZ}{COSMIC CITIZENSHIP QUIZ}{qz}%
+   \bibpdfbookmark{COSMIC CITIZENSHIP QUIZ}{qz}%
    \vspace*{\stretch{0.2}}%
    \begin{center}\titlefont\fontsize{28}{34}\selectfont COSMIC CITIZENSHIP QUIZ\end{center}%
    \vspace*{\stretch{0.7}}%
@@ -79,33 +79,34 @@
    \newpage
    \vspace*{\stretch{0.2}}%
    \ifnum #1=1
-      \ubookdescr{qb1}{toc={\MakeUppercase{\partimix}},bookmark=\partimix,abbr={qp1}}%
+      \bibpdfbookmark[1]{\partimix}{qp1}%
       \begin{center}\titlefont\huge\MakeUppercase{\partimix}\end{center}%
    \fi
    \ifnum #1=2
-      \ubookdescr{qb2}{toc={\MakeUppercase{\partiimix}},bookmark=\partiimix,abbr={qp2}}%
+      \bibpdfbookmark[1]{\partiimix}{qp2}%
       \begin{center}\titlefont\huge\MakeUppercase{\partiimix}\end{center}%
    \fi
    \ifnum #1=3
-      \ubookdescr{qb3}{toc={\MakeUppercase{\partiiimix}},bookmark=\partiiimix,abbr={qp3}}%
+      \bibpdfbookmark[1]{\partiiimix}{qp3}%
       \begin{center}\titlefont\huge\MakeUppercase{\partiiimix}\end{center}%
    \fi
    \ifnum #1=4
-      \ubookdescr{qb4}{toc={\MakeUppercase{\partivmix}},bookmark=\partivmix,abbr={qp4}}%
+      \bibpdfbookmark[1]{\partivmix}{qp4}%
       \begin{center}\titlefont\huge\MakeUppercase{\partivmix}\end{center}%
    \fi
    \vspace*{\stretch{0.7}}%
    \newpage
 }
 
-\newcounter{quizchapter}
-
-\newcommand{\quizchap}[1]{%
+\newcommand{\qpaper}[2]{%
    \newpage
-   \stepcounter{quizchapter}%
+   \ifnum #1=0\quizpart{1}\fi
+   \ifnum #1=32\quizpart{2}\fi
+   \ifnum #1=57\quizpart{3}\fi
+   \ifnum #1=120\quizpart{4}\fi
    \vspace*{\stretch{0.2}}%
-   \bib@raise@anchor{\bibpdfbookmark[2]{\thequizchapter. #1}{qc\thequizchapter}\label{qc\thequizchapter}\hypertarget{qc\thequizchapter}{}}%
-   \begin{center}\titlefont\LARGE\thequizchapter.\nobreakspace\MakeUppercase{#1}\end{center}
+   \bib@raise@anchor{\bibpdfbookmark[2]{#1. #2}{qc#1}\label{qc#1}\hypertarget{qc#1}{}}%
+   \begin{center}\titlefont\LARGE#1.\nobreakspace\MakeUppercase{#2}\end{center}
    \vspace*{\stretch{0.7}}%
    \newpage
 }
