@@ -1,6 +1,0 @@
-before_install:
-    - yes "" | sudo apt-add-repository ppa:texlive-backports/ppa
-    - sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-latex-recommended texlive-latex-extra
- 
-script:
-    - make
