@@ -9,8 +9,8 @@
 % various page sizes
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
-\tunemarkuptag{pgkoboaurahd}
-%\tunemarkuptag{pgkindledx}
+%\tunemarkuptag{pgkoboaurahd}
+\tunemarkuptag{pgkindledx}
 %\tunemarkuptag{pgkobomini}
 
 \RequirePackage[figure,curq]{totalcount}
@@ -236,6 +236,13 @@
 %\def\botprer{v}
 %\def\botr{w}
 
+\newcommand{\quizlink}{%
+  \par
+  \vspace*{\stretch{0.1}}%
+  \begin{center}\usefont{U}{webo}{xl}{n}\hyperlink{qc\thepaper}{\Huge\textcolor{ublinkcolor}{7}}\end{center}%
+  \vspace*{\stretch{0.9}}%
+}
+
 \newcommand{\titleframe}{%
 \begingroup
 \tunemarkup{pgkindledx}{%
@@ -422,7 +429,7 @@
    \ifnum #1=120\quizpart{4}\fi
    \vspace*{\stretch{0.2}}%
    \bib@raise@anchor{\bibpdfbookmark[2]{#1. #2}{qc#1}\hypertarget{qc#1}{}}%
-   \begin{center}\titlefont\LARGE#1.\nobreakspace\hyperlink{p0}{\MakeUppercase{#2}}\end{center}
+   \begin{center}\titlefont\LARGE#1.\nobreakspace\hyperlink{p#1}{\MakeUppercase{#2}}\end{center}
    \vspace*{\stretch{0.7}}%
    \newpage
 }
@@ -517,6 +524,7 @@
 \newcommand{\bibpaperfont}{\normalsize}
 \newcommand{\bibpapertitlefont}{\large}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
@@ -553,6 +561,7 @@
 \newcommand{\bibpaperfont}{\normalsize}
 \newcommand{\bibpapertitlefont}{\large}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
@@ -592,6 +601,7 @@
 \newcommand{\bibpapertitlefont}{\Large}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
@@ -625,6 +635,7 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
 \definecolor{ubdarkred}{rgb}{0.6, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
 \newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
@@ -646,9 +657,11 @@
 }
 
 \tunemarkup{pgkindledx}{%
+\renewcommand{\quizlink}{}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large ahb\end{center}}
