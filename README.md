@@ -29,9 +29,7 @@ Likewise, the time designations like "fifteen minutes past four o’clock" now r
 
 * Possible textual corruptions are indicated in the footnotes.
 
-The online interactive quiz based on this book and called The Cosmic Citizenship Quiz is freely accessible from our website: http://www.bibles.org.uk
-
-I invite all the readers to test their comprehension by participating in the quiz.
+The PDF file also includes the interactive quiz based on the material of the book called The Cosmic Citizenship Quiz.
 
 Tigran Aivazian
 London, England
