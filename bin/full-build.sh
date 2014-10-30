@@ -25,6 +25,7 @@ function unset_tag()
 function set_pgkindledx()
 {
 	echo "Building Kindle DX PDF"
+	unset_tag pgkobomini
 	unset_tag pgnexus7
 	unset_tag pghanlin
 	unset_tag pgkoboaurahd
@@ -34,15 +35,27 @@ function set_pgkindledx()
 function set_pghanlin()
 {
 	echo "Building Kindle PDF"
+	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
 	set_tag pghanlin
 }
 
+function set_pgkobomini()
+{
+	echo "Building Kobo Mini PDF"
+	unset_tag pgkindledx
+	unset_tag pghanlin
+	unset_tag pgnexus7
+	unset_tag pgkoboaurahd
+	set_tag pgkobomini
+}
+
 function set_pgkoboaurahd()
 {
 	echo "Building Kobo Aura HD PDF"
+	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgnexus7
 	unset_tag pghanlin
@@ -52,6 +65,7 @@ function set_pgkoboaurahd()
 function set_pgnexus7()
 {
 	echo "Building Android PDF"
+	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pghanlin
 	unset_tag pgkoboaurahd
@@ -73,6 +87,9 @@ function build_all()
 
 	set_pgkoboaurahd
 	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboAuraHD.pdf
+
+	set_pgkobomini
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboMini.pdf
 }
 
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
