@@ -99,6 +99,14 @@
 \fancyhead[L]{\bibheadfont\vs@range}
 \fancyhead[R]{\bibheadfont\bibheadpagesize\thepage}
 
+\tunemarkuptwo{pgkoboaurahd}{%
+  \newcommand{\authorfont}{\fontsize{13}{9}\bfseries\itshape}%
+}{%
+  \newcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
+}
+
+\renewcommand{\author}[1]{\begin{center}\authorfont\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
+
 \newcommand{\upartheader}[1]{%
    \par\vspace{3ex}\pagebreak[3]%
    {
@@ -530,7 +538,6 @@
 \newcommand{\urantiamainfontsize}{20/22}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
-\renewcommand{\author}[1]{{\fontsize{11}{9}\bfseries\itshape\begin{center}#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{16}{18}\selectfont}
 \renewcommand{\usectiontitle}[3]{%
@@ -566,7 +573,6 @@
 \newcommand{\urantiamainfontsize}{16.4/18.5}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{14}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10}{17}\selectfont}
-\renewcommand{\author}[1]{{\fontsize{11}{9}\bfseries\itshape\begin{center}#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \renewcommand{\usectiontitle}[3]{%
@@ -604,7 +610,6 @@
 \newcommand{\urantiamainfontsize}{16.4/18.5}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
-\renewcommand{\author}[1]{{\fontsize{13}{9}\bfseries\itshape\begin{center}#1\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \renewcommand{\usectiontitle}[3]{%
@@ -629,7 +634,6 @@
 \newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
-\renewcommand{\author}[1]{\begin{center}\fontsize{11}{10}\bfseries\itshape\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{16}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
