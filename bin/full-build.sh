@@ -85,11 +85,11 @@ function build_all()
 	set_pghanlin
 	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-Kindle.pdf
 
-	set_pgkoboaurahd
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboAuraHD.pdf
-
 	set_pgkobomini
 	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboMini.pdf
+
+	set_pgkoboaurahd
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboAuraHD.pdf
 }
 
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
