@@ -368,16 +368,7 @@
 \endgroup
 }
 
-%\tunemarkup{pgafour}{\tolerance=400}
-%\tunemarkup{pgletter}{\tolerance=400}
-%\tunemarkup{pgluluhb}{\tolerance=9999}
-\tunemarkup{pgkindledx}{\tolerance=9999}
-\tunemarkup{pghanlin}{\tolerance=9999}
-\tunemarkup{pgkobomini}{\tolerance=9999}
-\tunemarkup{pgkoboaurahd}{\tolerance=9999}
-\tunemarkup{pgnexus7}{\tolerance=9999}
-%\widowpenalty=9000
-%\clubpenalty=9000
+\tolerance=9999
 
 \input tex/urantia-hyphen-en.tex
 
@@ -533,7 +524,6 @@
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\huge ahb\end{center}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
 \newcommand{\parttitlefontsize}{\large}
 \newcommand{\bibbookend}{\fontsize{20}{22}\selectfont}
@@ -570,7 +560,6 @@
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\huge ahb\end{center}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
 \newcommand{\parttitlefontsize}{\large}
 \newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
@@ -609,7 +598,6 @@
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\LARGE ahb\end{center}}
 \newcommand{\subfont}{\fontsize{11}{10}\itshape}
 \newcommand{\parttitlefontsize}{\large}
 \newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
@@ -640,7 +628,6 @@
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
 \newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
-\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large\textcolor{ubgreen}{ahb}\end{center}}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
 \renewcommand{\author}[1]{\begin{center}\fontsize{11}{10}\bfseries\itshape\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{16}\bfseries}
@@ -665,7 +652,6 @@
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\large ahb\end{center}}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\Huge ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{15}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{10.8}{15}\selectfont}
@@ -687,8 +673,10 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 }
 
-\tunemarkup{nofancydecor}{%
-\renewcommand{\vsetoff}{\vspace*{1ex}}
+\tunemarkuptwo{nofancydecor}{%
+   \newcommand{\vsetoff}{\vspace*{1ex}}%
+}{%
+   \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\LARGE\textcolor{ubgreen}{ahb}\end{center}}%
 }
 
 \AtBeginDocument{%
@@ -697,7 +685,7 @@
   pdfauthor={Tigran Aivazian <aivazian.tigran@gmail.com>},%
   pdfcreator={Bibles.org.uk Typesetting Environment},%
   pdfsubject={The Urantia Papers in British English (also known as "The Urantia Book")},%
-  pdfkeywords={Earth,Urantia,Truth,History,Religion,English,English UK,Revelation,God,Jesus},%
+  pdfkeywords={Earth,Urantia,Truth,History,Religion,Revelation,God,Jesus,Christianity,Bible,Scriptures,Koran,Islam,Judaism,Torah},%
   pdflang={English},%
   pdfcreationdate={D:20110713102733Z},%
   pdfmoddate={D:\pdfdate-00'00'}%
