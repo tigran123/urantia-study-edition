@@ -503,6 +503,9 @@
 \def\fnst#1{}
 }
 
+\newlength{\minitocafterskip}
+\setlength{\minitocafterskip}{-1ex}
+
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%
    {
@@ -510,7 +513,7 @@
      \makebox[0.08\linewidth][r]{#2. }%
      \makebox[0.85\linewidth][l]{#3\bibdf}%
      \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
-   }\vspace{-0.5ex}\linebreak
+   }\vspace{\minitocafterskip}\linebreak
 }
 
 % for TOC entries horizontal spacing
@@ -543,14 +546,7 @@
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{16}{18}\selectfont}
-\renewcommand{\usectiontitle}[3]{%
-   {
-     \bibsectitlefont
-     \makebox[0.08\linewidth][r]{#2. }%
-     \makebox[0.85\linewidth][l]{#3\bibdf}%
-     \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
-   }\vspace{-1ex}\linebreak
-}
+\setlength{\minitocafterskip}{-1.2ex}
 }
 
 \tunemarkup{pghanlin}{%
@@ -578,14 +574,7 @@
 \renewcommand{\bibtocfont}{\fontsize{10}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\usectiontitle}[3]{%
-   {
-     \bibsectitlefont
-     \makebox[0.08\linewidth][r]{#2. }%
-     \makebox[0.85\linewidth][l]{#3\bibdf}%
-     \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
-   }\vspace{-1ex}\linebreak
-}
+\setlength{\minitocafterskip}{-1.5ex}
 }
 
 \tunemarkup{pgkoboaurahd}{%
@@ -615,14 +604,7 @@
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\usectiontitle}[3]{%
-   {
-     \bibsectitlefont
-     \makebox[0.08\linewidth][r]{#2. }%
-     \makebox[0.85\linewidth][l]{#3\bibdf}%
-     \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
-   }\vspace{-0.9ex}\linebreak
-}
+\setlength{\minitocafterskip}{-0.5ex}
 }
 
 \tunemarkup{pgnexus7}{%
@@ -649,6 +631,7 @@
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16}{17.5}\selectfont}
 \newcommand{\urantiamainfontsize}{16/17.5}
+\setlength{\minitocafterskip}{-0.1ex}
 }
 
 \tunemarkup{pgkindledx}{%
@@ -678,6 +661,7 @@
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
+\setlength{\minitocafterskip}{-1.9ex}
 }
 
 \tunemarkuptwo{nofancydecor}{%
