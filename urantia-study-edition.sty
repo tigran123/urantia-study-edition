@@ -244,6 +244,8 @@
 %\def\botprer{v}
 %\def\botr{w}
 
+\RequirePackage{enumitem}
+
 \newcommand{\quizlink}{%
   \par
   \vspace*{\stretch{0.1}}%
@@ -437,7 +439,7 @@
 \newcounter{curq}
 \newcounter{cans}
 
-\newcommand{\printquestion}{\begin{center}\questionfont\question\end{center}}
+\newcommand{\printquestion}{\begin{center}\questionfont\question\\*[3ex]\end{center}}
 
 \newcommand{\qstart}[1]{%
   \newpage
@@ -445,7 +447,7 @@
   \stepcounter{curq}%
   \gdef\question{#1}%
   \printquestion
-  \begin{itemize}%
+  \begin{enumerate}[leftmargin=4em,label=\ding{\value*},start=172]%
   \answersfont
   \@answers
 }
@@ -469,11 +471,11 @@
 }
 
 \newcommand\@answersend[1]{%
-  \end{itemize}
+  \end{enumerate}%
   \newpage
   \hypertarget{ans\thecurq}{}%
   \printquestion
-  \begin{itemize}%
+  \begin{enumerate}[leftmargin=4em,label=\protect\ding{\value*},start=172]%
   \answersfont
   \item \answerone
   \ifnum \value{cans}>1 \item \answertwo\fi
@@ -485,7 +487,7 @@
   \ifnum \value{cans}>7 \item \answereight\fi
   \ifnum \value{cans}>8 \item \answernine\fi
   \ifnum \value{cans}>9 \item \answerten\fi
-  \end{itemize}%
+  \end{enumerate}%
 }
 
 \newcommand{\cmark}{\textcolor{ubgreen}{\ding{51}}}
