@@ -441,13 +441,16 @@
 
 \newcommand{\printquestion}{\begin{center}\questionfont\question\\*[3ex]\end{center}}
 
+\newlength{\quizanswermargin}
+\setlength{\quizanswermargin}{4em}
+
 \newcommand{\qstart}[1]{%
   \newpage
   \setcounter{cans}{0}%
   \stepcounter{curq}%
   \gdef\question{#1}%
   \printquestion
-  \begin{enumerate}[leftmargin=4em,label=\ding{\value*},start=172]%
+  \begin{enumerate}[leftmargin=\quizanswermargin,label=\protect\ding{\value*},start=172]%
   \answersfont
   \@answers
 }
@@ -475,7 +478,7 @@
   \newpage
   \hypertarget{ans\thecurq}{}%
   \printquestion
-  \begin{enumerate}[leftmargin=4em,label=\protect\ding{\value*},start=172]%
+  \begin{enumerate}[leftmargin=\quizanswermargin,label=\protect\ding{\value*},start=172]%
   \answersfont
   \item \answerone
   \ifnum \value{cans}>1 \item \answertwo\fi
