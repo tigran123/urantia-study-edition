@@ -530,8 +530,8 @@
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\bibpaperfont}{\normalsize}
-\newcommand{\bibpapertitlefont}{\large}
+\newcommand{\bibpaperfont}{\normalsize\bfseries}
+\newcommand{\bibpapertitlefont}{\large\bfseries}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
@@ -558,8 +558,8 @@
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\bibpaperfont}{\normalsize}
-\newcommand{\bibpapertitlefont}{\large}
+\newcommand{\bibpaperfont}{\normalsize\bfseries}
+\newcommand{\bibpapertitlefont}{\large\bfseries}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
@@ -588,8 +588,8 @@
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\bibpaperfont}{\large}
-\newcommand{\bibpapertitlefont}{\Large}
+\newcommand{\bibpaperfont}{\large\bfseries}
+\newcommand{\bibpapertitlefont}{\Large\bfseries}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
@@ -619,8 +619,8 @@
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
-\newcommand{\bibpaperfont}{\fontsize{11}{12}\selectfont}
-\newcommand{\bibpapertitlefont}{\fontsize{13}{14}\selectfont}
+\newcommand{\bibpaperfont}{\fontsize{11}{12}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{13}{14}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{16}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
@@ -634,7 +634,7 @@
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16}{17.5}\selectfont}
 \newcommand{\urantiamainfontsize}{16/17.5}
-\setlength{\minitocafterskip}{-0.1ex}
+\setlength{\minitocafterskip}{-0.15ex}
 }
 
 \tunemarkup{pgkindledx}{%
@@ -653,8 +653,8 @@
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16}{18}\selectfont}
 \newcommand{\urantiamainfontsize}{16/18}
-\newcommand{\bibpaperfont}{\fontsize{15.0}{17}\selectfont}
-\newcommand{\bibpapertitlefont}{\fontsize{16.0}{18.0}\selectfont}
+\newcommand{\bibpaperfont}{\fontsize{15.0}{18}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{16.0}{19.0}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{9.6}{9.6}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
@@ -664,7 +664,7 @@
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
-\setlength{\minitocafterskip}{-1.9ex}
+\setlength{\minitocafterskip}{-0.5ex}
 }
 
 \tunemarkuptwo{nofancydecor}{%
@@ -724,9 +724,9 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \ifnum #1>0 \headerfont\bibpaperfont\papertxt\ #1\\[3pt]\fi
+      \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
-      \vspace*{-0.5ex}\input{tex/p\thepaper-sections.tex}\vspace*{-1ex}%
+      \input{tex/p\thepaper-sections.tex}\vspace*{-1ex}%
    \end{center}%
 }
 
