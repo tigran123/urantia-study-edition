@@ -397,9 +397,16 @@
    \newpage\pagestyle{empty}%
    \bibpdfbookmark{COSMIC CITIZENSHIP QUIZ}{qz}%
    \vspace*{\stretch{0.2}}%
-   \begin{center}\titlefont\fontsize{28}{34}\selectfont COSMIC CITIZENSHIP QUIZ\end{center}%
+   \begin{center}\titlefont\fontsize{20}{20}\selectfont COSMIC CITIZENSHIP QUIZ\\(\totalcurqs\ questions)\\\end{center}%
    \vspace*{\stretch{0.7}}%
    \newpage
+   \newcount\i
+   \i=0\relax
+   \loop
+     \ifnum\i<197
+        \@ifundefined{pqcount\the\i}{\expandafter\def\csname pqcount\the\i\endcsname{0}}{}%
+     \advance\i by1
+   \repeat
 }
 
 \newcommand{\quizpart}[1]{%
@@ -425,19 +432,24 @@
    \newpage
 }
 
+\newcount\qpapernum
+
 \newcommand{\qpaper}[2]{%
    \newpage
+   \qpapernum=\number#1\relax
+   \setcounter{paperqcount}{0}%
    \ifnum #1=0\quizpart{1}\fi
    \ifnum #1=32\quizpart{2}\fi
    \ifnum #1=57\quizpart{3}\fi
    \ifnum #1=120\quizpart{4}\fi
    \vspace*{\stretch{0.2}}%
    \bib@raise@anchor{\bibpdfbookmark[2]{#1. #2}{qc#1}\hypertarget{qc#1}{}}%
-   \begin{center}\titlefont\LARGE#1.\nobreakspace\hyperlink{p#1}{\MakeUppercase{#2}}\end{center}
+   \begin{center}\titlefont\LARGE#1.\nobreakspace\hyperlink{p#1}{\MakeUppercase{#2}}\\(\csname pqcount#1\endcsname\ questions)\\\end{center}
    \vspace*{\stretch{0.7}}%
    \newpage
 }
 
+\newcounter{paperqcount}
 \newcounter{curq}
 \newcounter{cans}
 
@@ -450,11 +462,24 @@
   \newpage
   \setcounter{cans}{0}%
   \stepcounter{curq}%
+  \stepcounter{paperqcount}%
+  \expandafter\edef\csname pqcount\the\qpapernum\endcsname{\thepaperqcount}
   \gdef\question{#1}%
   \printquestion
   \begin{enumerate}[leftmargin=\quizanswermargin,label=\protect\ding{\value*},start=172]%
   \answersfont
   \@answers
+}
+
+\AtEndDocument{%
+\newcount\pqcounter
+\pqcounter=0
+\noindent
+\loop
+  \ifnum\pqcounter<197
+    \immediate\write\@mainaux{\string\expandafter\string\gdef\string\csname\space pqcount\the\pqcounter\string\endcsname{\csname pqcount\the\pqcounter\endcsname}}
+  \advance\pqcounter by1
+\repeat
 }
 
 \newcommand\@answers{\@ifnextchar\qstop{\@answersend}{\@nextanswer}}
