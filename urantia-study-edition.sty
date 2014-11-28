@@ -471,6 +471,7 @@
   \@answers
 }
 
+\tunemarkuptwo{pgkindledx}{}{%
 \AtEndDocument{%
 \newcount\pqcounter
 \pqcounter=0
@@ -480,6 +481,7 @@
     \immediate\write\@mainaux{\string\expandafter\string\gdef\string\csname\space pqcount\the\pqcounter\string\endcsname{\csname pqcount\the\pqcounter\endcsname}}
   \advance\pqcounter by1
 \repeat
+}
 }
 
 \newcommand\@answers{\@ifnextchar\qstop{\@answersend}{\@nextanswer}}
