@@ -17,10 +17,10 @@
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}parvs]{ubook}
 
 % various font families
-%\tunemarkuptag{garamond}
+\tunemarkuptag{garamond}
 %\tunemarkuptag{goudy}
 %\tunemarkuptag{minionpro}
-\tunemarkuptag{academy}
+%\tunemarkuptag{academy}
 %\tunemarkuptag{palatino}
 %\tunemarkuptag{oldstandard}
 %\tunemarkuptag{gentium}
@@ -37,7 +37,7 @@
 %\tunemarkuptag{swift}
 
 % comment out for public PDF build
-\tunemarkuptag{private}
+%\tunemarkuptag{private}
 
 % comment out to disable pictures
 %\tunemarkuptag{pictures}
@@ -73,8 +73,8 @@
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{17}{19.5}\selectfont}
-\newcommand{\urantiamainfontsize}{17/19.5}
+\newcommand{\bibbookend}{\fontsize{17}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{17/20}
 }
 
 \tunemarkup{goudy}{%
@@ -365,7 +365,7 @@
   \newcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
 }
 
-\renewcommand{\author}[1]{\begin{center}\authorfont\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
+\renewcommand{\author}[1]{\thispagestyle{empty}\begin{center}\authorfont\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
 
 \newcommand{\upartheader}[1]{%
    \par\vspace{3ex}\pagebreak[3]%
@@ -970,15 +970,15 @@
 }%
 }
 
-%\newfontfamily\greekfont[Mapping=tex-text]{Galatia SIL}
+\newfontfamily\greekfont[Mapping=tex-text]{Galatia SIL}
 %\newfontfamily\greekfont[Mapping=tex-text]{SBL Greek}
 %\newfontfamily\greekfont[Mapping=tex-text]{Minion Pro}
 \newfontfamily\hebrewfont[Mapping=tex-text,Script=Hebrew]{Ezra SIL}
 \newfontfamily\armfont[Mapping=tex-text,Script=Armenian]{ArTarumianGrqiBardzr_U}
 \newcommand{\textheb}[1]{{\hebrewfont#1}}
 \newcommand{\textarm}[1]{{\armfont#1}}
-%\newcommand{\textgreek}[1]{{\greekfont#1}}
-\newcommand{\textgreek}[1]{#1}
+\newcommand{\textgreek}[1]{{\greekfont#1}}
+%\newcommand{\textgreek}[1]{#1}
 
 \def\ackn{Acknowledgement}
 \def\continuedtxt{(continued)}
@@ -1008,9 +1008,9 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\[1ex]\fi
+      \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
-      \input{tex/p\thepaper-sections.tex}\vspace*{-1ex}%
+      \input{tex/p\thepaper-sections.tex}\newpage%
    \end{center}%
 }
 
