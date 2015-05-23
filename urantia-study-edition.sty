@@ -17,8 +17,24 @@
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}parvs]{ubook}
 
 % various font families
-% (for now support just Adobe Garamond Premier Pro Opticals)
-\tunemarkuptag{garamond}
+%\tunemarkuptag{garamond}
+%\tunemarkuptag{goudy}
+%\tunemarkuptag{minionpro}
+\tunemarkuptag{academy}
+%\tunemarkuptag{palatino}
+%\tunemarkuptag{oldstandard}
+%\tunemarkuptag{gentium}
+%\tunemarkuptag{bookman}
+%\tunemarkuptag{arno}
+%\tunemarkuptag{century}
+%\tunemarkuptag{cambria}
+%\tunemarkuptag{agora}
+%\tunemarkuptag{literat}
+%\tunemarkuptag{newton}
+%\tunemarkuptag{fedra}
+%\tunemarkuptag{cent}
+%\tunemarkuptag{adamant}
+%\tunemarkuptag{swift}
 
 % comment out for public PDF build
 \tunemarkuptag{private}
@@ -39,7 +55,7 @@
 %\tunemarkuptag{nofancydecor}
 
 % comment out to disable cover image
-\tunemarkuptag{coverimage}
+%\tunemarkuptag{coverimage}
 
 % comment out to enable Cosmic Citizenship Quiz
 \tunemarkuptag{noquiz}
@@ -57,6 +73,246 @@
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{19.5}\selectfont}
+\newcommand{\urantiamainfontsize}{17/19.5}
+}
+
+\tunemarkup{goudy}{%
+\def\urantiamainfont{GoudyOlSt BT}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{GoudyOlSt BT}
+\def\urantiaheaderfont{GoudyOlSt BT}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{GoudyOlSt BT}
+\def\urantiaexplfont{GoudyOlSt BT}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{19.6}\selectfont}
+\newcommand{\urantiamainfontsize}{17/19.6}
+}
+
+\tunemarkup{minionpro}{%
+\def\urantiamainfont{Minion Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Minion Pro}
+\def\urantiaheaderfont{Minion Pro}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Minion Pro}
+\def\urantiaexplfont{Minion Pro}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{18}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{18/21}
+}
+
+\tunemarkup{academy}{%
+\def\urantiamainfont{Academy}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Academy}
+\def\urantiaheaderfont{Academy}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Academy}
+\def\urantiaexplfont{Academy}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{18/20}
+}
+
+\tunemarkup{palatino}{%
+\def\urantiamainfont{Palatino Linotype}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Palatino Linotype}
+\def\urantiaheaderfont{Palatino Linotype}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Palatino Linotype}
+\def\urantiaexplfont{Palatino Linotype}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{15/18}
+}
+
+\tunemarkup{oldstandard}{%
+\def\urantiamainfont{Old Standard}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Old Standard}
+\def\urantiaheaderfont{Old Standard}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Old Standard}
+\def\urantiaexplfont{Old Standard}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{16/20}
+}
+
+\tunemarkup{gentium}{%
+\def\urantiamainfont{Gentium Book Basic}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Gentium Book Basic}
+\def\urantiaheaderfont{Gentium Book Basic}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Gentium Book Basic}
+\def\urantiaexplfont{Gentium Book Basic}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{17/21}
+}
+
+\tunemarkup{bookman}{%
+\def\urantiamainfont{Bookman Old Style}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Bookman Old Style}
+\def\urantiaheaderfont{Bookman Old Style}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Bookman Old Style}
+\def\urantiaexplfont{Bookman Old Style}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+}
+
+\tunemarkup{arno}{%
+\def\urantiamainfont{Arno Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Arno Pro}
+\def\urantiaheaderfont{Arno Pro}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Arno Pro}
+\def\urantiaexplfont{Arno Pro}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{17/21}
+}
+
+\tunemarkup{century}{%
+\def\urantiamainfont{Century Schoolbook}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Century Schoolbook}
+\def\urantiaheaderfont{Century Schoolbook}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Century Schoolbook}
+\def\urantiaexplfont{Century Schoolbook}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+}
+
+\tunemarkup{cambria}{%
+\def\urantiamainfont{Cambria}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Cambria}
+\def\urantiaheaderfont{Cambria}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Cambria}
+\def\urantiaexplfont{Cambria}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+}
+
+\tunemarkup{agora}{%
+\def\urantiamainfont{PF Agora Serif Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{PF Agora Serif Pro}
+\def\urantiaheaderfont{PF Agora Serif Pro}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{PF Agora Serif Pro}
+\def\urantiaexplfont{PF Agora Serif Pro}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+}
+
+\tunemarkup{literat}{%
+\def\urantiamainfont{LiteraturnayaC15}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{LiteraturnayaC15}
+\def\urantiaheaderfont{LiteraturnayaC15}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{LiteraturnayaC15}
+\def\urantiaexplfont{LiteraturnayaC15}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+}
+
+\tunemarkup{newton}{%
+\def\urantiamainfont{Newton}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Newton}
+\def\urantiaheaderfont{Newton}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Newton}
+\def\urantiaexplfont{Newton}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{16/20}
+}
+
+\tunemarkup{fedra}{%
+\def\urantiamainfont{Fedra Serif A Pro Book}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Fedra Serif A Pro Book}
+\def\urantiaheaderfont{Fedra Serif A Pro Book}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Fedra Serif A Pro Book}
+\def\urantiaexplfont{Fedra Serif A Pro Book}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
+\newcommand{\urantiamainfontsize}{14/17}
+}
+
+\tunemarkup{cent}{%
+\def\urantiamainfont{21 Cent}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{21 Cent}
+\def\urantiaheaderfont{21 Cent}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{21 Cent}
+\def\urantiaexplfont{21 Cent}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
+\newcommand{\urantiamainfontsize}{14/17}
+}
+
+\tunemarkup{adamant}{%
+\def\urantiamainfont{PF Adamant Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{PF Adamant Pro}
+\def\urantiaheaderfont{PF Adamant Pro}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{PF Adamant Pro}
+\def\urantiaexplfont{PF Adamant Pro}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{15/18}
+}
+
+\tunemarkup{swift}{%
+\def\urantiamainfont{Swift}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Swift}
+\def\urantiaheaderfont{Swift}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Swift}
+\def\urantiaexplfont{Swift}
+\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{15/18}
 }
 
 % Google Nexus 7 (or any Android 7" colour device)
@@ -77,8 +333,8 @@
 % for typesetting fractions: 1/2, 1/6, etc.
 \newcommand{\bibfrac}[2]{{\addfontfeature{Fractions=On}#1/#2}}
 % for fonts which have no support for fractions uncomment these two lines
-%\RequirePackage{nicefrac}
-%\renewcommand{\bibfrac}[2]{\nicefrac{#1}{#2}}
+\RequirePackage{nicefrac}
+\renewcommand{\bibfrac}[2]{\nicefrac{#1}{#2}}
 
 % allow inter-paragraph space to grow
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
@@ -631,8 +887,6 @@
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{11}{10}\itshape}
 \newcommand{\parttitlefontsize}{\large}
-\newcommand{\bibbookend}{\fontsize{16.4}{18.5}\selectfont}
-\newcommand{\urantiamainfontsize}{16.4/18.5}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
