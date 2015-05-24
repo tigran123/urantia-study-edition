@@ -885,8 +885,8 @@
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\subfont}{\fontsize{11}{10}\itshape}
-\newcommand{\parttitlefontsize}{\large}
+\newcommand{\subfont}{\fontsize{15}{18}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0,WordSpace=1.1}\LARGE}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
@@ -1008,6 +1008,7 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
+      \newpage\thispagestyle{empty}%
       \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
       \input{tex/p\thepaper-sections.tex}%
@@ -1032,30 +1033,33 @@
 }
 
 \newcommand{\parti}{%
-\parttitlefontsize
-{\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partitxt\\\partiup}\\[2ex]
-{\subfont\partisub}\\[2ex]
+\vspace*{\stretch{0.1}}%
+{\parttitlefont\parttitlefontsize\partitxt\\\partiup\\[2ex]}
+\begin{center}\subfont\partisub\end{center}%
+\vspace*{\stretch{0.9}}%
 \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
 }
 
 \newcommand{\partii}{%
-\parttitlefontsize
-{\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partiitxt\\\partiiup}\\[2ex]
-{\subfont\partiisub}\\[2ex]
+\vspace*{\stretch{0.1}}%
+{\parttitlefont\parttitlefontsize\partiitxt\\\partiiup\\[2ex]}
+\begin{center}\subfont\partiisub\end{center}%
+\vspace*{\stretch{0.9}}%
 \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
 }
 
 \newcommand{\partiii}{%
-\parttitlefontsize
-{\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partiiitxt\\\partiiiup}\\[2ex]
-{\subfont\partiiisub}\\[2ex]
+\vspace*{\stretch{0.1}}%
+{\parttitlefont\parttitlefontsize\partiiitxt\\\partiiiup\\[2ex]}
+\begin{center}\subfont\partiiisub\end{center}%
+\vspace*{\stretch{0.9}}%
 \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
 }
 
 \newcommand{\partiv}{%
-\parttitlefontsize
-{\addfontfeature{LetterSpace=6.0,WordSpace=2.0}\parttitlefont\partivtxt\\\partivup}\\[2ex]
-{\subfont\partivsubone\\[0.5ex]
-\partivsubtwo\\[2ex]}
+\vspace*{\stretch{0.1}}%
+{\parttitlefont\parttitlefontsize\partivtxt\\\partivup\\[2ex]}
+\begin{center}\subfont\partivsubone\\[2ex]\partivsubtwo\end{center}%
+\vspace*{\stretch{0.9}}%
 \bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
 }
