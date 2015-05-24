@@ -1010,7 +1010,7 @@
       \ifnum #1=120\partiv\fi
       \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
-      \input{tex/p\thepaper-sections.tex}\newpage%
+      \input{tex/p\thepaper-sections.tex}%
    \end{center}%
 }
 
@@ -1027,6 +1027,7 @@
    abbr={p#1}
 }%
 \fancyhead[CO]{\bibheadfont\tunemarkup{pghanlin}{\addfontfeature{WordSpace=1.1}}\MakeUppercase{#2}}%
+\newpage
 \bib@raise@anchor{\bibpdfbookmark[2]{0. #2}{p#1_0}}%
 }
 
