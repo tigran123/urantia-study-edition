@@ -29,7 +29,6 @@
 %\tunemarkuptag{century}
 %\tunemarkuptag{cambria}
 %\tunemarkuptag{agora}
-%\tunemarkuptag{literat}
 %\tunemarkuptag{newton}
 %\tunemarkuptag{fedra}
 %\tunemarkuptag{cent}
@@ -143,8 +142,8 @@
 \def\urantiaexplfont{Old Standard}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{16/20}
+\newcommand{\bibbookend}{\fontsize{17}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{17/21}
 }
 
 \tunemarkup{gentium}{%
@@ -178,8 +177,8 @@
 \tunemarkup{arno}{%
 \def\urantiamainfont{Arno Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Arno Pro}
-\def\urantiaheaderfont{Arno Pro}
+\def\urantiatitlefont{Arno Pro Semibold Display}
+\def\urantiaheaderfont{Arno Pro Semibold Subhead}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaheaderackfont{Arno Pro}
 \def\urantiaexplfont{Arno Pro}
@@ -213,8 +212,8 @@
 \def\urantiaexplfont{Cambria}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
+\newcommand{\bibbookend}{\fontsize{16}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{16/21}
 }
 
 \tunemarkup{agora}{%
@@ -227,22 +226,8 @@
 \def\urantiaexplfont{PF Agora Serif Pro}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
-}
-
-\tunemarkup{literat}{%
-\def\urantiamainfont{LiteraturnayaC15}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{LiteraturnayaC15}
-\def\urantiaheaderfont{LiteraturnayaC15}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaheaderackfont{LiteraturnayaC15}
-\def\urantiaexplfont{LiteraturnayaC15}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
+\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{16/20}
 }
 
 \tunemarkup{newton}{%
@@ -269,8 +254,8 @@
 \def\urantiaexplfont{Fedra Serif A Pro Book}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
-\newcommand{\urantiamainfontsize}{14/17}
+\newcommand{\bibbookend}{\fontsize{14}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{14/19}
 }
 
 \tunemarkup{cent}{%
@@ -283,8 +268,8 @@
 \def\urantiaexplfont{21 Cent}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
-\newcommand{\urantiamainfontsize}{14/17}
+\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{16/20}
 }
 
 \tunemarkup{adamant}{%
@@ -297,8 +282,8 @@
 \def\urantiaexplfont{PF Adamant Pro}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{15/18}
+\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{16/20}
 }
 
 \tunemarkup{swift}{%
@@ -1008,7 +993,6 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \newpage\thispagestyle{empty}%
       \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
       \input{tex/p\thepaper-sections.tex}%
@@ -1016,7 +1000,7 @@
 }
 
 \newcommand{\upaper}[2]{%
-\par\vskip1ex\pagebreak[3]%
+\newpage\thispagestyle{empty}%
 \setcounter{paper}{#1}%
 \setcounter{secnum}{0}%
 \bibpaperdisplay{#1}{#2}%
@@ -1027,7 +1011,6 @@
    abbr={p#1}
 }%
 \fancyhead[CO]{\bibheadfont\tunemarkup{pghanlin}{\addfontfeature{WordSpace=1.1}}\MakeUppercase{#2}}%
-\newpage
 \bib@raise@anchor{\bibpdfbookmark[2]{0. #2}{p#1_0}}%
 }
 
@@ -1038,6 +1021,7 @@
 \begin{center}\subfont\partisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
+\newpage
 }
 
 \newcommand{\partii}{%
@@ -1047,6 +1031,7 @@
 \begin{center}\subfont\partiisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
+\newpage
 }
 
 \newcommand{\partiii}{%
@@ -1056,6 +1041,7 @@
 \begin{center}\subfont\partiiisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
+\newpage
 }
 
 \newcommand{\partiv}{%
@@ -1065,4 +1051,5 @@
 \begin{center}\subfont\partivsubone\\[2ex]\partivsubtwo\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
+\newpage
 }
