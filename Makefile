@@ -27,7 +27,7 @@ all::		$(MOD).pdf
 .PHONY:		clean
 
 clean::		
-		@rm -rf $(WORKDIR) select-book.tex
+		@rm -rf $(WORKDIR) select-book.tex missfont.log
 
 vclean:		clean
 		@rm -f $(MOD).pdf
