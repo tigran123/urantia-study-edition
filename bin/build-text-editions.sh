@@ -42,7 +42,7 @@ unset_tag pictures
 set_tag noquiz
 set_pgkoboaurahd
 
-fontlist="garamond goudy minionpro academy palatino oldstandard gentium bookman arno century cambria agora newton fedra cent adamant swift"
+fontlist="garamond goudy minionpro academy palatino oldstandard gentium bookman arno century cambria agora newton fedra cent adamant swift bliss newjournal"
 for font in $fontlist
 do
   unset_tag $font
