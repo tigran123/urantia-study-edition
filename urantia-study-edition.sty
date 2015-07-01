@@ -842,8 +842,7 @@
 
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%
-   {
-     \bibsectitlefont
+   {\bibsectitlefont
      \makebox[0.08\linewidth][r]{#2. }%
      \makebox[0.85\linewidth][l]{#3\bibdf}%
      \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
@@ -934,7 +933,7 @@
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0,WordSpace=1.1}\LARGE}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{10}{10}\mdseries}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 }
@@ -1053,7 +1052,7 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \ifnum #1>0 {\headerfont\bibpaperfont\papertxt\ #1}\\\fi
+      \ifnum #1>0\headerfont\bibpaperfont\papertxt\ #1\\\fi
       {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
       \input{tex/p\thepaper-sections.tex}%
    \end{center}%
