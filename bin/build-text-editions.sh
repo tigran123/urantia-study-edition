@@ -42,7 +42,7 @@ unset_tag pictures
 set_tag noquiz
 set_pgkoboaurahd
 
-fontlist="garamond goudy minionpro academy palatino oldstandard gentium bookman arno century cambria agora newton fedra cent adamant swift bliss newjournal"
+fontlist="garamond goudy minionpro academy palatino oldstandard gentium bookman arno century cambria agora newton fedra cent adamant swift bliss"
 for font in $fontlist
 do
   unset_tag $font
@@ -51,6 +51,6 @@ done
 for font in $fontlist
 do
    set_tag $font
-   make vclean ; make && mv -f ${MOD}.pdf ${OUT}/urantia-text-edition-KoboAuraHD-${font}.pdf
+   make vclean ; make && mv -f ${MOD}.pdf ${OUT}/urantia-text-edition-${font}.pdf
    unset_tag $font
 done
