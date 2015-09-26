@@ -27,26 +27,14 @@ function set_pgkindledx()
 	echo "Building Kindle DX PDF"
 	unset_tag pgkobomini
 	unset_tag pgnexus7
-	unset_tag pghanlin
 	unset_tag pgkoboaurahd
 	set_tag pgkindledx
-}
-
-function set_pghanlin()
-{
-	echo "Building Kindle PDF"
-	unset_tag pgkobomini
-	unset_tag pgkindledx
-	unset_tag pgnexus7
-	unset_tag pgkoboaurahd
-	set_tag pghanlin
 }
 
 function set_pgkobomini()
 {
 	echo "Building Kobo Mini PDF"
 	unset_tag pgkindledx
-	unset_tag pghanlin
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
 	set_tag pgkobomini
@@ -58,7 +46,6 @@ function set_pgkoboaurahd()
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgnexus7
-	unset_tag pghanlin
 	set_tag pgkoboaurahd
 }
 
@@ -67,7 +54,6 @@ function set_pgnexus7()
 	echo "Building Android PDF"
 	unset_tag pgkobomini
 	unset_tag pgkindledx
-	unset_tag pghanlin
 	unset_tag pgkoboaurahd
 	set_tag pgnexus7
 }
@@ -76,41 +62,40 @@ function build_all()
 {
 	local outdir=${OUT}/$1
 
-	set_pgkindledx
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KindleDX.pdf
-
 	set_pgnexus7
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-Android.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-tablet.pdf
+    cd ${outdir}
+    zip ${MOD}-tablet.pdf.zip ${MOD}-tablet.pdf
+    cd -
 
-	set_pghanlin
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-Kindle.pdf
+	set_pgkindledx
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-twocolumn.pdf
+    cd ${outdir}
+    zip ${MOD}-twocolumn.pdf.zip ${MOD}-twocolumn.pdf
+    cd -
 
 	set_pgkobomini
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboMini.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-5in.pdf
+    cd ${outdir}
+    zip ${MOD}-5in.pdf.zip ${MOD}-5in.pdf
+    cd -
 
 	set_pgkoboaurahd
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-KoboAuraHD.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-7in.pdf
+    cd ${outdir}
+    zip ${MOD}-7in.pdf.zip ${MOD}-7in.pdf
+    cd -
 }
 
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
-echo "Building Kobo AuraHD plain PDF"
-unset_tag coverimage
-unset_tag introinclude
-unset_tag fancylettrine
-unset_tag pictures
-set_tag nofnt
-set_tag nofancydecor
-
-unset_tag private
-make vclean ; make && mv -f ${MOD}.pdf pdf/public/${MOD}-KoboAuraHD-plain.pdf
-
 set_tag coverimage
 set_tag introinclude
-set_tag fancylettrine
 set_tag pictures
+unset_tag private
 unset_tag nofnt
 unset_tag nofancydecor
+unset_tag fancylettrine
 
 build_all public
 
