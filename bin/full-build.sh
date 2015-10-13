@@ -3,7 +3,7 @@
 MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
-OUTFILE=revelation
+OUTFILE=Revelation
 
 function set_tag()
 {
