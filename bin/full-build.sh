@@ -89,9 +89,9 @@ function build_all()
 
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
-set_tag coverimage
 set_tag introinclude
 set_tag pictures
+unset_tag coverimage
 unset_tag private
 unset_tag nofnt
 unset_tag nofancydecor
