@@ -3,6 +3,7 @@
 MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
+OUTFILE=Revelation
 
 function set_tag()
 {
@@ -63,35 +64,35 @@ function build_all()
 	local outdir=${OUT}/$1
 
 	set_pgnexus7
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-tablet.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-tablet.pdf
     cd ${outdir}
-    zip ${MOD}-tablet.pdf.zip ${MOD}-tablet.pdf
+    zip ${OUTFILE}-tablet.pdf.zip ${OUTFILE}-tablet.pdf
     cd -
 
 	set_pgkindledx
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-twocolumn.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-twocolumn.pdf
     cd ${outdir}
-    zip ${MOD}-twocolumn.pdf.zip ${MOD}-twocolumn.pdf
+    zip ${OUTFILE}-twocolumn.pdf.zip ${OUTFILE}-twocolumn.pdf
     cd -
 
 	set_pgkobomini
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-5in.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-5in.pdf
     cd ${outdir}
-    zip ${MOD}-5in.pdf.zip ${MOD}-5in.pdf
+    zip ${OUTFILE}-5in.pdf.zip ${OUTFILE}-5in.pdf
     cd -
 
 	set_pgkoboaurahd
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${MOD}-7in.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-7in.pdf
     cd ${outdir}
-    zip ${MOD}-7in.pdf.zip ${MOD}-7in.pdf
+    zip ${OUTFILE}-7in.pdf.zip ${OUTFILE}-7in.pdf
     cd -
 }
 
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
-set_tag coverimage
 set_tag introinclude
 set_tag pictures
+unset_tag coverimage
 unset_tag private
 unset_tag nofnt
 unset_tag nofancydecor
