@@ -1,15 +1,12 @@
 urantia-study-edition
 =====================
 
-# The British Study Edition of the Urantia Papers
+# The British Study Edition of the Fifth Epochal Revelation
 ## Edited by Tigran Aivazian
 
-This work is a translation of the Fifth Epochal Revelation from American to British English
-as defined by the _Oxford Dictionary of English_
+The British Study Edition of the Fifth Epochal Revelation has the following main features:
 
-It has the following main features:
-
-* The Standard Reference Text (SRT) has been used as a base of this translation.
+* The Standard Reference Text (SRT) of the Urantia Papers has been used as a base of this translation.
 
 * All significant changes to the text (present also in SRT) are documented in the critical apparatus, together with a brief explanation of the reason for the change. To signify the presence of a textual variant, a circle is printed at the end of the affected word or paragraph.
 
