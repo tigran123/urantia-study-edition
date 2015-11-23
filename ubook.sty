@@ -223,7 +223,8 @@
 \def\bibdf{\leaders\hbox to 0.7em{\hss.\hss}\hfill}
 \DeclareTextCommandDefault{\textellipsis}{.\kern\fontdimen3\font.\kern\fontdimen3\font.} % corrected \textellipsis
 \newcommand*{\bibemph}[1]{\emph{#1}}
-\newcommand{\ts}[1]{\@textsuperscript{#1}}
+%\newcommand{\ts}[1]{\@textsuperscript{#1}}
+\newcommand{\ts}[1]{\textsuperscript{#1}}
 \newcommand{\tb}[1]{\textsubscript{#1}}
 \def\overprint#1#2{\setbox\z@\hbox{#1}\rlap{\hb@xt@\wd\z@{\hss#2\hss}}#1}
 \def\backslashed#1{\overprint{#1}{\textbackslash}}
