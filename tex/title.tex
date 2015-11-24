@@ -1,13 +1,8 @@
-\tunemarkup{pghanlin}{\newcommand{\coverimagescale}{1.67}}
-\tunemarkup{pgkoboaurahd}{\newcommand{\coverimagescale}{1.89}}
-\tunemarkup{pgnexus7}{\newcommand{\coverimagescale}{1.71}}
-\tunemarkup{pgkindledx}{\newcommand{\coverimagescale}{2.7}}
-\tunemarkup{pgkobomini}{\newcommand{\coverimagescale}{1.67}}
-
 \tunemarkup{coverimage}{%
+\newcommand{\adjustimg}{\checkoddpage\ifoddpage\hspace*{\dimexpr\evensidemargin-\oddsidemargin}\else\hspace*{-\dimexpr\evensidemargin-\oddsidemargin}\fi}
+\newcommand{\centerimg}[2][width=\textwidth]{\makebox[\textwidth]{\adjustimg\includegraphics[#1]{#2}}}
 \newpagecolor{ubpagecolor}\afterpage{\restorepagecolor}
-\begin{center}\includegraphics[scale=\coverimagescale]{images/British-Study-Edition-Cover-tiny.jpg}\end{center}
-\newpage
+\includepdf{images/British-Study-Edition-Cover-tiny.png}
 }
 
 \makeatletter
@@ -30,12 +25,12 @@ THE BRITISH \tunemarkuptwo{nofnt}{TEXT}{STUDY} EDITION\\
 \tunemarkup{pgnexus7}{\fontsize{10}{20}\selectfont}
 \tunemarkup{pgkoboaurahd}{\fontsize{12}{20}\selectfont}
 {\itshape OF}\\
-\tunemarkup{pgkindledx}{\fontsize{16.2}{32}\selectfont}
+\tunemarkup{pgkindledx}{\fontsize{25}{32}\selectfont}
 \tunemarkup{pghanlin}{\fontsize{9}{20}\selectfont}
-\tunemarkup{pgkoboaurahd}{\fontsize{11.8}{20}\selectfont}
-\tunemarkup{pgkobomini}{\fontsize{11}{20}\selectfont}
-\tunemarkup{pgnexus7}{\fontsize{10.6}{20}\selectfont}
-{\itshape THE FIFTH EPOCHAL REVELATION}\\
+\tunemarkup{pgkoboaurahd}{\fontsize{18}{20}\selectfont}
+\tunemarkup{pgkobomini}{\fontsize{16.6}{20}\selectfont}
+\tunemarkup{pgnexus7}{\fontsize{16}{20}\selectfont}
+{\itshape\urantiapapers}\\
 }%
 {%
 \vspace*{\stretch{0.1}}
