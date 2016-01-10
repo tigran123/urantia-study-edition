@@ -9,12 +9,13 @@
 % various page sizes
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
-\tunemarkuptag{pgkoboaurahd}
+%\tunemarkuptag{pgkoboaurahd}
+\tunemarkuptag{pgafour}
 %\tunemarkuptag{pgkindledx}
 %\tunemarkuptag{pgkobomini}
 
 \RequirePackage[figure,curq]{totalcount}
-\RequirePackage[\tunemarkup{pgkindledx}{doublecol,}parvs]{ubook}
+\RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}parvs]{ubook}
 
 % various font families
 %\tunemarkuptag{garamond}
@@ -58,10 +59,10 @@
 %\tunemarkuptag{nofancydecor}
 
 % comment out to disable cover image
-\tunemarkuptag{coverimage}
+%\tunemarkuptag{coverimage}
 
 % comment out to enable Cosmic Citizenship Quiz
-%\tunemarkuptag{noquiz}
+\tunemarkuptag{noquiz}
 
 \setdefaultlanguage{english}
 
@@ -371,6 +372,9 @@
 
 % Kobo Aura HD 7"
 \tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
+
+% A4 for printed PDF to fit in 2x740 pages
+\tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.57in,0.5in},hmargin={0.9in,0.5in},twoside=true,a4paper]{geometry}}
 
 % Kobo Mini 5"
 \tunemarkup{pgkobomini}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,120.0mm}]{geometry}}
@@ -959,6 +963,37 @@
 \newcommand{\bibsectitlefont}{\fontsize{10}{12}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
+}
+
+\tunemarkup{pgafour}{%
+\renewcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
+\renewcommand{\quizlink}{}
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
+\renewcommand{\headrulewidth}{0.5pt}
+\definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{17}{17}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{14}{17}\selectfont}
+\newcommand{\subfont}{\fontsize{19}{23}\itshape}
+\newcommand{\parttitlefontsize}{\Huge}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+\renewcommand{\bibbookend}{\fontsize{15}{17}\selectfont}
+\renewcommand{\urantiamainfontsize}{15/17}
+\newcommand{\bibpaperfont}{\fontsize{19}{21}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{21}{22}\bfseries}
+\newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{13}{13}\bfseries}
+\newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibfnchapsize}{\Large\bfseries}
+\renewcommand{\bibfnvssize}{\large\bfseries}
+\newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
+\setlength{\minitocafterskip}{-0.5ex}
 }
 
 \tunemarkup{pgkindledx}{%
