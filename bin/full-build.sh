@@ -26,6 +26,7 @@ function unset_tag()
 function set_pgkindledx()
 {
 	echo "Building Kindle DX PDF"
+    unset_tag noquiz
 	unset_tag pgkobomini
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
@@ -36,6 +37,7 @@ function set_pgkindledx()
 function set_pgkobomini()
 {
 	echo "Building Kobo Mini PDF"
+    unset_tag noquiz
 	unset_tag pgkindledx
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
@@ -46,6 +48,7 @@ function set_pgkobomini()
 function set_pgkoboaurahd()
 {
 	echo "Building Kobo Aura HD PDF"
+    unset_tag noquiz
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgnexus7
@@ -56,6 +59,7 @@ function set_pgkoboaurahd()
 function set_pgnexus7()
 {
 	echo "Building Android PDF"
+    unset_tag noquiz
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgkoboaurahd
@@ -66,6 +70,7 @@ function set_pgnexus7()
 function set_pgafour()
 {
 	echo "Building A4 PDF"
+    set_tag noquiz
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgkoboaurahd
