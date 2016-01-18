@@ -29,6 +29,7 @@ function set_pgkindledx()
 	unset_tag pgkobomini
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
+	unset_tag pgafour
 	set_tag pgkindledx
 }
 
@@ -38,6 +39,7 @@ function set_pgkobomini()
 	unset_tag pgkindledx
 	unset_tag pgnexus7
 	unset_tag pgkoboaurahd
+	unset_tag pgafour
 	set_tag pgkobomini
 }
 
@@ -47,6 +49,7 @@ function set_pgkoboaurahd()
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgnexus7
+	unset_tag pgafour
 	set_tag pgkoboaurahd
 }
 
@@ -56,12 +59,30 @@ function set_pgnexus7()
 	unset_tag pgkobomini
 	unset_tag pgkindledx
 	unset_tag pgkoboaurahd
+	unset_tag pgafour
 	set_tag pgnexus7
 }
+
+function set_pgafour()
+{
+	echo "Building A4 PDF"
+	unset_tag pgkobomini
+	unset_tag pgkindledx
+	unset_tag pgkoboaurahd
+	unset_tag pgnexus7
+	set_tag pgafour
+}
+
 
 function build_all()
 {
 	local outdir=${OUT}/$1
+
+	set_pgafour
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-A4.pdf
+    cd ${outdir}
+    zip ${OUTFILE}-A4.pdf.zip ${OUTFILE}-A4.pdf
+    cd -
 
 	set_pgnexus7
 	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-tablet.pdf
@@ -70,9 +91,9 @@ function build_all()
     cd -
 
 	set_pgkindledx
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-twocolumn.pdf
+	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-10in.pdf
     cd ${outdir}
-    zip ${OUTFILE}-twocolumn.pdf.zip ${OUTFILE}-twocolumn.pdf
+    zip ${OUTFILE}-10in.pdf.zip ${OUTFILE}-10in.pdf
     cd -
 
 	set_pgkobomini
