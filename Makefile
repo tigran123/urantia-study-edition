@@ -36,7 +36,9 @@ $(MOD).pdf:	tex $(MOD).tex select-book.tex $(TEXFILES)
 		@mkdir -p $(WORKDIR)
 		$(LATEX)
 ifndef DRAFT
+		@mv $(WORKDIR)/$(MOD).pdf $(MOD)-1.pdf
 		$(LATEX)
+		@mv $(WORKDIR)/$(MOD).pdf $(MOD)-2.pdf
 		$(LATEX)
 		@if test -s $(WORKDIR)/$(MOD).fnchk; then bin/fnchk.pl < $(WORKDIR)/$(MOD).fnchk; fi
 endif
