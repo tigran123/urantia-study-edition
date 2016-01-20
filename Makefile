@@ -30,7 +30,7 @@ clean::
 		@rm -rf $(WORKDIR) select-book.tex missfont.log
 
 vclean:		clean
-		@rm -f $(MOD).pdf
+		@rm -f $(MOD)*.pdf
 
 $(MOD).pdf:	tex $(MOD).tex select-book.tex $(TEXFILES)
 		@mkdir -p $(WORKDIR)
