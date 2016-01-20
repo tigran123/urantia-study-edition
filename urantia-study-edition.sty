@@ -11,11 +11,12 @@
 %\tunemarkuptag{pgnexus7}
 \tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgafour}
+%\tunemarkuptag{pgcrownq}
 %\tunemarkuptag{pgkindledx}
 %\tunemarkuptag{pgkobomini}
 
 \RequirePackage[figure,curq]{totalcount}
-\RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}parvs]{ubook}
+\RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
 % various font families
 %\tunemarkuptag{garamond}
@@ -39,6 +40,15 @@
 %\tunemarkuptag{bliss}
 %\tunemarkuptag{maiola}
 %\tunemarkuptag{newjournal}
+
+% comment out for NO page break BEFORE Part title
+%\tunemarkuptag{beforepartnewpage}
+
+% comment out for NO page break AFTER Part title
+\tunemarkuptag{afterpartnewpage}
+
+% comment out for NO page break before each Paper
+\tunemarkuptag{papernewpage}
 
 % comment out for public PDF build
 \tunemarkuptag{private}
@@ -65,6 +75,15 @@
 %\tunemarkuptag{noquiz}
 
 \setdefaultlanguage{english}
+
+\newif\ifmultivol
+\newif\ifvoli
+\newif\ifvolii
+\newif\ifvoliii
+\volitrue
+\voliitrue
+\voliiitrue
+\multivolfalse
 
 \tunemarkup{garamond}{%
 \def\urantiamainfont{Garamond Premier Pro}
@@ -376,6 +395,9 @@
 % A4 for printed PDF to fit in 2x740 pages
 \tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.5in,0.5in},twoside=true,a4paper]{geometry}}
 
+% Crown Quart for printing in 3 volumes
+\tunemarkup{pgcrownq}{\RequirePackage[dvips,headheight=12.8pt,headsep=2pt,vmargin={0.4in,0.45in},hmargin={0.8in,0.4in},twoside=true,papersize={7.444in,9.681in}]{geometry}}
+
 % Kobo Mini 5"
 \tunemarkup{pgkobomini}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,120.0mm}]{geometry}}
 
@@ -405,8 +427,13 @@
 
 \fancyhead{}
 \fancyfoot{}
+\tunemarkuptwo{pgcrownq}{%
+\fancyhead[LE,RO]{\bibheadfont\vs@range}
+\fancyhead[RE,LO]{\bibheadfont\bibheadpagesize\thepage}
+}{%
 \fancyhead[L]{\bibheadfont\vs@range}
 \fancyhead[R]{\bibheadfont\bibheadpagesize\thepage}
+}
 
 \tunemarkuptwo{pgkoboaurahd}{%
   \newcommand{\authorfont}{\fontsize{13}{9}\bfseries\itshape}%
@@ -960,7 +987,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{13}{15}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0,WordSpace=1.1}\LARGE}
-\newcommand{\bibsectitlefont}{\fontsize{10}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 }
@@ -972,7 +999,6 @@
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
-\renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{17}{17}\selectfont}
@@ -992,6 +1018,37 @@
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
+\newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
+\setlength{\minitocafterskip}{-0.5ex}
+}
+
+\tunemarkup{pgcrownq}{%
+\setcounter{DefaultLines}{2}
+\renewcommand{\authorfont}{\fontsize{10.1}{9}\bfseries\itshape}%
+\renewcommand{\quizlink}{}
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{36}{36}\selectfont ahb}}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{14}{14}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{12}{14}\selectfont}
+\newcommand{\subfont}{\fontsize{16}{18}\itshape}
+\newcommand{\parttitlefontsize}{\huge}
+\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
+\renewcommand{\bibbookend}{\fontsize{13.9}{16}\selectfont}
+\renewcommand{\urantiamainfontsize}{13.9/16}
+\newcommand{\bibpaperfont}{\fontsize{17}{20}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{21}{22}\bfseries}
+\newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{10}{10}\bfseries}
+\newcommand{\bibheadpapersize}{\fontsize{12.0}{12.0}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
+\renewcommand{\bibfnchapsize}{\large\bfseries}
+\renewcommand{\bibfnvssize}{\normalsize\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 }
@@ -1083,14 +1140,18 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \headerfont\bibpaperfont\ifnum #1>0\papertxt\ #1\\\fi
-      {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
-      \input{tex/p\thepaper-sections.tex}%
+      \headerfont\bibpaperfont
+         \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
+         \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
+           {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
+           \input{tex/p\thepaper-sections.tex}%
+         }%
    \end{center}%
 }
 
 \newcommand{\upaper}[2]{%
-\newpage\thispagestyle{empty}%
+\tunemarkup{papernewpage}{\newpage}%
+\thispagestyle{empty}%
 \setcounter{paper}{#1}%
 \setcounter{secnum}{0}%
 \bibpaperdisplay{#1}{#2}%
@@ -1105,41 +1166,45 @@
 }
 
 \newcommand{\parti}{%
+\tunemarkup{beforepartnewpage}{\newpage}%
 \thispagestyle{empty}%
 \vspace*{\stretch{0.1}}%
 {\parttitlefont\parttitlefontsize\partitxt\\\partiup\\[2ex]}
 \begin{center}\subfont\partisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
-\newpage
+\tunemarkup{afterpartnewpage}{\newpage}%
 }
 
 \newcommand{\partii}{%
+\tunemarkup{beforepartnewpage}{\newpage}%
 \thispagestyle{empty}%
 \vspace*{\stretch{0.1}}%
 {\parttitlefont\parttitlefontsize\partiitxt\\\partiiup\\[2ex]}
 \begin{center}\subfont\partiisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
-\newpage
+\tunemarkup{afterpartnewpage}{\newpage}%
 }
 
 \newcommand{\partiii}{%
+\tunemarkup{beforepartnewpage}{\newpage}%
 \thispagestyle{empty}%
 \vspace*{\stretch{0.1}}%
 {\parttitlefont\parttitlefontsize\partiiitxt\\\partiiiup\\[2ex]}
 \begin{center}\subfont\partiiisub\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
-\newpage
+\tunemarkup{afterpartnewpage}{\newpage}%
 }
 
 \newcommand{\partiv}{%
+\tunemarkup{beforepartnewpage}{\newpage}%
 \thispagestyle{empty}%
 \vspace*{\stretch{0.1}}%
 {\parttitlefont\parttitlefontsize\partivtxt\\\partivup\\[2ex]}
 \begin{center}\subfont\partivsubone\\[2ex]\partivsubtwo\end{center}%
 \vspace*{\stretch{0.9}}%
 \bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
-\newpage
+\tunemarkup{afterpartnewpage}{\newpage}%
 }

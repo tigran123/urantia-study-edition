@@ -4,6 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
+FORMATS="10in A4 tablet 5in 7in"
 
 function set_tag()
 {
@@ -23,108 +24,91 @@ function unset_tag()
 	EOF
 }
 
-function set_pgkindledx()
+function set_tags()
 {
-	echo "Building Kindle DX PDF"
-    unset_tag noquiz
-	unset_tag pgkobomini
-	unset_tag pgnexus7
-	unset_tag pgkoboaurahd
-	unset_tag pgafour
-	set_tag pgkindledx
+   local list=$1
+
+   for tag in $list
+   do
+      set_tag $tag
+   done
 }
 
-function set_pgkobomini()
+function unset_tags()
+{
+   local list=$1
+
+   for tag in $list
+   do
+      unset_tag $tag
+   done
+}
+
+function set_pg10in()
+{
+   echo "Building Kindle DX PDF"
+   set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx"
+   unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkoboaurahd pgafour pgnexus7"
+}
+
+function set_pg5in()
 {
 	echo "Building Kobo Mini PDF"
-    unset_tag noquiz
-	unset_tag pgkindledx
-	unset_tag pgnexus7
-	unset_tag pgkoboaurahd
-	unset_tag pgafour
-	set_tag pgkobomini
+    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkobomini"
+    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkindledx pgkoboaurahd pgafour pgnexus7"
 }
 
-function set_pgkoboaurahd()
+function set_pg7in()
 {
 	echo "Building Kobo Aura HD PDF"
-    unset_tag noquiz
-	unset_tag pgkobomini
-	unset_tag pgkindledx
-	unset_tag pgnexus7
-	unset_tag pgafour
-	set_tag pgkoboaurahd
+    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkoboaurahd"
+    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgafour pgnexus7"
 }
 
-function set_pgnexus7()
+function set_pgtablet()
 {
 	echo "Building Android PDF"
-    unset_tag noquiz
-	unset_tag pgkobomini
-	unset_tag pgkindledx
-	unset_tag pgkoboaurahd
-	unset_tag pgafour
-	set_tag pgnexus7
+    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgnexus7"
+    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgafour"
 }
 
-function set_pgafour()
+function set_pgA4()
 {
 	echo "Building A4 PDF"
-    set_tag noquiz
-	unset_tag pgkobomini
-	unset_tag pgkindledx
-	unset_tag pgkoboaurahd
-	unset_tag pgnexus7
-	set_tag pgafour
+    set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor arno pgafour"
+    unset_tags "beforepartnewpage garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgnexus7"
+}
+
+function set_pgcrownq()
+{
+	echo "Building Crown Quarto PDF"
+    set_tags "beforepartnewpage papernewpage noquiz nofancydecor garamond pgcrownq"
+    unset_tags "afterpartnewpage introinclude coverimage arno pgafour pgkobomini pgkindledx pgkoboaurahd pgnexus7"
 }
 
 
 function build_all()
 {
-	local outdir=${OUT}/$1
+    local flag=$1
+	local outdir=${OUT}/$flag
 
-	set_pgafour
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-A4.pdf
-    cd ${outdir}
-    zip ${OUTFILE}-A4.pdf.zip ${OUTFILE}-A4.pdf
-    cd -
-
-	set_pgnexus7
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-tablet.pdf
-    cd ${outdir}
-    zip ${OUTFILE}-tablet.pdf.zip ${OUTFILE}-tablet.pdf
-    cd -
-
-	set_pgkindledx
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-10in.pdf
-    cd ${outdir}
-    zip ${OUTFILE}-10in.pdf.zip ${OUTFILE}-10in.pdf
-    cd -
-
-	set_pgkobomini
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-5in.pdf
-    cd ${outdir}
-    zip ${OUTFILE}-5in.pdf.zip ${OUTFILE}-5in.pdf
-    cd -
-
-	set_pgkoboaurahd
-	make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-7in.pdf
-    cd ${outdir}
-    zip ${OUTFILE}-7in.pdf.zip ${OUTFILE}-7in.pdf
-    cd -
+    for fmt in $FORMATS
+    do
+	   set_pg${fmt}
+	   make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
+       if [ "$flag" = "public" ] ; then
+          cd ${outdir}
+          zip ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
+          cd -
+       fi
+    done
 }
 
-rm -rf $OUT ; mkdir -p $OUT/{public,private}
+#rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
-set_tag introinclude
 set_tag pictures
-set_tag coverimage
-unset_tag private
-unset_tag nofnt
-unset_tag nofancydecor
-unset_tag fancylettrine
-
-build_all public
+unset_tags "private nofnt fancylettrine"
+#build_all public
 
 set_tag private
 build_all private
