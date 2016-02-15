@@ -104,11 +104,11 @@ function build_all()
     done
 }
 
-#rm -rf $OUT ; mkdir -p $OUT/{public,private}
+rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
 set_tag pictures
 unset_tags "private nofnt fancylettrine"
-#build_all public
+build_all public
 
 set_tag private
 build_all private
