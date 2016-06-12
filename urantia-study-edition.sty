@@ -370,7 +370,7 @@
 \setmainfont[WordSpace={1.2,2.5,1.0},Mapping=tex-text]{\urantiamainfont}
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
-\newfontfamily\headerfont[Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
+\newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
 %\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headingfont[LetterSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headerackfont[Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderackfont}
@@ -465,7 +465,7 @@
     \ifx\secname\ackn
        {\centering\headerackfont\parbox{\columnwidth}{\itshape\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
     \else
-       {\centering\headerfont\addfontfeature{WordSpace=2.4}\parbox{\columnwidth}{\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
+       {\centering\headerfont\parbox{\columnwidth}{\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
     \fi
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
@@ -816,7 +816,7 @@
 
 \newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
-\newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=4.5,WordSpace=1.0}}
+\newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=4.5}}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 
 \tunemarkup{nofnt}{%
@@ -862,7 +862,7 @@
 \newcommand{\parttitlefontsize}{\LARGE}
 \renewcommand{\bibbookend}{\fontsize{19.5}{22}\selectfont}
 \renewcommand{\urantiamainfontsize}{19.5/22}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{15}\bfseries}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{9}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{15}{17}\selectfont}
@@ -888,7 +888,7 @@
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
 \newcommand{\parttitlefontsize}{\large}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{14}{17}\bfseries}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{14}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -915,8 +915,8 @@
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{15}{18}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0,WordSpace=1.1}\LARGE}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{17}\bfseries}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{15}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{12.0}{19}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -935,14 +935,14 @@
 \newcommand{\bibpaperfont}{\fontsize{11}{12}\bfseries}
 \newcommand{\bibpapertitlefont}{\fontsize{13}{14}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{13}{16}\bfseries}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{16}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{13}{15}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0,WordSpace=1.1}\LARGE}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
 \newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
@@ -957,7 +957,7 @@
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{17}{17}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{14}{17}\selectfont}
 \newcommand{\subfont}{\fontsize{19}{23}\itshape}
 \newcommand{\parttitlefontsize}{\Huge}
@@ -967,7 +967,7 @@
 \newcommand{\bibpaperfont}{\fontsize{19}{21}\bfseries}
 \newcommand{\bibpapertitlefont}{\fontsize{21}{22}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
-\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{13}{13}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{13}{13}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
@@ -988,7 +988,7 @@
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{36}{36}\selectfont ahb}}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{14}{14}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{14}{14}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{12}{14}\selectfont}
 \newcommand{\subfont}{\fontsize{16}{18}\itshape}
 \newcommand{\parttitlefontsize}{\huge}
@@ -998,7 +998,7 @@
 \newcommand{\bibpaperfont}{\fontsize{17}{20}\bfseries}
 \newcommand{\bibpapertitlefont}{\fontsize{21}{22}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
-\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{10}{10}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{12.0}{12.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
@@ -1018,7 +1018,7 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\Huge ahb}}
-\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2,WordSpace=1.2}\fontsize{15}{15}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{15}{15}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{10.8}{15}\selectfont}
 \newcommand{\subfont}{\fontsize{13}{15}\itshape}
 \newcommand{\parttitlefontsize}{\LARGE}
@@ -1028,7 +1028,7 @@
 \newcommand{\bibpaperfont}{\fontsize{15.0}{18}\bfseries}
 \newcommand{\bibpapertitlefont}{\fontsize{16.0}{19.0}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5,WordSpace=1.3}\fontsize{9.6}{9.6}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{9.6}{9.6}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
@@ -1049,7 +1049,7 @@
 \hypersetup{%
   pdftitle={The British Study Edition of the Urantia Papers},%
   pdfauthor={Tigran Aivazian <aivazian.tigran@gmail.com>},%
-  pdfcreator={Bibles.org.uk Typesetting Environment},%
+  pdfcreator={Bibles.org.uk Typesetting Environment based on TeX Live 2016},%
   pdfsubject={The Urantia Papers in British English (also known as "The Urantia Book")},%
   pdfkeywords={Earth,Urantia,Truth,History,Religion,Revelation,God,Jesus,Christianity,Bible,Scriptures,Koran,Islam,Judaism,Torah},%
   pdflang={English},%
@@ -1099,7 +1099,7 @@
       \headerfont\bibpaperfont
          \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
          \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
-           {\addfontfeatures{WordSpace=2.0,LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
+           {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
            \input{tex/p\thepaper-sections.tex}%
          }%
    \end{center}%
@@ -1117,7 +1117,7 @@
    header={#2},
    abbr={p#1}
 }%
-\fancyhead[CO]{\bibheadfont\tunemarkup{pghanlin}{\addfontfeature{WordSpace=1.1}}\MakeUppercase{#2}}%
+\fancyhead[CO]{\bibheadfont\MakeUppercase{#2}}%
 \bib@raise@anchor{\bibpdfbookmark[2]{0. #2}{p#1_0}}%
 }
 
