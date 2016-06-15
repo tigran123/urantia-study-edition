@@ -9,7 +9,7 @@ FORMATS="10in A4 tablet 5in 7in"
 function set_tag()
 {
     local tag=$1
-	ed -s ${STYFILE} <<-EOF
+	ed -s ${STYFILE} <<-EOF > /dev/null 2>&1
 	%s/^%\\\tunemarkuptag{${tag}}/\\\tunemarkuptag{${tag}}/
 	wq
 	EOF
@@ -18,7 +18,7 @@ function set_tag()
 function unset_tag()
 {
     local tag=$1
-	ed -s ${STYFILE} <<-EOF
+	ed -s ${STYFILE} <<-EOF > /dev/null 2>&1
 	%s/^\\\tunemarkuptag{${tag}}/%\\\tunemarkuptag{${tag}}/
 	wq
 	EOF
@@ -95,7 +95,7 @@ function build_all()
     for fmt in $FORMATS
     do
 	   set_pg${fmt}
-	   make vclean ; make && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
+	   make vclean ; make -s && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
        if [ "$flag" = "public" ] ; then
           cd ${outdir}
           zip ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
