@@ -107,8 +107,8 @@
 \def\urantiaexplfont{GoudyOlSt BT}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{19.5}\selectfont}
-\newcommand{\urantiamainfontsize}{16/19.5}
+\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{15/18}
 }
 
 \tunemarkup{minionpro}{%
@@ -177,8 +177,8 @@
 \def\urantiaexplfont{Gentium Book Basic}
 \def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{17}{21}\selectfont}
-\newcommand{\urantiamainfontsize}{17/21}
+\newcommand{\bibbookend}{\fontsize{16}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{16/19}
 }
 
 \tunemarkup{bookman}{%
@@ -371,6 +371,7 @@
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
+\newfontfamily\sectiontitlefont[WordSpace=3.0,Letters=Uppercase,LetterSpace=1.5,Mapping=tex-text]{\urantiaheaderfont}
 %\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headingfont[LetterSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headerackfont[Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderackfont}
@@ -465,7 +466,7 @@
     \ifx\secname\ackn
        {\centering\headerackfont\parbox{\columnwidth}{\itshape\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
     \else
-       {\centering\headerfont\parbox{\columnwidth}{\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
+       {\centering\sectiontitlefont\parbox{\columnwidth}{\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
     \fi
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
