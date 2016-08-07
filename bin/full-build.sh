@@ -46,42 +46,36 @@ function unset_tags()
 
 function set_pg10in()
 {
-   echo "Building Kindle DX PDF"
    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx"
    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkoboaurahd pgafour pgnexus7"
 }
 
 function set_pg5in()
 {
-	echo "Building Kobo Mini PDF"
     set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkobomini"
     unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkindledx pgkoboaurahd pgafour pgnexus7"
 }
 
 function set_pg7in()
 {
-	echo "Building Kobo Aura HD PDF"
     set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkoboaurahd"
     unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgafour pgnexus7"
 }
 
 function set_pgtablet()
 {
-	echo "Building Android PDF"
     set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgnexus7"
     unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgafour"
 }
 
 function set_pgA4()
 {
-	echo "Building A4 PDF"
     set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor arno pgafour"
     unset_tags "beforepartnewpage garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgnexus7"
 }
 
 function set_pgcrownq()
 {
-	echo "Building Crown Quarto PDF"
     set_tags "beforepartnewpage papernewpage noquiz nofancydecor garamond pgcrownq"
     unset_tags "afterpartnewpage introinclude coverimage arno pgafour pgkobomini pgkindledx pgkoboaurahd pgnexus7"
 }
@@ -95,12 +89,14 @@ function build_all()
     for fmt in $FORMATS
     do
 	   set_pg${fmt}
+       echo -n "$fmt: "
 	   make vclean ; make -s && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
        if [ "$flag" = "public" ] ; then
           cd ${outdir}
           zip ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
           cd -
        fi
+       echo "OK"
     done
 }
 
