@@ -203,7 +203,7 @@
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaheaderackfont{Arno Pro Semibold Subhead}
 \def\urantiaexplfont{Arno Pro}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
+\def\pc{{\fontsize{8}{8}\selectfont\P}\kern1pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 \newcommand{\bibbookend}{\fontsize{17}{20}\selectfont}
 \newcommand{\urantiamainfontsize}{17/20}
@@ -349,7 +349,7 @@
 \tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
 
 % A4 for printed PDF to fit in 2x740 pages
-\tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.5in,0.5in},twoside=true,a4paper]{geometry}}
+\tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.7in,0.5in},twoside=true,a4paper]{geometry}}
 
 % Crown Quart for printing in 3 volumes
 \tunemarkup{pgcrownq}{\RequirePackage[dvips,headheight=12.8pt,headsep=2pt,vmargin={0.4in,0.45in},hmargin={0.8in,0.4in},twoside=true,papersize={7.444in,9.681in}]{geometry}}
@@ -373,7 +373,7 @@
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\sectiontitlefont[WordSpace=3.0,Letters=Uppercase,LetterSpace=1.5,Mapping=tex-text]{\urantiaheaderfont}
 %\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
-\newfontfamily\headingfont[LetterSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
+\newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headerackfont[Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderackfont}
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
 \newfontfamily\libertinefont[Mapping=tex-text]{Linux Libertine O}
@@ -956,6 +956,8 @@
 }
 
 \tunemarkup{pgafour}{%
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
+\renewcommand{\usectiontitle}[3]{}
 \renewcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
@@ -966,15 +968,15 @@
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{14}{17}\selectfont}
-\newcommand{\subfont}{\fontsize{19}{23}\itshape}
-\newcommand{\parttitlefontsize}{\Huge}
-\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibbookend}{\fontsize{15}{17}\selectfont}
-\renewcommand{\urantiamainfontsize}{15/17}
-\newcommand{\bibpaperfont}{\fontsize{19}{21}\bfseries}
-\newcommand{\bibpapertitlefont}{\fontsize{21}{22}\bfseries}
+\newcommand{\subfont}{\fontsize{14}{17}\itshape}
+\newcommand{\parttitlefontsize}{\fontsize{18}{21}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
+\renewcommand{\bibbookend}{\fontsize{13.4}{15.1}\selectfont}
+\renewcommand{\urantiamainfontsize}{13.4/15.1}
+\newcommand{\bibpaperfont}{\fontsize{16}{19}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{18}{19}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
-\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{13}{13}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
@@ -1104,7 +1106,7 @@
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
       \headerfont\bibpaperfont
-         \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
+         \ifnum #1>0\papertxt\space\ № #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
          \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
            {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
            \input{tex/p\thepaper-sections.tex}%
