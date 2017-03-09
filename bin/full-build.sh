@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="10in A4 tablet 5in 7in"
+FORMATS="7in 10in A4 tablet 5in"
 
 function set_tag()
 {
@@ -47,7 +47,7 @@ function unset_tags()
 function set_pg10in()
 {
    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx"
-   unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkoboaurahd pgafour pgnexus7"
+   unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq garamond pgkobomini pgkoboaurahd pgafour pgnexus7"
 }
 
 function set_pg5in()
@@ -58,20 +58,20 @@ function set_pg5in()
 
 function set_pg7in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgafour pgnexus7"
+    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond pgkoboaurahd"
+    unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7"
 }
 
 function set_pgtablet()
 {
     set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgnexus7"
-    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgafour"
+    unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq garamond pgkobomini pgkindledx pgkoboaurahd pgafour"
 }
 
 function set_pgA4()
 {
     set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor arno pgafour"
-    unset_tags "beforepartnewpage garamond pgcrownq pgkobomini pgkindledx pgkoboaurahd pgnexus7"
+    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgnexus7"
 }
 
 function set_pgcrownq()
@@ -103,7 +103,7 @@ function build_all()
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
 set_tag pictures
-unset_tags "private nofnt fancylettrine"
+unset_tags "private nofnt"
 build_all public
 
 set_tag private
