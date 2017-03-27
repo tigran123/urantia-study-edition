@@ -20,7 +20,7 @@ for ($i = 0; $i <= 196; $i++) {
                           '<sup>'.$i.':'.$chap.'.'.$verse.'</sup></a> ' .  $text . PHP_EOL;
       } elseif (preg_match('/^\\\\author{(.*)}/u', $iline, $matches)) { // Extract author
          $author = $matches[1];
-      } elseif (preg_match('/^\\\\upaper{\d*}{(.*)}/u', $iline, $matches)) { // Extract paper title
+      } elseif (preg_match('/^\\\\upaper{\d+}{(.*)}/u', $iline, $matches)) { // Extract paper title
          $paper = $matches[1];
       } elseif (preg_match('/^\\\\usection{(.*)}/u', $iline, $matches)) { // Extract section title
          $section = convert_section($matches[1]);
@@ -56,13 +56,16 @@ function convert_text($text) {
               '/`/u',
               '/\'\'/u',
               '/\'/u',
+              '/\\\\,/u',
               '/\\\\ldots\\\\/u',
               '/\\\\ldots{}/u',
               '/\\\\bibref\[([^]]*)\]{p0*(\d{1,3}) (\d{1,2}):(\d{1,3})}/u',
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:ublistelem|textheb|textgreek){([^}]*)}/u'];
+              '/\\\\(?:ublistelem|textheb|textgreek|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\fn[cs]t?{([^}]*)}/u',
+              '/\\\\tunemarkup{(?:private|pictures)}{.*}/u'];
    $replace = ['¶ ',
                '',
                '×',
@@ -75,13 +78,16 @@ function convert_text($text) {
                '‘',
                '”',
                '’',
+               ' ',
                '...',
                '...',
                '<a href=".U$2_$3_$4">$1</a>',
                '<em>$1</em>',
                '<b>$1</b>',
                '<sup>$1</sup>',
-               '$1'];
+               '$1',
+               '<a href="notes.html">*</a>',
+               '<a href="notes.html">*</a>'];
    return preg_replace($search, $replace, $text);
 }
 ?>
