@@ -64,7 +64,6 @@ function convert_text($text) {
               '/\'\'/u',
               '/\'/u',
               '/\\\\,/u',
-              '/\\\\{/u',
               '/ *\\\\pm\\\\ */u',
               '/\\\\%/u',
               '/\\\\ldots\\\\/u',
@@ -75,7 +74,7 @@ function convert_text($text) {
               '/\^({?\d+}?)/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:ublistelem|textheb|textgreek|textcolour{ubdarkred}){([^}]*)}/u'];
+              '/\\\\(?:ublistelem|textgreek|textcolour{ubdarkred}){([^}]*)}/u'];
    $replace = ['¶ ',
                '',
                '×',
@@ -89,7 +88,6 @@ function convert_text($text) {
                '”',
                '’',
                ' ',
-               '{',
                '±',
                '%',
                '...',
@@ -101,6 +99,11 @@ function convert_text($text) {
                '<b>$1</b>',
                '<sup>$1</sup>',
                '$1'];
-   return preg_replace($search, $replace, $text);
+
+   $stage1 =  preg_replace($search, $replace, $text);
+
+   return preg_replace_callback('/\\\\textheb{([^}]*)}/u', // reverse Hebrew for RTL
+             function($match) {return implode(array_reverse(explode(" ",$match[1]))," ");},
+             $stage1);
 }
 ?>
