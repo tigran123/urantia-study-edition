@@ -17,6 +17,7 @@ for ($i = 0; $i <= 196; $i++) {
          $chap = $matches[1];
          $verse = $matches[2];
          $text = convert_text($matches[3]);
+         //if ($i == 173 && $chap ==1 && $verse == 3) echo $text;
          $fn_total = preg_match_all('/\\\\fn[cs]t?{([^}]*)}/u', $text, $fnotes);
          for ($fn = 0; $fn < $fn_total; $fn++) {
              $nlines[] = '<p><a name="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'" href=".U'.$i.'_'.$chap.'_'.$verse.'"><sup>'.$i.':'.$chap.'.'.$verse.'['.$fn.']</sup></a> '.$fnotes[1][$fn].PHP_EOL;
@@ -87,7 +88,8 @@ function convert_text($text) {
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:ublistelem|textgreek|textcolour{ubdarkred}){([^}]*)}/u'];
+              '/\\\\(?:ublistelem|textgreek|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['¶ ',
                '',
                '×',
@@ -124,7 +126,8 @@ function convert_text($text) {
                '<em>$1</em>',
                '<b>$1</b>',
                '<sup>$1</sup>',
-               '$1'];
+               '$1',
+               '<figure><img class="$1" src="img/$2"><figcaption>$3</figcaption></figure>'];
 
    $stage1 =  preg_replace($search, $replace, $text);
 
