@@ -127,7 +127,7 @@ function convert_text($text) {
                '<b>$1</b>',
                '<sup>$1</sup>',
                '$1',
-               '<figure><img class="$1" src="img/$2"><figcaption>$3</figcaption></figure>'];
+               '<figure class="$1"><img class="pictures" src="img/$2"><figcaption>$3</figcaption></figure>'];
 
    $stage1 =  preg_replace($search, $replace, $text);
 
