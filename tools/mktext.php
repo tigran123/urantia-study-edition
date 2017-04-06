@@ -20,8 +20,8 @@ for ($i = 0; $i <= 196; $i++) {
          //if ($i == 173 && $chap ==1 && $verse == 3) echo $text;
          $fn_total = preg_match_all('/\\\\fn[cs]t?{([^}]*)}/u', $text, $fnotes);
          for ($fn = 0; $fn < $fn_total; $fn++) {
-             $nlines[] = '<p><a name="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'" href=".U'.$i.'_'.$chap.'_'.$verse.'"><sup>'.$i.':'.$chap.'.'.$verse.'['.$fn.']</sup></a> '.$fnotes[1][$fn].PHP_EOL;
-             $text = preg_replace('/\\\\fn[cs]t?{([^}]*)}/u', '<a href="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'"><sup>'.$fn.'</sup></a>', $text, 1);
+             $nlines[] = '<p><a class="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'" href=".U'.$i.'_'.$chap.'_'.$verse.'"><sup>'.$i.':'.$chap.'.'.$verse.'['.$fn.']</sup></a> '.$fnotes[1][$fn].PHP_EOL;
+             $text = preg_replace('/\\\\fn[cs]t?{([^}]*)}/u', '<a href=".U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'"><sup>'.$fn.'</sup></a>', $text, 1);
          }
          $olines[] = '<p><a class="U'.$i.'_'.$chap.'_'.$verse.'" href=".U'.$i.'_'.$chap.'_'.$verse.'">' .
                           '<sup>'.$i.':'.$chap.'.'.$verse.'</sup></a> ' .  $text . PHP_EOL;
