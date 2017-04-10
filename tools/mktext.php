@@ -17,7 +17,10 @@ for ($i = 0; $i <= 196; $i++) {
          $chap = $matches[1];
          $verse = $matches[2];
          $text = convert_text($matches[3]);
-         //if ($i == 173 && $chap ==1 && $verse == 3) echo $text;
+         if (($i == 134 && $chap == 6 && $verse == 14)) {
+            $olines[] = '<h4><a class="U'.$i.'_'.$chap.'_'.$verse.'" href=".U'.$i.'_'.$chap.'_'.$verse.'">***</a></h4>'.PHP_EOL;
+            continue;
+         }
          $fn_total = preg_match_all('/\\\\fn[cs]t?{([^}]*)}/u', $text, $fnotes);
          for ($fn = 0; $fn < $fn_total; $fn++) {
              $nlines[] = '<p><a class="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'" href=".U'.$i.'_'.$chap.'_'.$verse.'"><sup>'.$i.':'.$chap.'.'.$verse.'['.$fn.']</sup></a> '.$fnotes[1][$fn].PHP_EOL;
