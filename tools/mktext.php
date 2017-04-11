@@ -3,7 +3,6 @@ ini_set('memory_limit','300M');
 
 system("rm -rf 1 ; mkdir 1");
 
-$notelines = [];
 $nfilename = "1/notes.html";
 
 for ($i = 0; $i <= 196; $i++) {
