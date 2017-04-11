@@ -17,11 +17,13 @@ for ($i = 0; $i <= 196; $i++) {
          $chap = $matches[1];
          $verse = $matches[2];
          $text = convert_text($matches[3]);
-         if ($i == 134 && $chap ==  6 && $verse == 14) {
+         if ( ($i == 134 && $chap ==  6 && $verse == 14) || ($i == 120 && $chap ==  3 && $verse == 12) ||
+              ($i == 144 && $chap ==  5 && $verse == 11) || ($i == 144 && $chap ==  5 && $verse == 25) ||
+              ($i == 144 && $chap ==  5 && $verse == 38) || ($i == 144 && $chap ==  5 && $verse == 54) ||
+              ($i == 144 && $chap ==  5 && $verse == 73) || ($i == 144 && $chap ==  5 && $verse == 87) ){
             $olines[] = '<h4><a class="U'.$i.'_'.$chap.'_'.$verse.'" href=".U'.$i.'_'.$chap.'_'.$verse.'">***</a></h4>'.PHP_EOL;
             continue;
-         } elseif ( ($i ==  31 && $chap == 11 && $verse ==  0) ||
-                    ($i ==  56 && $chap == 11 && $verse ==  0)) {
+         } elseif ( ($i ==  31 && $chap == 10 && $verse ==  22) || ($i ==  56 && $chap == 10 && $verse ==  23)) {
             $olines[] = '<h4><a class="U'.$i.'_'.$chap.'_'.$verse.'" href=".U'.$i.'_'.$chap.'_'.$verse.'">* * * * *</a></h4>'.PHP_EOL;
             continue;
          }
@@ -53,8 +55,8 @@ for ($i = 0; $i <= 196; $i++) {
 }
 
 function convert_section($text) {
-   $search = ['/\\\\bibnobreakspace/u', '/\\\\\\\\/u', '/\\\hyp{}/u', '/---/u'];
-   $replace = ['', ' ', '-', '—'];
+   $search = ['/\\\\bibnobreakspace/u', '/\\\\\\\\/u', '/\\\hyp{}/u', '/---/u', '/\\\\,/u'];
+   $replace = ['', ' ', '-', '—', ' '];
    return preg_replace($search, $replace, $text);
 }
 
