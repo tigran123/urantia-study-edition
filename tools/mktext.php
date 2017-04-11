@@ -64,7 +64,7 @@ function convert_text($text) {
    $search = ['/\\\\pc /u',
               '/\\\\bibnobreakspace/u',
               '/\\\\hsetoff */u',
-              '/ *\\\\times /u',
+              '/ *\\\\times */u',
               '/\$/u',
               '/\\\\hyp{}/u',
               '/\\\\\'(.)/u',
