@@ -26,6 +26,7 @@ for ($i = 0; $i <= 196; $i++) {
             $olines[] = '<h4><a class="U'.$i.'_'.$chap.'_'.$verse.'" href=".U'.$i.'_'.$chap.'_'.$verse.'">* * * * *</a></h4>'.PHP_EOL;
             continue;
          }
+         //if ($i == 41 && $chap ==  4 && $verse == 4) echo $text;
          $fn_total = preg_match_all('/\\\\fn[cs]t?{([^}]*)}/u', $text, $fnotes);
          for ($fn = 0; $fn < $fn_total; $fn++) {
              $nlines[] = '<p><a class="U'.$i.'_'.$chap.'_'.$verse.'_'.$fn.'" href=".U'.$i.'_'.$chap.'_'.$verse.'"><sup>'.$i.':'.$chap.'.'.$verse.'['.$fn.']</sup></a> '.$fnotes[1][$fn].PHP_EOL;
@@ -85,7 +86,9 @@ function convert_text($text) {
               '/\\\\sqrt{([^}]*)}/u',
               '/\\\\subset/u',
               '/\\\\ae */u',
+              '/\\\\pi\^\+/u',
               '/\\\\tau/u',
+              '/\\\\rho/u',
               '/\\\\Delta */u',
               '/\\\\geqslant */u',
               '/\\\\hbar */u',
@@ -101,7 +104,7 @@ function convert_text($text) {
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:ublistelem|textgreek|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\(?:ublistelem|textgreek|textarm|textcolour{ubdarkred}){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['¶ ',
                '',
@@ -128,7 +131,9 @@ function convert_text($text) {
                '√($1)',
                '⊂',
                'ae',
+               'π<sup>+</sup>',
                'τ',
+               'ρ',
                'Δ',
                '⩾',
                'ℏ',
