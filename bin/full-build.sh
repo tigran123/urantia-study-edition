@@ -46,26 +46,26 @@ function unset_tags()
 
 function set_pg10in()
 {
-   set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx"
-   unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq garamond pgkobomini pgkoboaurahd pgafour pgnexus7"
+   set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx nofancydecor"
+   unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgafour pgnexus7"
 }
 
 function set_pg5in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkobomini"
-    unset_tags "beforepartnewpage noquiz nofancydecor garamond pgcrownq pgkindledx pgkoboaurahd pgafour pgnexus7"
+    set_tags "afterpartnewpage papernewpage introinclude coverimage arno nofancydecor pgkobomini"
+    unset_tags "beforepartnewpage noquiz garamond pgcrownq pgkindledx pgkoboaurahd pgafour pgnexus7"
 }
 
 function set_pg7in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgkoboaurahd"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7"
 }
 
 function set_pgtablet()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgnexus7"
-    unset_tags "beforepartnewpage noquiz nofancydecor pgcrownq garamond pgkobomini pgkindledx pgkoboaurahd pgafour"
+    set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage arno pgnexus7"
+    unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkindledx pgkoboaurahd pgafour"
 }
 
 function set_pgA4()
