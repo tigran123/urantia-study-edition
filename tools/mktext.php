@@ -63,6 +63,7 @@ function convert_section($text) {
 function convert_text($text) {
    $search = ['/\\\\pc /u',
               '/\\\\bibnobreakspace/u',
+              '/\\\\bibdf/u',
               '/\\\\hsetoff */u',
               '/ *\\\\times */u',
               '/\$/u',
@@ -108,6 +109,7 @@ function convert_text($text) {
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['¶ ',
                '',
+               ' ...',
                '',
                '×',
                '',
