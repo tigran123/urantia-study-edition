@@ -55,8 +55,8 @@ for ($i = 0; $i <= 196; $i++) {
 }
 
 function convert_section($text) {
-   $search = ['/\\\\bibnobreakspace/u', '/\\\\\\\\/u', '/\\\hyp{}/u', '/---/u', '/\\\\,/u'];
-   $replace = ['', ' ', '-', '—', ' '];
+   $search = ['/\\\\bibnobreakspace/u', '/\\\\subtitlefont */u', '/\\\\\\\\/u', '/\\\hyp{}/u', '/---/u', '/\\\\,/u'];
+   $replace = ['', '', '<br>', '-', '—', ' '];
    return preg_replace($search, $replace, $text);
 }
 
