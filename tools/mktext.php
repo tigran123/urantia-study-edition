@@ -42,7 +42,7 @@ for ($i = 0; $i <= 196; $i++) {
          $section = convert_section($matches[1]);
          if ($i == 0 && $chap == 12) { // Acknowledgment "section" in the Foreword
             $verse = 10;
-            $section = '<em>'.$section.'</em>';
+            $section = '<i>'.$section.'</i>';
          } else {
             $chap++;
             $verse = 0;
@@ -127,7 +127,7 @@ function convert_text($text) {
                '%',
                '$1/$2',
                '...',
-               '<em>M</em>',
+               '<i>M</i>',
                'ℝ',
                '/',
                '√($1)',
@@ -148,7 +148,7 @@ function convert_text($text) {
                '<sup>$1</sup>',
                '<sub>$1</sub>',
                '<a href=".U$2_$3_$4">$1</a>',
-               '<em>$1</em>',
+               '<i>$1</i>',
                '<b>$1</b>',
                '<sup>$1</sup>',
                '$1',
