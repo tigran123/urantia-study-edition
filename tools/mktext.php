@@ -107,7 +107,7 @@ function convert_text($text) {
               '/\\\\ts{([^}]*)}/u',
               '/\\\\(?:ublistelem|textgreek|textarm|textcolour{ubdarkred}){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
-   $replace = ['¶ ',
+   $replace = ['§§ ',
                '',
                ' ...',
                '',
