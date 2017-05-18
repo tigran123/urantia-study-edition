@@ -99,7 +99,7 @@ function convert_text($text) {
               '/\\\\mu/u',
               '/\\\\ldots{}/u',
               '/\\\\textsc{([^}]*)}/u',
-              '/\^{?(\d+)}?/u',
+              '/\^{?(-?N?\d*)}?/u',
               '/\_({?\d+}?)/u',
               '/\\\\bibref\[([^]]*)\]{p0*(\d{1,3}) (\d{1,2}):(\d{1,3})}/u',
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
