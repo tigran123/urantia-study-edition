@@ -93,7 +93,7 @@ function build_all()
 	   make vclean ; make -s && mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
        if [ "$flag" = "public" ] ; then
           cd ${outdir}
-          zip ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
+          zip -q ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
           cd -
        fi
        echo "OK"
