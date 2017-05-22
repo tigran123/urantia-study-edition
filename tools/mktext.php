@@ -105,7 +105,8 @@ function convert_text($text) {
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:ublistelem|textgreek|textarm|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\(?:textgreek|textarm|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\(?:ublistelem){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['§§ ',
                '',
@@ -151,6 +152,7 @@ function convert_text($text) {
                '<i>$1</i>',
                '<b>$1</b>',
                '<sup>$1</sup>',
+               '$1',
                '$1',
                '<figure class="$1"><img class="pictures" src="img/$2"><figcaption>$3</figcaption></figure>'];
 
