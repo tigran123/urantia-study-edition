@@ -1,7 +1,7 @@
 <?php
 ini_set('memory_limit','300M');
 
-system("rm -rf 1 ; mkdir 1");
+system("rm -rf 1 tex ; mkdir 1 tex ; cp ../tex/p???.tex tex");
 
 $nfilename = "1/notes.html";
 
