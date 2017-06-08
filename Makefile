@@ -2,7 +2,7 @@
 # Makefile for urantia-study-edition (The British Study Edition of the Urantia Papers)
 # 
 
-SHELL = /bin/bash
+#SHELL = /bin/bash
 
 MOD = urantia-study-edition
 
@@ -10,7 +10,7 @@ BOOKS = p000 p001 p002 p003 p004 p005 p006 p007 p008 p009 p010 p011 p012 p013 p0
 
 MISCFILES = tex/intro.tex tex/title.tex tex/paper-titles.tex tex/urantia-hyphen-en.tex tex/quiz.tex
 
-WORKDIR = /tmp/$(MOD)
+WORKDIR = $(TMPDIR)/$(MOD)
 
 LATEX = xelatex -output-directory=$(WORKDIR) -halt-on-error $(MOD) < /dev/null > /dev/null 2>&1
 
@@ -42,7 +42,7 @@ ifndef DRAFT
 		$(LATEX)
 		@mv $(WORKDIR)/$(MOD).pdf $(MOD)-2.pdf
 		$(LATEX)
-		@if test -s $(WORKDIR)/$(MOD).fnchk; then bin/fnchk.pl < $(WORKDIR)/$(MOD).fnchk; fi
+		@if test -s $(WORKDIR)/$(MOD).fnchk; then perl bin/fnchk.pl < $(WORKDIR)/$(MOD).fnchk; fi
 endif
 		@mv $(WORKDIR)/$(MOD).pdf .
 
