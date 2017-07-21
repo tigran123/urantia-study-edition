@@ -15,7 +15,7 @@
 %\tunemarkuptag{pgkindledx}
 %\tunemarkuptag{pgkobomini}
 
-\RequirePackage[figure,curq]{totalcount}
+\RequirePackage[figure,curq,nfnst,nfnc]{totalcount}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
 % various font families
@@ -747,6 +747,8 @@
    \newpage
 }
 
+\newcounter{nfnc}
+\newcounter{nfnst}
 \newcounter{paperqcount}
 \newcounter{curq}
 \newcounter{cans}
@@ -828,9 +830,12 @@
 \newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=4.5}}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
 
-\tunemarkup{nofnt}{%
-\def\fnc#1{}
-\def\fnst#1{}
+\tunemarkuptwo{nofnt}{%
+ \def\fnc#1{}
+ \def\fnst#1{}
+}{%
+ \def\fnc#1{\r{}\stepcounter{nfnc}\fn{#1}}
+ \def\fnst#1{\ignorespaces\ts{*}\stepcounter{nfnst}\fn{#1}}
 }
 
 \newlength{\minitocafterskip}
