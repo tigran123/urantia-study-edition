@@ -110,7 +110,7 @@ function convert_text($text) {
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
               '/\\\\ts{([^}]*)}/u',
-              '/\\\\(?:textgreek|textarm|textcolour{ubdarkred}){([^}]*)}/u',
+              '/\\\\(?:textgreek|textchinese|textarm|textcolour{ubdarkred}){([^}]*)}/u',
               '/\\\\(?:ublistelem){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['§§ ',
