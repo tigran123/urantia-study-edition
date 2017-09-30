@@ -9,7 +9,8 @@
 % various page sizes
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
-\tunemarkuptag{pgkoboaurahd}
+%\tunemarkuptag{pgkoboaurahd}
+\tunemarkuptag{pgauraone}
 %\tunemarkuptag{pgafour}
 %\tunemarkuptag{pgcrownq}
 %\tunemarkuptag{pgkindledx}
@@ -351,6 +352,9 @@
 % Kobo Aura HD 7"
 \tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
 
+% Kobo Aura One 8"
+\tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
+
 % A4 for printed PDF to fit in 2x740 pages
 \tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.7in,0.5in},twoside=true,a4paper]{geometry}}
 
@@ -592,6 +596,36 @@
 \setlength{\unitlength}{5.8pt}%
 \fontsize{\unitlength}{\unitlength}\usefont{U}{webo}{xl}{n}
    \begin{picture}(0,0)(1.6,-55.9)%
+     % top left corner
+     \put(0,0){\topl}
+     % top plank
+     \multiput(1,0)(4,0){10}{\topplank}
+     % top right corner
+     \put(41,0){\topprer}
+     \put(42,0){\topr}
+     % right plank
+     \multiput(42,-1)(0,-4){14}{\hr}
+     \multiput(42,-2)(0,-4){14}{\hhr}
+     \multiput(42,-3)(0,-4){14}{\hhhr}
+     \multiput(42,-4)(0,-4){14}{\hhhhr}
+     % left plank
+     \multiput(0,-1)(0,-4){14}{\hhhhl}
+     \multiput(0,-2)(0,-4){14}{\hl}
+     \multiput(0,-3)(0,-4){14}{\hhl}
+     \multiput(0,-4)(0,-4){14}{\hhhl}
+     % bottom left corner
+     \put(0,-57){\botl}
+     % bottom plank
+     \multiput(1,-57)(4,0){10}{\botplank}
+     % bottom right corner
+     \put(41,-57){\botprer}
+     \put(42,-57){\botr}
+   \end{picture}%
+}%
+\tunemarkup{pgauraone}{%
+\setlength{\unitlength}{7.65pt}%
+\fontsize{\unitlength}{\unitlength}\usefont{U}{webo}{xl}{n}
+   \begin{picture}(0,0)(1.4,-55.2)%
      % top left corner
      \put(0,0){\topl}
      % top plank
@@ -939,6 +973,37 @@
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
+}
+
+\tunemarkup{pgauraone}{%
+\renewcommand{\numw}{0.07\linewidth}
+\renewcommand{\txtw}{0.85\linewidth}
+\newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
+\newcommand{\bibpaperfont}{\large\bfseries}
+\newcommand{\bibpapertitlefont}{\Large\bfseries}
+\definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
+\definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
+\renewcommand{\bibfnchapsize}{\headerfont\Large}
+\renewcommand{\bibfnvssize}{\headerfont\large}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
+\newcommand{\subfont}{\fontsize{15}{18}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{9.2}{17}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+\setlength{\minitocafterskip}{-0.5ex}
+\renewcommand{\bibbookend}{\fontsize{16}{18.5}\selectfont}
+\renewcommand{\urantiamainfontsize}{16/18.5}
+\renewcommand{\authorfont}{\fontsize{14}{14}\bfseries\itshape}%
 }
 
 \tunemarkup{pgnexus7}{%
