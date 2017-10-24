@@ -16,7 +16,6 @@
 \tunemarkup{pgkindledx}{\include{tex/paper-titles}}
 \tunemarkup{pgafour}{\include{tex/paper-titles}}
 \tunemarkup{pgcrownq}{\include{tex/paper-titles}}
-\iftotalfigures\clp\listoffigures\clp\fi
 \tunemarkup{introinclude}{\include{tex/intro}}
 \clp
 \ifvoli
@@ -221,4 +220,9 @@
 \include{tex/p196}
 \fi
 \tunemarkuptwo{noquiz}{}{\include{tex/quiz}}
+\iftotalfigures
+  \clp
+  \bibpdfbookmark{LIST OF FIGURES}{fig}%
+  \listoffigures
+\fi
 \end{document}
