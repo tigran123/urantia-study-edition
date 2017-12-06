@@ -64,7 +64,7 @@ function set_pg7in()
 
 function set_pg8in()
 {
-    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgkauraone"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgauraone"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7 pgkoboaurahd"
 }
 
