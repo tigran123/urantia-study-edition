@@ -63,6 +63,7 @@ function convert_section($text) {
 function convert_text($text) {
    $search = ['/\\\\pc /u',
               '/\\\\bibnobreakspace/u',
+              '/\\\\tunemarkup{pg[^}]*}{[^}]*}/u',
               '/\\\\bibdf/u',
               '/\\\\makebox\[4em\]\[l\]{\$(.*)\$}/u',
               '/\\\\hsetoff */u',
@@ -117,6 +118,7 @@ function convert_text($text) {
               '/\\\\(?:ublistelem){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['§§ ',
+               '',
                '',
                ' ...',
                '$1',
