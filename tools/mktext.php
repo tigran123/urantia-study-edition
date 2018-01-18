@@ -111,9 +111,9 @@ function convert_text($text) {
               '/\^{?(-?N?\d*)}?/u',
               '/\_({?\d+}?)/u',
               '/\\\\bibref\[([^]]*)\]{p0*(\d{1,3}) (\d{1,2}):(\d{1,3})}/u',
+              '/\\\\ts{([^}]*)}/u',
               '/\\\\(?:bibemph|textit|bibexpl){([^}]*)}/u',
               '/\\\\(?:mathbf|textbf|bibtextul){([^}]*)}/u',
-              '/\\\\ts{([^}]*)}/u',
               '/\\\\(?:texttt|textgreek|textchinese|textarm|textcolour{ubdarkred}){([^}]*)}/u',
               '/\\\\(?:ublistelem){([^}]*)}/u',
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
@@ -167,9 +167,9 @@ function convert_text($text) {
                '<sup>$1</sup>',
                '<sub>$1</sub>',
                '<a href=".U$2_$3_$4">$1</a>',
+               '<sup>$1</sup>',
                '<i>$1</i>',
                '<b>$1</b>',
-               '<sup>$1</sup>',
                '$1',
                '$1',
                '<figure class="$1"><img class="pictures" src="img/$2"><figcaption>$3</figcaption></figure>'];
