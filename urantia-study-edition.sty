@@ -997,16 +997,17 @@
 }
 
 \tunemarkup{pgnexus7}{%
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
-\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
-\pagecolor{ubpagebg}
+%\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
+%\pagecolor{ubpagebg}
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
 \definecolor{ubdarkred}{rgb}{0.6, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
-\newcommand{\bibpaperfont}{\fontsize{11}{12}\bfseries}
-\newcommand{\bibpapertitlefont}{\fontsize{13}{14}\bfseries}
+\newcommand{\bibpaperfont}{\fontsize{13}{15}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{15}{17}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{16}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
@@ -1014,10 +1015,14 @@
 \renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\subfont}{\fontsize{13}{15}\itshape}
+\newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
 \newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
+\renewcommand{\bibfnchapsize}{\Large\bfseries}
+\renewcommand{\bibfnvssize}{\large\bfseries}
+\renewcommand{\bibbookend}{\fontsize{19}{22}\selectfont}
+\renewcommand{\urantiamainfontsize}{19/22}
+\renewcommand{\footnotesize}{\fontsize{16}{19}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 }
 
