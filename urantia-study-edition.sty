@@ -9,6 +9,7 @@
 % various page sizes
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
+%\tunemarkuptag{pgnexus10}
 \tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgauraone}
 %\tunemarkuptag{pgafour}
@@ -326,6 +327,9 @@
 \newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
 \newcommand{\urantiamainfontsize}{18/20}
 }
+
+% Google Nexus 10 (or any Android 10" colour device)
+\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={100.0mm,160mm}]{geometry}}
 
 % Google Nexus 7 (or any Android 7" colour device)
 \tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,160mm}]{geometry}}
@@ -996,6 +1000,37 @@
 \renewcommand{\authorfont}{\fontsize{14}{14}\bfseries\itshape}%
 }
 
+\tunemarkup{pgnexus10}{%
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
+\definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
+%\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
+%\pagecolor{ubpagebg}
+\definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{ubdarkred}{rgb}{0.6, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
+\newcommand{\bibpaperfont}{\fontsize{13}{15}\bfseries}
+\newcommand{\bibpapertitlefont}{\fontsize{15}{17}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{16}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{9.9}{13.6}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
+\newcommand{\subfont}{\fontsize{14}{17}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
+\renewcommand{\bibfnchapsize}{\large\bfseries}
+\renewcommand{\bibfnvssize}{\normalsize\bfseries}
+\renewcommand{\bibbookend}{\fontsize{14}{16}\selectfont}
+\renewcommand{\urantiamainfontsize}{14/16}
+\renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
+\setlength{\minitocafterskip}{-0.15ex}
+\renewcommand{\authorfont}{\fontsize{12}{12}\bfseries\itshape}%
+}
+
 \tunemarkup{pgnexus7}{%
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
@@ -1020,8 +1055,8 @@
 \newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
-\renewcommand{\bibbookend}{\fontsize{19}{22}\selectfont}
-\renewcommand{\urantiamainfontsize}{19/22}
+\renewcommand{\bibbookend}{\fontsize{20}{22}\selectfont}
+\renewcommand{\urantiamainfontsize}{20/22}
 \renewcommand{\footnotesize}{\fontsize{16}{19}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 }
