@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="tablet bigtablet 5in 7in 8in 10in A4"
+FORMATS="mobile tablet 5in 7in 8in 10in A4"
 
 function set_tag()
 {
@@ -68,13 +68,13 @@ function set_pg8in()
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7 pgkoboaurahd pgnexus10"
 }
 
-function set_pgtablet()
+function set_pgmobile()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus7"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus10"
 }
 
-function set_pgbigtablet()
+function set_pgtablet()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus10"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7"
