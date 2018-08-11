@@ -71,13 +71,13 @@ function set_pg8in()
 function set_pgtablet()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus7"
-    unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus10"
 }
 
 function set_pgbigtablet()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus10"
-    unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7"
 }
 
 
