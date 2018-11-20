@@ -21,7 +21,9 @@
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
 % various font families
-\tunemarkuptag{garamond}
+%\tunemarkuptag{caslon}
+\tunemarkuptag{basker}
+%\tunemarkuptag{garamond}
 %\tunemarkuptag{goudy}
 %\tunemarkuptag{minionpro}
 %\tunemarkuptag{academy}
@@ -88,9 +90,46 @@
 
 \renewcommand{\r}{\kern2pt\raisebox{1.5ex}{\circle{2}}}
 
+\tunemarkup{caslon}{%
+\def\urantiamainfont{Adobe Caslon Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiatitlefont{Adobe Caslon Pro}
+\def\urantiaauthorfont{PF DaVinci Script Pro}
+\def\urantiaheaderfont{Adobe Caslon Pro}
+\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheaderackfont{Adobe Caslon Pro}
+\def\urantiaexplfont{Adobe Caslon Pro}
+\def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
+\renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\large}
+\renewcommand{\bibfnvssize}{\headerfont\normalsize}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{21}{9}\bfseries\itshape}%
+}
+
+\tunemarkup{basker}{%
+\def\urantiamainfont{Baskerville 10 Pro}
+\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiaauthorfont{PF DaVinci Script Pro}
+\def\urantiatitlefont{Baskerville 10 Pro}
+\def\urantiaheaderfont{Arial Narrow Bold}
+\def\urantiaheadingfont{Arial Narrow}
+\def\urantiaheaderackfont{Arial Narrow Bold}
+\def\urantiaexplfont{Baskerville 10 Pro}
+\def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
+\newcommand{\bibbookend}{\fontsize{14.5}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{14.5/18}
+\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\large}
+\renewcommand{\bibfnvssize}{\headerfont\normalsize}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{21}{9}\bfseries\itshape}%
+}
+
 \tunemarkup{garamond}{%
 \def\urantiamainfont{Garamond Premier Pro}
-%\def\urantiaparttitlefont{Garamond Premier Pro Semibold Display}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 \def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
@@ -101,6 +140,9 @@
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16.4}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{16.4/19}
+\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\Large}
+\renewcommand{\bibfnvssize}{\headerfont\large}
 }
 
 \tunemarkup{goudy}{%
@@ -341,7 +383,7 @@
 \tunemarkup{pghanlin}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,120.0mm}]{geometry}}
 
 % Kobo Aura HD 7"
-\tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=13pt,headsep=2pt,vmargin={0.17in,0.13in},hmargin={0.07in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
+\tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=15pt,headsep=4pt,vmargin={0.2in,0.13in},hmargin={0.1in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
 
 % Kobo Aura One 8"
 \tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
@@ -373,6 +415,7 @@
 %\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headerackfont[Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderackfont}
+\newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
 \newfontfamily\libertinefont[Mapping=tex-text]{Linux Libertine O}
 \newcommand{\tux}{{\libertinefont ^^^^e000}}
@@ -456,7 +499,7 @@
 \newcommand{\upapertitle}[4]{%
    {
      \pagebreak[3]%
-     \makebox[0.05\linewidth][r]{\headerfont#1. }%
+     \makebox[0.05\linewidth][r]{#1. }%
      \makebox[0.57\linewidth][l]{#2\bibdf}%
      \makebox[0.29\linewidth][l]{#3\bibdf}%
      \makebox[0.07\linewidth][r]{\headerfont\bibpr{#4}}%
@@ -470,9 +513,9 @@
     \stepcounter{secnum}%
     \par\raggedbottom\addtolength{\topskip}{0pt plus 20pt}\vspace*{1ex}%
     \ifx\secname\ackn
-       {\centering\headerackfont\parbox{\columnwidth}{\itshape\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
+       {\centering\headerackfont\parbox{\columnwidth}{\itshape\centering\uppercase{#1}}\\*[3pt]}%
     \else
-       {\centering\sectiontitlefont\parbox{\columnwidth}{\centering\uppercase{\textbf{#1}}}\\*[3pt]}%
+       {\centering\sectiontitlefont\parbox{\columnwidth}{\centering\uppercase{#1}}\\*[3pt]}%
     \fi
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
@@ -934,7 +977,6 @@
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{14}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-1.5ex}
 \renewcommand{\footnotesize}{\fontsize{14}{17}\selectfont}
 \renewcommand{\bibbookend}{\fontsize{16}{19}\selectfont}
@@ -957,15 +999,15 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large}
-\renewcommand{\bibfnvssize}{\headerfont\large}
+%\renewcommand{\bibfnchapsize}{\headerfont\Large}
+%\renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{15}{18}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
-\renewcommand{\bibtocfont}{\fontsize{8}{14}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{7.5}{14}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+%\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 }
 
@@ -1215,9 +1257,10 @@
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
       \headerfont\bibpaperfont
-         \ifnum #1>0\papertxt\space\ № #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
+         %\ifnum #1>0\papertxt\space\ № #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
+         \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\[1ex]}\fi
          \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
-           {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\
+           {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\[1ex]
            \input{tex/p\thepaper-sections.tex}%
          }%
    \end{center}%
