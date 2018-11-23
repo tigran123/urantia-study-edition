@@ -114,14 +114,14 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
-\def\urantiaheaderfont{Arial Narrow Bold}
-\def\urantiaheadingfont{Arial Narrow}
-\def\urantiaheaderackfont{Arial Narrow Bold}
+\def\urantiaheaderfont{Helvetica Neue eText Pro}
+\def\urantiaheadingfont{Helvetica Neue eText Pro}
+\def\urantiaheaderackfont{Helvetica Neue eText Pro}
 \def\urantiaexplfont{Baskerville 10 Pro}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{14.5}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{14.5/18}
+\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{15/18}
 \renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\large}
 \renewcommand{\bibfnvssize}{\headerfont\normalsize}
@@ -383,7 +383,7 @@
 \tunemarkup{pghanlin}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,120.0mm}]{geometry}}
 
 % Kobo Aura HD 7"
-\tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=15pt,headsep=4pt,vmargin={0.2in,0.13in},hmargin={0.1in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
+\tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=15pt,headsep=4pt,vmargin={0.2in,0.13in},hmargin={0.05in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
 
 % Kobo Aura One 8"
 \tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
@@ -489,7 +489,7 @@
 
 \newcommand{\upapertitleheader}[3]{%
    \mbox{%
-     \makebox[0.05\linewidth][l]{№}%
+     \makebox[0.05\linewidth][l]{\#}%
      \makebox[0.57\linewidth][l]{\textsc{#1}}%
      \makebox[0.29\linewidth][l]{\textsc{#2}}%
      \makebox[0.05\linewidth][l]{\textsc{#3}}%
@@ -513,9 +513,9 @@
     \stepcounter{secnum}%
     \par\raggedbottom\addtolength{\topskip}{0pt plus 20pt}\vspace*{1ex}%
     \ifx\secname\ackn
-       {\centering\headerackfont\parbox{\columnwidth}{\itshape\centering\uppercase{#1}}\\*[3pt]}%
+       {\centering\headerackfont\parbox{\columnwidth}{\bfseries\itshape\centering\uppercase{#1}}\\*[3pt]}%
     \else
-       {\centering\sectiontitlefont\parbox{\columnwidth}{\centering\uppercase{#1}}\\*[3pt]}%
+       {\centering\sectiontitlefont\parbox{\columnwidth}{\bfseries\centering\uppercase{#1}}\\*[3pt]}%
     \fi
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
@@ -1002,10 +1002,10 @@
 %\renewcommand{\bibfnchapsize}{\headerfont\Large}
 %\renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\subfont}{\fontsize{15}{18}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\newcommand{\subfont}{\fontsize{15}{20}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
-\renewcommand{\bibtocfont}{\fontsize{7.5}{14}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{6}{14}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 %\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
