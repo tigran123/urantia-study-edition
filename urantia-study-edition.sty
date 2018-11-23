@@ -120,11 +120,11 @@
 \def\urantiaexplfont{Baskerville 10 Pro}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{15/18}
+\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{15/19}
 \renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\large}
-\renewcommand{\bibfnvssize}{\headerfont\normalsize}
+\renewcommand{\bibfnchapsize}{\large}
+\renewcommand{\bibfnvssize}{\normalsize}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{21}{9}\bfseries\itshape}%
 }
 
@@ -513,9 +513,9 @@
     \stepcounter{secnum}%
     \par\raggedbottom\addtolength{\topskip}{0pt plus 20pt}\vspace*{1ex}%
     \ifx\secname\ackn
-       {\centering\headerackfont\parbox{\columnwidth}{\bfseries\itshape\centering\uppercase{#1}}\\*[3pt]}%
+       {\centering\headerackfont\parbox{\columnwidth}{\mdseries\itshape\centering\uppercase{#1}}\\*[3pt]}%
     \else
-       {\centering\sectiontitlefont\parbox{\columnwidth}{\bfseries\centering\uppercase{#1}}\\*[3pt]}%
+       {\centering\sectiontitlefont\parbox{\columnwidth}{\mdseries\centering\uppercase{#1}}\\*[3pt]}%
     \fi
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
@@ -1003,11 +1003,11 @@
 %\renewcommand{\bibfnchapsize}{\headerfont\Large}
 %\renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\subfont}{\fontsize{15}{20}\itshape}
+\newcommand{\subfont}{\fontsize{14}{19}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{6}{14}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{8.6}{8}\selectfont}
 %\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 }
@@ -1262,7 +1262,7 @@
          \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\[1ex]}\fi
          \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
            {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\[1ex]
-           \input{tex/p\thepaper-sections.tex}%
+           {\mdseries\input{tex/p\thepaper-sections.tex}}%
          }%
    \end{center}%
 }
