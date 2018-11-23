@@ -899,7 +899,7 @@
 \newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
 \newcommand{\bibcovertitlefont}{\parttitlefont\fontsize{18}{18}\selectfont\addfontfeature{LetterSpace=4.5}}
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{8}{8}\selectfont#1}}\kern0.2em\relax}
+\protected\def\print@vssup#1{\makebox[0.9em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.4em\relax}
 
 \tunemarkuptwo{nofnt}{%
  \def\fnc#1{}
@@ -984,6 +984,7 @@
 }
 
 \tunemarkup{pgkoboaurahd}{%
+\setcounter{DefaultLines}{4}
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
