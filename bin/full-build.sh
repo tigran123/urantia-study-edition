@@ -4,7 +4,8 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="mobile tablet 5in 7in 8in 10in A4"
+#FORMATS="mobile tablet 5in 7in 8in 10in A4"
+FORMATS="tablet 7in"
 
 function set_tag()
 {
@@ -47,50 +48,50 @@ function unset_tags()
 function set_pg10in()
 {
    set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx nofancydecor"
-   unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+   unset_tags "beforepartnewpage noquiz pgcrownq garamond basker pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
 }
 
 function set_pg5in()
 {
     set_tags "afterpartnewpage papernewpage introinclude coverimage arno nofancydecor pgkobomini"
-    unset_tags "beforepartnewpage noquiz garamond pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+    unset_tags "beforepartnewpage noquiz garamond basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
 }
 
 function set_pg7in()
 {
-    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7 pgauraone pgnexus10"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage basker pgkoboaurahd"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour garamond pgnexus7 pgauraone pgnexus10"
 }
 
 function set_pg8in()
 {
     set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgauraone"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour pgnexus7 pgkoboaurahd pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10"
 }
 
 function set_pgmobile()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus7"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour arno pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour arno pgnexus10"
 }
 
 function set_pgtablet()
 {
-    set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus10"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7"
+    set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage basker pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd garamond pgauraone pgafour pgnexus7"
 }
 
 
 function set_pgA4()
 {
     set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor arno pgafour"
-    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10"
+    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond basker pgkoboaurahd pgauraone pgnexus7 pgnexus10"
 }
 
 function set_pgcrownq()
 {
     set_tags "beforepartnewpage papernewpage noquiz nofancydecor garamond pgcrownq"
-    unset_tags "afterpartnewpage introinclude coverimage arno pgafour pgkobomini pgkindledx pgkoboaurahd pgauraone pgnexus7 pgnexus10"
+    unset_tags "afterpartnewpage introinclude coverimage arno pgafour pgkobomini basker pgkindledx pgkoboaurahd pgauraone pgnexus7 pgnexus10"
 }
 
 
