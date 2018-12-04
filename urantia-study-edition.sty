@@ -384,7 +384,7 @@
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
-\newfontfamily\sectiontitlefont[WordSpace=3.0,Letters=Uppercase,LetterSpace=1.5,Mapping=tex-text]{\urantiaheaderfont}
+\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=1.2,Mapping=tex-text]{\urantiaheaderfont}
 %\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
@@ -946,6 +946,7 @@
 }
 
 \tunemarkup{pgkoboaurahd}{%
+\protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \setcounter{DefaultLines}{4}
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
@@ -971,12 +972,12 @@
 \newcommand{\bibsectitlefont}{\fontsize{8.6}{8}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
+\newcommand{\bibbookend}{\fontsize{14}{18}\selectfont}
+\newcommand{\urantiamainfontsize}{14/18}
 \renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
 \renewcommand{\bibfnchapsize}{\large}
 \renewcommand{\bibfnvssize}{\normalsize}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{21}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgauraone}{%
