@@ -344,7 +344,7 @@
 }
 
 % Google Nexus 10 (or any Android 10" colour device)
-\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.15in},twoside=true,papersize={135.0mm,216mm}]{geometry}}
+\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={135.0mm,216mm}]{geometry}}
 
 % Google Nexus 7 (or any Android 7" colour device)
 \tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,160mm}]{geometry}}
@@ -1012,6 +1012,7 @@
 }
 
 \tunemarkup{pgnexus10}{%
+\protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \setcounter{DefaultLines}{4}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
@@ -1041,7 +1042,7 @@
 \renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
 \renewcommand{\bibfnchapsize}{\large}
 \renewcommand{\bibfnvssize}{\normalsize}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{28}{8}\selectfont}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{29}{8}\selectfont}%
 }
 
 \tunemarkup{pgnexus7}{%
