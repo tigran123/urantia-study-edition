@@ -380,7 +380,7 @@
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
 
 %\setmainfont[WordSpace={1.2,2.5,1.0},\tunemarkup{pgnexus7}{Ligatures=NoCommon,}Mapping=tex-text]{\urantiamainfont}
-\setmainfont[WordSpace={1.2,2.5,1.0},Mapping=tex-text]{\urantiamainfont}
+%\setmainfont[WordSpace={1.0,4.0,0.1},Color=000001,Mapping=tex-text]{\urantiamainfont} % WordSpace takes effect only if Color != 000000 for some reason, so we use \fontspec instead
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
@@ -974,7 +974,7 @@
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \newcommand{\bibbookend}{\fontsize{14.7}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{14.7/19}
-\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{12}{14}\selectfont}
 \renewcommand{\bibfnchapsize}{\large}
 \renewcommand{\bibfnvssize}{\normalsize}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
@@ -1039,7 +1039,7 @@
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 \newcommand{\bibbookend}{\fontsize{14.8}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{14.8/19}
-\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{12}{14}\selectfont}
 \renewcommand{\bibfnchapsize}{\large}
 \renewcommand{\bibfnvssize}{\normalsize}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{29}{8}\selectfont}%
