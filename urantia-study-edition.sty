@@ -956,8 +956,8 @@
 \renewcommand{\bibheadchapsize}{\fontsize{6.3}{6.3}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{6}{6}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\bibpaperfont}{\large\bfseries}
-\newcommand{\bibpapertitlefont}{\Large\bfseries}
+\newcommand{\bibpaperfont}{\fontsize{12}{14.5}\selectfont}
+\newcommand{\bibpapertitlefont}{\fontsize{15}{23}\bfseries}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
@@ -1022,7 +1022,7 @@
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
-\newcommand{\bibpaperfont}{\fontsize{13}{15}\bfseries}
+\newcommand{\bibpaperfont}{\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{15}{17}\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{18}{20}\selectfont}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{12}\bfseries}
@@ -1227,7 +1227,7 @@
       \ifnum #1=32\partii\fi
       \ifnum #1=57\partiii\fi
       \ifnum #1=120\partiv\fi
-      \headerfont\bibpaperfont
+      \bibpaperfont
          %\ifnum #1>0\papertxt\space\ № #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
          \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\[1ex]}\fi
          \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
