@@ -113,14 +113,15 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
-\def\urantiaheaderfont{Helvetica Neue eText Pro}
-\def\urantiaheadingfont{Helvetica Neue eText Pro}
+\def\urantiaheaderfont{Arial Narrow Bold}
+\def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Baskerville 10 Pro}
 }
 
 \tunemarkup{garamond}{%
 \def\urantiamainfont{Garamond Premier Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 \def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
 \def\urantiaheadingfont{Arial Narrow Bold}
@@ -359,7 +360,7 @@
 \tunemarkup{pgkoboaurahd}{\RequirePackage[dvips,headheight=15pt,headsep=4pt,vmargin={0.2in,0.13in},hmargin={0.05in},twoside=true,papersize={102.0mm,136.0mm}]{geometry}}
 
 % Kobo Aura One 8"
-\tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
+\tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.25in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
 
 % A4 for printed PDF to fit in 2x740 pages
 \tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.7in,0.5in},twoside=true,a4paper]{geometry}}
@@ -969,7 +970,7 @@
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{6}{14}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{8.6}{8}\selectfont}
+\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{9}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \newcommand{\bibbookend}{\fontsize{14.7}{19}\selectfont}
@@ -981,14 +982,16 @@
 }
 
 \tunemarkup{pgauraone}{%
+\setcounter{DefaultLines}{4}
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{8}{8}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\bibpaperfont}{\large\bfseries}
+\newcommand{\bibpaperfont}{\large\selectfont}
 \newcommand{\bibpapertitlefont}{\Large\bfseries}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
@@ -999,16 +1002,17 @@
 \renewcommand{\bibfnchapsize}{\headerfont\Large}
 \renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
-\newcommand{\subfont}{\fontsize{15}{18}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\newcommand{\subfont}{\fontsize{16}{20}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
-\renewcommand{\bibtocfont}{\fontsize{9.2}{17}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{7}{11}\selectfont}
+\newcommand{\bibsectitlefont}{\headingfont\fontsize{10}{10}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{12}{14}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
-\renewcommand{\bibbookend}{\fontsize{16}{18.5}\selectfont}
-\renewcommand{\urantiamainfontsize}{16/18.5}
-\renewcommand{\authorfont}{\fontsize{14}{14}\bfseries\itshape}%
+\def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
+\newcommand{\bibbookend}{\fontsize{14.7}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{14.7/19}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{25}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgnexus10}{%
@@ -1033,7 +1037,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{15}{20}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
-\newcommand{\bibsectitlefont}{\fontsize{10}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\headingfont\fontsize{12}{13}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
@@ -1055,7 +1059,7 @@
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
-\newcommand{\bibpaperfont}{\fontsize{13}{15}\bfseries}
+\newcommand{\bibpaperfont}{\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{15}{17}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{16}\bfseries}
@@ -1066,19 +1070,21 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
-\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\Large\bfseries}
 \renewcommand{\bibfnvssize}{\large\bfseries}
 \renewcommand{\bibbookend}{\fontsize{20}{22}\selectfont}
 \renewcommand{\urantiamainfontsize}{20/22}
-\renewcommand{\footnotesize}{\fontsize{16}{19}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgafour}{%
+\setcounter{DefaultLines}{4}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
 \renewcommand{\usectiontitle}[3]{}
-\renewcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
@@ -1087,13 +1093,13 @@
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{17}{17}\selectfont}
-\renewcommand{\bibtocfont}{\fontsize{14}{17}\selectfont}
-\newcommand{\subfont}{\fontsize{14}{17}\itshape}
-\newcommand{\parttitlefontsize}{\fontsize{18}{21}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{12}{14}\selectfont}
-\renewcommand{\bibbookend}{\fontsize{13.4}{15.1}\selectfont}
-\renewcommand{\urantiamainfontsize}{13.4/15.1}
-\newcommand{\bibpaperfont}{\fontsize{16}{19}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{10.9}{14}\selectfont}
+\newcommand{\subfont}{\fontsize{16}{21}\itshape}
+\newcommand{\parttitlefontsize}{\fontsize{22}{26}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{12}{15}\selectfont}
+\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
+\newcommand{\urantiamainfontsize}{14/17}
+\newcommand{\bibpaperfont}{\fontsize{16}{19}\selectfont}
 \newcommand{\bibpapertitlefont}{\fontsize{18}{19}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
@@ -1101,10 +1107,11 @@
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibfnchapsize}{\Large\bfseries}
-\renewcommand{\bibfnvssize}{\large\bfseries}
+\renewcommand{\bibfnchapsize}{\large\bfseries}
+\renewcommand{\bibfnvssize}{\normalsize\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
+\def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 }
 
 \tunemarkup{pgcrownq}{%
