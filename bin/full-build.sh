@@ -4,8 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-#FORMATS="mobile tablet 5in 7in 8in 10in A4"
-FORMATS="tablet 7in"
+FORMATS="mobile tablet 5in 7in 8in 10in A4"
 
 function set_tag()
 {
@@ -65,8 +64,8 @@ function set_pg7in()
 
 function set_pg8in()
 {
-    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgauraone"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage basker pgauraone"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx garamond pgafour pgnexus7 pgkoboaurahd pgnexus10"
 }
 
 function set_pgmobile()
@@ -84,8 +83,8 @@ function set_pgtablet()
 
 function set_pgA4()
 {
-    set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor arno pgafour"
-    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond basker pgkoboaurahd pgauraone pgnexus7 pgnexus10"
+    set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor basker pgafour"
+    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd arno pgauraone pgnexus7 pgnexus10"
 }
 
 function set_pgcrownq()
@@ -124,7 +123,9 @@ function build_all()
 rm -rf $OUT ; mkdir -p $OUT/{public,private}
 
 set_tag pictures
-unset_tags "private nofnt"
+unset_tags nofnt
+
+unset_tags private
 build_all public
 
 set_tag private

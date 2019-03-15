@@ -216,6 +216,7 @@
 \tunemarkup{arno}{%
 \def\urantiamainfont{Arno Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Arno Pro Semibold Display}
 \def\urantiaheaderfont{Arno Pro Semibold Subhead}
 \def\urantiaheadingfont{Arial Narrow Bold}
@@ -890,7 +891,7 @@
 
 \tunemarkup{pgkobomini}{%
 \setcounter{DefaultLines}{2}
-\renewcommand{\authorfont}{\fontsize{12}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
@@ -1084,7 +1085,7 @@
 \setcounter{DefaultLines}{4}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
 \renewcommand{\usectiontitle}[3]{}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{18}{9}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
@@ -1173,6 +1174,7 @@
 \renewcommand{\bibfnvssize}{\large\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
 
 \tunemarkuptwo{nofancydecor}{%
