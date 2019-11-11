@@ -123,16 +123,10 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
-\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
+%\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
+\def\urantiaheaderfont{Arial Narrow Bold}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16.4}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{16.4/19}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\Large}
-\renewcommand{\bibfnvssize}{\headerfont\large}
 }
 
 \tunemarkup{goudy}{%
@@ -218,13 +212,10 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Arno Pro Semibold Display}
-\def\urantiaheaderfont{Arno Pro Semibold Subhead}
+\def\urantiaheaderfont{Arial Narrow Bold}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Arno Pro}
-\def\pc{{\fontsize{8}{8}\selectfont\P}\kern1pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{17}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{17/20}
 }
 
 \tunemarkup{century}{%
@@ -905,18 +896,19 @@
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large}
-\renewcommand{\bibfnvssize}{\headerfont\large}
+\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{16}{18}\itshape}
 \newcommand{\parttitlefontsize}{\LARGE}
-\renewcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
-\renewcommand{\urantiamainfontsize}{18/20}
+\newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{18/20}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
 \newcommand{\bibsectitlefont}{\fontsize{9}{10}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-1.2ex}
+\def\pc{{\fontsize{8}{8}\selectfont\P}\kern2pt}
 }
 
 \tunemarkup{pghanlin}{%
@@ -977,8 +969,8 @@
 \newcommand{\bibbookend}{\fontsize{14.5}{18}\selectfont}
 \newcommand{\urantiamainfontsize}{14.5/18}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{11}{13}\selectfont}
-\renewcommand{\bibfnchapsize}{\large}
-\renewcommand{\bibfnvssize}{\normalsize}
+\renewcommand{\bibfnchapsize}{\headerfont\large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\normalsize\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
 
@@ -1000,8 +992,8 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubdarkred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large}
-\renewcommand{\bibfnvssize}{\headerfont\large}
+\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{16}{20}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
@@ -1042,16 +1034,17 @@
 \setlength{\minitocafterskip}{-0.15ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
-\newcommand{\urantiamainfontsize}{14/17}
-\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{11}{14}\selectfont}
-\renewcommand{\bibfnchapsize}{\large}
-\renewcommand{\bibfnvssize}{\normalsize}
+\newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{17/19}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{14}{16}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{29}{8}\selectfont}%
 }
 
 \tunemarkup{pgnexus7}{%
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
+\def\pc{{\fontsize{12}{12}\selectfont\P}\kern2pt}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
 %\pagecolor{ubpagebg}
@@ -1072,10 +1065,10 @@
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
 \newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{12}\selectfont}
-\renewcommand{\bibfnchapsize}{\Large\bfseries}
-\renewcommand{\bibfnvssize}{\large\bfseries}
-\renewcommand{\bibbookend}{\fontsize{20}{22}\selectfont}
-\renewcommand{\urantiamainfontsize}{20/22}
+\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
+\newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
@@ -1159,9 +1152,9 @@
 \renewcommand{\bibtocfont}{\fontsize{10.8}{15}\selectfont}
 \newcommand{\subfont}{\fontsize{13}{15}\itshape}
 \newcommand{\parttitlefontsize}{\LARGE}
-\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibbookend}{\fontsize{16}{18}\selectfont}
-\renewcommand{\urantiamainfontsize}{16/18}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{14}{16}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{17/19}
 \newcommand{\bibpaperfont}{\fontsize{15.0}{18}\bfseries}
 \newcommand{\bibpapertitlefont}{\fontsize{16.0}{19.0}\bfseries}
 \newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
@@ -1175,6 +1168,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+\def\pc{{\fontsize{8}{8}\selectfont\P}\kern1pt}
 }
 
 \tunemarkuptwo{nofancydecor}{%
