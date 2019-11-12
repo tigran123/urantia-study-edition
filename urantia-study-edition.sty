@@ -18,6 +18,7 @@
 %\tunemarkuptag{pgkobomini}
 
 \RequirePackage[figure,curq,nfnst,nfnc]{totalcount}
+\RequirePackage{caption}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
 % various font families
@@ -382,6 +383,11 @@
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
+
+\newfontfamily\captionfont[Mapping=tex-text]{Linux Libertine O}
+\DeclareCaptionFormat{capfont}{\captionfont\large#1#2#3}
+\captionsetup{format=capfont,labelfont=bf,margin={0cm,0cm},justification=justified,singlelinecheck=off}
+
 \newfontfamily\libertinefont[Mapping=tex-text]{Linux Libertine O}
 \newcommand{\tux}{{\libertinefont ^^^^e000}}
 
