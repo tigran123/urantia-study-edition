@@ -23,8 +23,8 @@
 
 % various font families
 %\tunemarkuptag{caslon}
-\tunemarkuptag{basker}
-%\tunemarkuptag{garamond}
+%\tunemarkuptag{basker}
+\tunemarkuptag{garamond}
 %\tunemarkuptag{goudy}
 %\tunemarkuptag{minionpro}
 %\tunemarkuptag{academy}
@@ -972,9 +972,13 @@
 \newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{9}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
-\newcommand{\bibbookend}{\fontsize{14.5}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{14.5/18}
-\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{11}{13}\selectfont}
+% for Baskerville
+%\newcommand{\bibbookend}{\fontsize{14.5}{18}\selectfont}
+%\newcommand{\urantiamainfontsize}{14.5/18}
+% for Garamond
+\newcommand{\bibbookend}{\fontsize{17.5}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{17.5/20}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{13}{15}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\large\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\normalsize\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
