@@ -46,32 +46,32 @@ function unset_tags()
 
 function set_pg10in()
 {
-   set_tags "afterpartnewpage papernewpage introinclude coverimage arno pgkindledx nofancydecor"
-   unset_tags "beforepartnewpage noquiz pgcrownq garamond basker pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+   set_tags "afterpartnewpage papernewpage introinclude coverimage basker pgkindledx nofancydecor"
+   unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
 }
 
 function set_pg5in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage arno nofancydecor pgkobomini"
-    unset_tags "beforepartnewpage noquiz garamond basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond nofancydecor pgkobomini"
+    unset_tags "beforepartnewpage noquiz basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
 }
 
 function set_pg7in()
 {
-    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage basker pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx pgafour garamond pgnexus7 pgauraone pgnexus10"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgkoboaurahd"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10"
 }
 
 function set_pg8in()
 {
-    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage basker pgauraone"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini arno pgkindledx garamond pgafour pgnexus7 pgkoboaurahd pgnexus10"
+    set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgauraone"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10"
 }
 
 function set_pgmobile()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus7"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour arno pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10"
 }
 
 function set_pgtablet()
@@ -80,19 +80,11 @@ function set_pgtablet()
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus7"
 }
 
-
 function set_pgA4()
 {
     set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor basker pgafour"
-    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd arno pgauraone pgnexus7 pgnexus10"
+    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10"
 }
-
-function set_pgcrownq()
-{
-    set_tags "beforepartnewpage papernewpage noquiz nofancydecor garamond pgcrownq"
-    unset_tags "afterpartnewpage introinclude coverimage arno pgafour pgkobomini basker pgkindledx pgkoboaurahd pgauraone pgnexus7 pgnexus10"
-}
-
 
 function build_all()
 {
@@ -114,7 +106,7 @@ function build_all()
        if [ "$flag" = "public" ] ; then
           cd ${outdir}
           zip -q ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
-          cd -
+          cd - > /dev/null 2>&1
        fi
        echo "OK"
     done
