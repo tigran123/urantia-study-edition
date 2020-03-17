@@ -103,11 +103,11 @@ function build_all()
           echo "ERROR: Build failed, please examine the logs"
           exit
        fi
-       if [ "$flag" = "public" ] ; then
-          cd ${outdir}
-          zip -q ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
-          cd - > /dev/null 2>&1
-       fi
+       #if [ "$flag" = "public" ] ; then
+       #   cd ${outdir}
+       #   zip -q ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
+       #   cd - > /dev/null 2>&1
+       #fi
        echo "OK"
     done
 }
