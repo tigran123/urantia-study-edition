@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="5in mobile tablet 7in 8in 10in A4"
+FORMATS="mobile tablet 5in 7in 8in 10in A4"
 
 function set_tag()
 {
@@ -117,8 +117,8 @@ rm -rf $OUT ; mkdir -p $OUT/{public,private}
 set_tag pictures
 unset_tags nofnt
 
-unset_tags private
-build_all public
-
 set_tag private
 build_all private
+
+unset_tags private
+build_all public
