@@ -8,8 +8,8 @@
 
 % various page sizes
 %\tunemarkuptag{pghanlin}
-\tunemarkuptag{pgnexus7}
-%\tunemarkuptag{pgnexus10}
+%\tunemarkuptag{pgnexus7}
+\tunemarkuptag{pgnexus10}
 %\tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgauraone}
 %\tunemarkuptag{pgafour}
@@ -20,6 +20,9 @@
 \RequirePackage[figure,curq,nfnst,nfnc]{totalcount}
 \RequirePackage{caption}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
+
+\RequirePackage{etoolbox}
+\patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 
 % various font families
 %\tunemarkuptag{caslon}
@@ -338,10 +341,10 @@
 }
 
 % Google Nexus 10 (or any Android 10" colour device)
-\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={135.0mm,216mm}]{geometry}}
+\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=false,papersize={135.0mm,216mm}]{geometry}}
 
 % Google Nexus 7 (or any Android 7" colour device)
-\tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,160mm}]{geometry}}
+\tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=false,papersize={90.0mm,160mm}]{geometry}}
 
 % Amazon Kindle DX
 \tunemarkup{pgkindledx}{\RequirePackage[dvips,headheight=30pt,headsep=7pt,vmargin={0.27in,0.2in},hmargin={0.08in},twoside=true,papersize={140mm,203mm}]{geometry}}
