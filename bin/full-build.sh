@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="mobile tablet 5in 7in 8in 10in A4"
+FORMATS="thinmob mobile tablet 5in 7in 8in 10in A4"
 
 function set_tag()
 {
@@ -47,43 +47,50 @@ function unset_tags()
 function set_pg10in()
 {
    set_tags "afterpartnewpage papernewpage introinclude coverimage basker pgkindledx nofancydecor"
-   unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+   unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
 }
 
 function set_pg5in()
 {
     set_tags "afterpartnewpage papernewpage introinclude coverimage garamond nofancydecor pgkobomini"
-    unset_tags "beforepartnewpage noquiz basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10"
+    unset_tags "beforepartnewpage noquiz basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
 }
 
 function set_pg7in()
 {
     set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10 pgthinmob"
 }
 
 function set_pg8in()
 {
     set_tags "afterpartnewpage papernewpage nofancydecor introinclude coverimage garamond pgauraone"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
 }
+
+function set_pgthinmob()
+{
+    set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgthinmob"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgnexus7"
+}
+
 
 function set_pgmobile()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus7"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgthinmob"
 }
 
 function set_pgtablet()
 {
     set_tags "afterpartnewpage papernewpage inofancydecor ntroinclude coverimage garamond pgnexus10"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus7"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus7 pgthinmob"
 }
 
 function set_pgA4()
 {
     set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage nofancydecor basker pgafour"
-    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10"
+    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
 }
 
 function build_all()
@@ -103,11 +110,6 @@ function build_all()
           echo "ERROR: Build failed, please examine the logs"
           exit
        fi
-       #if [ "$flag" = "public" ] ; then
-       #   cd ${outdir}
-       #   zip -q ${OUTFILE}-${fmt}.pdf.zip ${OUTFILE}-${fmt}.pdf
-       #   cd - > /dev/null 2>&1
-       #fi
        echo "OK"
     done
 }
