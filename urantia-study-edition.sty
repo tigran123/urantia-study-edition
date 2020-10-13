@@ -10,6 +10,7 @@
 %\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
 \tunemarkuptag{pgnexus10}
+%\tunemarkuptag{pgthinmob}
 %\tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgauraone}
 %\tunemarkuptag{pgafour}
@@ -25,25 +26,13 @@
 \patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 
 % various font families
-%\tunemarkuptag{caslon}
 %\tunemarkuptag{basker}
 \tunemarkuptag{garamond}
-%\tunemarkuptag{goudy}
 %\tunemarkuptag{minionpro}
 %\tunemarkuptag{academy}
 %\tunemarkuptag{palatino}
 %\tunemarkuptag{oldstandard}
-%\tunemarkuptag{bookman}
 %\tunemarkuptag{arno}
-%\tunemarkuptag{century}
-%\tunemarkuptag{cambria}
-%\tunemarkuptag{agora}
-%\tunemarkuptag{fedra}
-%\tunemarkuptag{cent}
-%\tunemarkuptag{adamant}
-%\tunemarkuptag{swift}
-%\tunemarkuptag{charter}
-%\tunemarkuptag{maiola}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -94,24 +83,6 @@
 
 \renewcommand{\r}{\kern2pt\raisebox{1.5ex}{\circle{2}}}
 
-\tunemarkup{caslon}{%
-\def\urantiamainfont{Adobe Caslon Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Adobe Caslon Pro}
-\def\urantiaauthorfont{PF DaVinci Script Pro}
-\def\urantiaheaderfont{Adobe Caslon Pro}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Adobe Caslon Pro}
-\def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
-\renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\large}
-\renewcommand{\bibfnvssize}{\headerfont\normalsize}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{21}{9}\bfseries\itshape}%
-}
-
 \tunemarkup{basker}{%
 \def\urantiamainfont{Baskerville 10 Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
@@ -128,22 +99,9 @@
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 %\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
-\def\urantiaheaderfont{Arial Narrow Bold}
+\def\urantiaheaderfont{Arial Narrow}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
-}
-
-\tunemarkup{goudy}{%
-\def\urantiamainfont{GoudyOlSt BT}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{GoudyOlSt BT}
-\def\urantiaheaderfont{GoudyOlSt BT}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{GoudyOlSt BT}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{15/18}
 }
 
 \tunemarkup{minionpro}{%
@@ -198,19 +156,6 @@
 \newcommand{\urantiamainfontsize}{15.6/20}
 }
 
-\tunemarkup{bookman}{%
-\def\urantiamainfont{Bookman Old Style}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Bookman Old Style}
-\def\urantiaheaderfont{Bookman Old Style}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Bookman Old Style}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
-}
-
 \tunemarkup{arno}{%
 \def\urantiamainfont{Arno Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
@@ -222,129 +167,14 @@
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 }
 
-\tunemarkup{century}{%
-\def\urantiamainfont{Century Schoolbook}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Century Schoolbook}
-\def\urantiaheaderfont{Century Schoolbook}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Century Schoolbook}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
-}
-
-\tunemarkup{cambria}{%
-\def\urantiamainfont{Cambria}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Cambria}
-\def\urantiaheaderfont{Cambria}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Cambria}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{16/20}
-}
-
-\tunemarkup{agora}{%
-\def\urantiamainfont{PF Agora Serif Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{PF Agora Serif Pro}
-\def\urantiaheaderfont{PF Agora Serif Pro}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{PF Agora Serif Pro}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\authorfont}{\fontsize{10.5}{9}\bfseries\itshape}%
-\newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
-\newcommand{\urantiamainfontsize}{14/17}
-}
-
-\tunemarkup{fedra}{%
-\def\urantiamainfont{Fedra Serif A Pro Book}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Fedra Serif A Pro Book}
-\def\urantiaheaderfont{Fedra Serif A Pro Book}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Fedra Serif A Pro Book}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{13}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{13/18}
-}
-
-\tunemarkup{cent}{%
-\def\urantiamainfont{21 Cent}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{21 Cent}
-\def\urantiaheaderfont{21 Cent}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{21 Cent}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{14}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{14/18}
-}
-
-\tunemarkup{adamant}{%
-\def\urantiamainfont{PF Adamant Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{PF Adamant Pro}
-\def\urantiaheaderfont{PF Adamant Pro}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{PF Adamant Pro}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{13}{16}\selectfont}
-\newcommand{\urantiamainfontsize}{13/16}
-}
-
-\tunemarkup{swift}{%
-\def\urantiamainfont{Swift}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Swift}
-\def\urantiaheaderfont{Swift}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Swift}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{15/18}
-}
-
-\tunemarkup{charter}{%
-\def\urantiamainfont{CharterITC}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{CharterITC}
-\def\urantiaheaderfont{CharterITC}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{CharterITC}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{15/18}
-}
-
-\tunemarkup{maiola}{%
-\def\urantiamainfont{MaiolaPro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{MaiolaPro}
-\def\urantiaheaderfont{MaiolaPro}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{MaiolaPro}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{18/20}
-}
+% Samsung Galaxy A70 20:9 aspect ratio
+\tunemarkup{pgthinmob}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={90.0mm,200mm}]{geometry}}
 
 % Google Nexus 10 (or any Android 10" colour device)
-\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=false,papersize={135.0mm,216mm}]{geometry}}
+\tunemarkup{pgnexus10}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={135.0mm,216mm}]{geometry}}
 
 % Google Nexus 7 (or any Android 7" colour device)
-\tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=false,papersize={90.0mm,160mm}]{geometry}}
+\tunemarkup{pgnexus7}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.2in,0.15in},hmargin={0.07in},twoside=true,papersize={90.0mm,160mm}]{geometry}}
 
 % Amazon Kindle DX
 \tunemarkup{pgkindledx}{\RequirePackage[dvips,headheight=30pt,headsep=7pt,vmargin={0.27in,0.2in},hmargin={0.08in},twoside=true,papersize={140mm,203mm}]{geometry}}
@@ -376,7 +206,7 @@
 % allow inter-paragraph space to grow
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
 
-%\setmainfont[WordSpace={1.2,2.5,1.0},\tunemarkup{pgnexus7}{Ligatures=NoCommon,}Mapping=tex-text]{\urantiamainfont}
+\setmainfont[WordSpace={1.2,2.5,1.0},Mapping=tex-text]{\urantiamainfont}
 %\setmainfont[WordSpace={1.0,4.0,0.1},Color=000001,Mapping=tex-text]{\urantiamainfont} % WordSpace takes effect only if Color != 000000 for some reason, so we use \fontspec instead
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
@@ -1055,6 +885,39 @@
 \newcommand{\authorfont}{\authorfontfamily\fontsize{29}{8}\selectfont}%
 }
 
+\tunemarkup{pgthinmob}{%
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
+\def\pc{{\fontsize{12}{12}\selectfont\P}\kern2pt}
+\definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
+%\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
+%\pagecolor{ubpagebg}
+\definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
+\definecolor{ubdarkred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
+\newcommand{\bibpaperfont}{\headingfont\fontsize{13}{15}\selectfont}
+\newcommand{\bibpapertitlefont}{\headingfont\fontsize{15}{17}\bfseries}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
+\renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{16}\bfseries}
+\renewcommand{\bibtocfont}{\fontsize{9.8}{13.5}\selectfont}
+\newcommand{\bibheadpapersize}{\fontsize{8.0}{8.0}\selectfont}
+\renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
+\renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
+\renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
+\newcommand{\subfont}{\fontsize{14}{17}\itshape}
+\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
+\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{12}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
+\newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{19/21}
+\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
+\setlength{\minitocafterskip}{-0.15ex}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+}
+
+
 \tunemarkup{pgnexus7}{%
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \def\pc{{\fontsize{12}{12}\selectfont\P}\kern2pt}
@@ -1277,7 +1140,9 @@
 \vspace*{\stretch{0.1}}%
 {\parttitlefont\parttitlefontsize\partitxt\\\partiup\\[2ex]}
 \begin{center}\subfont\partisub\end{center}%
-\vspace*{\stretch{0.9}}%
+\vspace*{\stretch{0.4}}%
+\begin{center}\includegraphics[width=0.8\columnwidth]{images/Blake-The-Ancient-of-Days.jpg}\end{center}
+\vspace*{\stretch{0.4}}%
 \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
 \tunemarkup{afterpartnewpage}{\newpage}%
 }
