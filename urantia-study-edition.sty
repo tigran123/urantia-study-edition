@@ -53,7 +53,7 @@
 %\tunemarkuptag{nofnt}
 
 % comment out to disable fancy lettrine letters
-\tunemarkuptag{fancylettrine}
+%\tunemarkuptag{fancylettrine}
 
 % comment out to disable Introduction
 \tunemarkuptag{introinclude}
@@ -100,7 +100,7 @@
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 %\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
 \def\urantiaheaderfont{Arial Narrow}
-\def\urantiaheadingfont{Arial Narrow Bold}
+\def\urantiaheadingfont{Arial Narrow}
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
 }
 
@@ -245,7 +245,7 @@
 
 \newcommand{\subtitlefont}{\Large}
 
-\renewcommand{\author}[1]{\thispagestyle{empty}\begin{center}\authorfont\textcolor{ubdarkblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
+\renewcommand{\author}[1]{\thispagestyle{empty}\begin{center}\authorfont\textcolor{ubblue}{#1}\end{center}\fancyhead[CE]{\bibheadfont\MakeUppercase{#1}}}
 
 \newcommand{\upartheader}[1]{%
    \par\vspace{3ex}\pagebreak[3]%
@@ -540,6 +540,37 @@
 %     \put(37,-57){\botr}
 %   \end{picture}%
 %}%
+\tunemarkup{pgnexus10}{%
+\setlength{\unitlength}{13.2pt}%
+\fontsize{\unitlength}{\unitlength}\usefont{U}{webo}{xl}{n}
+   \begin{picture}(0,0)(0.4,-44.0)%
+     \color{ubblue}
+     % top left corner
+     \put(0,0){\topl}
+     % top plank
+     \multiput(1.2,0)(4.8,0){5}{\topplank}
+     % top right corner
+     \put(25.2,0){\topprer}
+     \put(26.4,0){\topr}
+     % right plank
+     \multiput(26.3,-1.2)(0,-4.7){9}{\hr}
+     \multiput(26.3,-2.4)(0,-4.7){9}{\hhr}
+     \multiput(26.3,-3.6)(0,-4.7){9}{\hhhr}
+     \multiput(26.3,-4.8)(0,-4.7){9}{\hhhhr}
+     % left plank
+     \multiput(0,-1.2)(0,-4.7){9}{\hhhhl}
+     \multiput(0,-2.4)(0,-4.7){9}{\hl}
+     \multiput(0,-3.6)(0,-4.7){9}{\hhl}
+     \multiput(0,-4.8)(0,-4.7){9}{\hhhl}
+     % bottom left corner
+     \put(0,-43.6){\botl}
+     % bottom plank
+     \multiput(1.2,-43.6)(4.8,0){5}{\botplank}
+     % bottom right corner
+     \put(25.2,-43.6){\botprer}
+     \put(26.4,-43.6){\botr}
+   \end{picture}%
+}%
 \endgroup
 }
 
@@ -710,7 +741,7 @@
 \newcommand{\usectiontitle}[3]{%
    {\bibsectitlefont
      \makebox[0.08\linewidth][r]{#2. }%
-     \makebox[0.85\linewidth][l]{#3\bibdf}%
+     \makebox[0.85\linewidth][l]{\MakeUppercase{#3}\bibdf}%
      \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
    }\vspace{\minitocafterskip}\linebreak
 }
@@ -857,11 +888,12 @@
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
 %\pagecolor{ubpagebg}
+\definecolor{ubblue}{rgb}{0.0, 0.3, 0.6}
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
 \definecolor{ubdarkred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
-\definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
+\definecolor{ublinkcolor}{rgb}{0.0, 0.3, 0.6}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubblue}{ahb}}}
 \newcommand{\bibpaperfont}{\headingfont\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\headingfont\fontsize{15}{17}\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{18}{20}\selectfont}
@@ -895,7 +927,7 @@
 \definecolor{ubdarkred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubblue}{ahb}}}
 \newcommand{\bibpaperfont}{\headingfont\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\headingfont\fontsize{15}{17}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
