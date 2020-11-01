@@ -28,11 +28,6 @@
 % various font families
 %\tunemarkuptag{basker}
 \tunemarkuptag{garamond}
-%\tunemarkuptag{minionpro}
-%\tunemarkuptag{academy}
-%\tunemarkuptag{palatino}
-%\tunemarkuptag{oldstandard}
-%\tunemarkuptag{arno}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -88,7 +83,7 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
-\def\urantiaheaderfont{Arial Narrow Bold}
+\def\urantiaheaderfont{Arial Narrow}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Baskerville 10 Pro}
 }
@@ -100,71 +95,8 @@
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 %\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
 \def\urantiaheaderfont{Arial Narrow}
-\def\urantiaheadingfont{Arial Narrow}
+\def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
-}
-
-\tunemarkup{minionpro}{%
-\def\urantiamainfont{Minion Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Minion Pro}
-\def\urantiaheaderfont{Minion Pro}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Minion Pro}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{16/19}
-}
-
-\tunemarkup{academy}{%
-\def\urantiamainfont{Academy}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Academy}
-\def\urantiaheaderfont{Academy Bold}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Academy}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{18/20}
-}
-
-\tunemarkup{palatino}{%
-\def\urantiamainfont{Palatino Linotype}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Palatino Linotype}
-\def\urantiaheaderfont{Palatino Linotype}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Palatino Linotype}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{16/19}
-}
-
-\tunemarkup{oldstandard}{%
-\def\urantiamainfont{Old Standard}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiatitlefont{Old Standard}
-\def\urantiaheaderfont{Old Standard}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Old Standard}
-\def\pc{{\fontsize{10}{10}\selectfont\P}\kern2pt}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15.6}{20}\selectfont}
-\newcommand{\urantiamainfontsize}{15.6/20}
-}
-
-\tunemarkup{arno}{%
-\def\urantiamainfont{Arno Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiaauthorfont{PF DaVinci Script Pro}
-\def\urantiatitlefont{Arno Pro Semibold Display}
-\def\urantiaheaderfont{Arial Narrow Bold}
-\def\urantiaheadingfont{Arial Narrow Bold}
-\def\urantiaexplfont{Arno Pro}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 }
 
 % Samsung Galaxy A70 20:9 aspect ratio
@@ -212,7 +144,6 @@
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=1.2,Mapping=tex-text]{\urantiaheaderfont}
-%\newfontfamily\headingfont[Letters=Uppercase,LetterSpace=1.2,Numbers=Lining,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
@@ -739,7 +670,7 @@
 
 % for mini-TOC of each paper
 \newcommand{\usectiontitle}[3]{%
-   {\bibsectitlefont
+   {\headerfont\bibsectitlefont
      \makebox[0.08\linewidth][r]{#2. }%
      \makebox[0.85\linewidth][l]{\MakeUppercase{#3}\bibdf}%
      \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
@@ -754,6 +685,7 @@
 \setcounter{DefaultLines}{2}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{6.9}{6.9}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
@@ -836,7 +768,7 @@
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7.7}{14}\selectfont}
-\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{9}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{9}{9}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 % for Baskerville
@@ -877,7 +809,7 @@
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7}{11}\selectfont}
-\newcommand{\bibsectitlefont}{\headingfont\fontsize{10}{10}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
@@ -909,7 +841,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{15}{20}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
-\newcommand{\bibsectitlefont}{\headingfont\fontsize{12}{13}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{12}{13}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
@@ -944,7 +876,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
-\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
@@ -978,7 +910,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
-\newcommand{\bibsectitlefont}{\headingfont\fontsize{9}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
