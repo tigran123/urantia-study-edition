@@ -53,9 +53,6 @@
 % comment out to disable Introduction
 \tunemarkuptag{introinclude}
 
-% comment out to enable fancy page decorations
-\tunemarkuptag{nofancydecor}
-
 % comment out to disable cover image
 \tunemarkuptag{coverimage}
 
@@ -1020,11 +1017,7 @@
 \def\pc{{\fontsize{8}{8}\selectfont\P}\kern1pt}
 }
 
-\tunemarkuptwo{nofancydecor}{%
-   \newcommand{\vsetoff}{\vspace*{1ex}}%
-}{%
-   \newcommand{\vsetoff}{\begin{center}\usefont{U}{webo}{xl}{n}\LARGE\textcolor{ubgreen}{ahb}\end{center}}%
-}
+\newcommand{\vsetoff}{\vspace*{1ex}}%
 
 \AtBeginDocument{%
 \hypersetup{%
