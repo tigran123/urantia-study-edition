@@ -46,50 +46,50 @@ function unset_tags()
 
 function set_pg10in()
 {
-   set_tags "afterpartnewpage papernewpage introinclude coverimage basker pgkindledx"
+   set_tags "afterpartnewpage papernewpage introinclude basker pgkindledx"
    unset_tags "beforepartnewpage noquiz pgcrownq garamond pgkobomini pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
 }
 
 function set_pg5in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond pgkobomini"
+    set_tags "afterpartnewpage papernewpage introinclude garamond pgkobomini"
     unset_tags "beforepartnewpage noquiz basker pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
 }
 
 function set_pg7in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond pgkoboaurahd"
+    set_tags "afterpartnewpage papernewpage introinclude garamond pgkoboaurahd"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10 pgthinmob"
 }
 
 function set_pg8in()
 {
-    set_tags "afterpartnewpage papernewpage introinclude coverimage garamond pgauraone"
+    set_tags "afterpartnewpage papernewpage introinclude garamond pgauraone"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
 }
 
 function set_pgthinmob()
 {
-    set_tags "afterpartnewpage papernewpage ntroinclude coverimage garamond pgthinmob"
+    set_tags "afterpartnewpage papernewpage ntroinclude garamond pgthinmob"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgnexus7"
 }
 
 
 function set_pgmobile()
 {
-    set_tags "afterpartnewpage papernewpage ntroinclude coverimage garamond pgnexus7"
+    set_tags "afterpartnewpage papernewpage ntroinclude garamond pgnexus7"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgthinmob"
 }
 
 function set_pgtablet()
 {
-    set_tags "afterpartnewpage papernewpage ntroinclude coverimage garamond pgnexus10"
+    set_tags "afterpartnewpage papernewpage ntroinclude garamond pgnexus10"
     unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus7 pgthinmob"
 }
 
 function set_pgA4()
 {
-    set_tags "afterpartnewpage papernewpage noquiz introinclude coverimage basker pgafour"
+    set_tags "afterpartnewpage papernewpage noquiz introinclude basker pgafour"
     unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
 }
 
