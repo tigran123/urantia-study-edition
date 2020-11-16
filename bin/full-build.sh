@@ -119,8 +119,8 @@ rm -rf $OUT ; mkdir -p $OUT/{public,private}
 set_tag pictures
 unset_tags nofnt
 
-set_tag private
-build_all private
-
 unset_tags private
 build_all public
+
+set_tag private
+build_all private
