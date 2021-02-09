@@ -5,7 +5,7 @@ declare -i MAXLINELEN=74
 for ((i = 0 ; i <= 196 ; i++));
 do
    I=$(printf "%03d" $i)
-   sed -ne "s/^.usection{\([0-9][0-9]*\)\..bibnobreakspace \(.*\)}$/\\\usectiontitle{$i}{\1}{\2}/p" tex/p${I}.tex | sed -e "s%\\\\hyp{}%-%g" -e "s%\\\\\\\\% %g" > tex/p${i}-sections.tmp
+   sed -ne "s/^.usection{\([0-9][0-9]*\)\..bibnobreakspace \(.*\)}$/\\\uminitoc{\2}/p" tex/p${I}.tex | sed -e "s%\\\\hyp{}%-%g" -e "s%\\\\\\\\% %g" > tex/p${i}-sections.tmp
    > tex/p${i}-sections.tex
    while read -r line
    do
