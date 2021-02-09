@@ -87,7 +87,8 @@
 
 \tunemarkup{garamond}{%
 \def\urantiamainfont{Garamond Premier Pro}
-\def\urantiaparttitlefont{GoudyHandtooled BT}
+%\def\urantiaparttitlefont{GoudyHandtooled BT}
+\def\urantiaparttitlefont{Garamond Premier Pro Semibold Display}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 %\def\urantiaheaderfont{Garamond Premier Pro Semibold Subhead}
@@ -138,7 +139,7 @@
 \setmainfont[WordSpace={1.2,2.5,1.0},Mapping=tex-text]{\urantiamainfont}
 %\setmainfont[WordSpace={1.0,4.0,0.1},Color=000001,Mapping=tex-text]{\urantiamainfont} % WordSpace takes effect only if Color != 000000 for some reason, so we use \fontspec instead
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
-\newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
+\newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=1.2,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
@@ -238,10 +239,10 @@
 \def\secname{#1}
     \stepcounter{secnum}%
     \par\raggedbottom\addtolength{\topskip}{0pt plus 20pt}\vspace*{1ex}%
-    {\centering\sectiontitlefont\parbox{\columnwidth}{\mdseries\ifx\secname\ackn\itshape\fi\centering\uppercase{#1}}\\*[3pt]}%
+    {\centering\sectiontitlefont\parbox{\columnwidth}{\mdseries\centering\ifx\secname\ackn\itshape\uppercase{#1}\else\uppercase{\thesecnum.\bibnobreakspace #1}\fi}\\*[3pt]}%
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
-    \bib@raise@anchor{\bibpdfbookmark[2]{#1}{\bkname_\thechnum_\curr@vs}\label{p\thepaper_\thesecnum}\hypertarget{p\thepaper_\thesecnum}{}}%
+    \ifx\secname\ackn\else\bib@raise@anchor{\bibpdfbookmark[2]{\thesecnum. #1}{\bkname_\thechnum_\curr@vs}\label{p\thepaper_\thesecnum}\hypertarget{p\thepaper_\thesecnum}{}}\fi%
 \def\bibnobreakspace{\kern5pt\relax}
     \flushbottom\addtolength{\topskip}{0pt plus -20pt}
 }
@@ -666,12 +667,17 @@
 \setlength{\minitocafterskip}{-1ex}
 
 % for mini-TOC of each paper
-\newcommand{\usectiontitle}[3]{%
-   {\headerfont\bibsectitlefont
-     \makebox[0.08\linewidth][r]{#2. }%
-     \makebox[0.85\linewidth][l]{\MakeUppercase{#3}\bibdf}%
-     \makebox[0.06\linewidth][r]{\bibpr{p#1_#2}}%
-   }\vspace{\minitocafterskip}\linebreak
+\newcounter{uminitocnum}
+
+\newcommand{\uminitoc}[1]{%
+   {%
+    \stepcounter{uminitocnum}%
+    \sectiontitlefont\sectiontitlefontsize
+    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}%
+    \makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}%
+    \makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\%
+   }%
+   %\linebreak
 }
 
 % for TOC entries horizontal spacing
@@ -707,7 +713,7 @@
 \newcommand{\urantiamainfontsize}{18/20}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{9}{10}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{9}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{13}{15}\selectfont}
 \setlength{\minitocafterskip}{-1.2ex}
 \def\pc{{\fontsize{8}{8}\selectfont\P}\kern2pt}
@@ -735,7 +741,7 @@
 \newcommand{\parttitlefontsize}{\large}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{14}{17}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10}{17}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{8}{9}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{8}{9}\selectfont}
 \setlength{\minitocafterskip}{-1.5ex}
 \renewcommand{\footnotesize}{\fontsize{14}{17}\selectfont}
 \renewcommand{\bibbookend}{\fontsize{16}{19}\selectfont}
@@ -764,10 +770,10 @@
 \definecolor{ubfblue}{rgb}{0.0, 0.0, 0.0}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{14}{19}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
+\newcommand{\parttitlefontsize}{\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7.7}{14}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{9}{9}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{9}{9}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 % for Baskerville
@@ -805,10 +811,10 @@
 \renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{16}{20}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
+\newcommand{\parttitlefontsize}{\huge}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7}{11}\selectfont}
-\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{14}{16}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
@@ -829,8 +835,8 @@
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.6}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.3, 0.6}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubblue}{ahb}}}
-\newcommand{\bibpaperfont}{\headingfont\fontsize{13}{15}\selectfont}
-\newcommand{\bibpapertitlefont}{\headingfont\fontsize{15}{17}\bfseries}
+\newcommand{\bibpaperfont}{\titlefont\fontsize{13}{15}\selectfont}
+\newcommand{\bibpapertitlefont}{\titlefont\fontsize{15}{17}\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{18}{20}\selectfont}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{12}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7.6}{13}\selectfont}
@@ -838,9 +844,9 @@
 \renewcommand{\bibheadchapsize}{\fontsize{7.5}{7.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
-\newcommand{\subfont}{\fontsize{15}{20}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\huge}
-\newcommand{\bibsectitlefont}{\fontsize{12}{13}\selectfont}
+\newcommand{\subfont}{\fontsize{14}{17}\itshape}
+\newcommand{\parttitlefontsize}{\huge}
+\newcommand{\sectiontitlefontsize}{\fontsize{12}{13}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 \def\pc{{\fontsize{9}{9}\selectfont\P}\kern2pt}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
@@ -874,8 +880,8 @@
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
-\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
+\newcommand{\parttitlefontsize}{\LARGE}
+\newcommand{\sectiontitlefontsize}{\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
@@ -908,8 +914,8 @@
 \renewcommand{\bibheadversesize}{\fontsize{7}{7}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
-\newcommand{\parttitlefontsize}{\addfontfeature{LetterSpace=4.0}\LARGE}
-\newcommand{\bibsectitlefont}{\fontsize{9}{12}\selectfont}
+\newcommand{\parttitlefontsize}{\LARGE}
+\newcommand{\sectiontitlefontsize}{\fontsize{9}{12}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
@@ -922,7 +928,6 @@
 \tunemarkup{pgafour}{%
 \setcounter{DefaultLines}{4}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
-\renewcommand{\usectiontitle}[3]{}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{18}{9}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubblue}{rgb}{0.0, 0.0, 0.0}
@@ -941,7 +946,7 @@
 \newcommand{\urantiamainfontsize}{14/17}
 \newcommand{\bibpaperfont}{\headingfont\fontsize{16}{19}\selectfont}
 \newcommand{\bibpapertitlefont}{\headingfont\fontsize{18}{19}\bfseries}
-\newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{15}{15}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -974,7 +979,7 @@
 \renewcommand{\urantiamainfontsize}{13.9/16}
 \newcommand{\bibpaperfont}{\headingfont\fontsize{17}{20}\bfseries}
 \newcommand{\bibpapertitlefont}{\headingfont\fontsize{21}{22}\bfseries}
-\newcommand{\bibsectitlefont}{\fontsize{15}{15}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{15}{15}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{12.0}{12.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -1005,7 +1010,7 @@
 \newcommand{\urantiamainfontsize}{17/19}
 \newcommand{\bibpaperfont}{\headingfont\fontsize{15.0}{18}\bfseries}
 \newcommand{\bibpapertitlefont}{\headingfont\fontsize{16.0}{19.0}\bfseries}
-\newcommand{\bibsectitlefont}{\fontsize{10}{10}\selectfont}
+\newcommand{\sectiontitlefontsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{9.6}{9.6}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
@@ -1070,17 +1075,8 @@
 
 \newcommand{\bibpaperdisplay}[2]{%
    \begin{center}%
-      \ifnum #1=0\parti\fi
-      \ifnum #1=32\partii\fi
-      \ifnum #1=57\partiii\fi
-      \ifnum #1=120\partiv\fi
-      \bibpaperfont
-         %\ifnum #1>0\papertxt\space\ № #1\tunemarkuptwo{pgcrownq}{.}{\\}\fi
-         \ifnum #1>0\papertxt\ #1\tunemarkuptwo{pgcrownq}{.}{\\[1ex]}\fi
-         \tunemarkuptwo{pgcrownq}{\space\MakeUppercase{#2}\\}{%
-           {\addfontfeatures{LetterSpace=3.0}\bibpapertitlefont\hyperlink{qc#1}{\MakeUppercase{#2}}}\\[1ex]
-           {\mdseries\input{tex/p\thepaper-sections.tex}}%
-         }%
+   \ifnum #1>0\bibpaperfont\uppercase{\papertxt}\nobreakspace#1\\[1ex]\fi
+   \bibpapertitlefont\uppercase{#2}\\%
    \end{center}%
 }
 
@@ -1091,6 +1087,7 @@
 \thispagestyle{empty}%
 \setcounter{paper}{#1}%
 \setcounter{secnum}{0}%
+\setcounter{uminitocnum}{0}
 \bibpaperdisplay{#1}{#2}%
  \ubookdescr{p#1}{
    toc={\makebox[\numw][r]{#1.\,}\makebox[\txtw][l]{#2\bibdf}},
@@ -1099,51 +1096,78 @@
    abbr={p#1}
 }%
 \fancyhead[CO]{\bibheadfont\MakeUppercase{#2}}%
-\bib@raise@anchor{\bibpdfbookmark[2]{0. #2}{p#1_0}}%
 }
 
 \newcommand{\parti}{%
-\tunemarkup{beforepartnewpage}{\newpage}%
-\thispagestyle{empty}%
-\vspace*{\stretch{0.1}}%
-{\parttitlefont\parttitlefontsize\partitxt\\\partiup\\[2ex]}
-\begin{center}\subfont\partisub\end{center}%
-\vspace*{\stretch{0.4}}%
-\begin{center}\includegraphics[width=0.8\columnwidth]{images/Blake-The-Ancient-of-Days.jpg}\end{center}
-\vspace*{\stretch{0.4}}%
-\bibpart{\partitxt. \partiup}{\partimix}{pt1}%
-\tunemarkup{afterpartnewpage}{\newpage}%
+  \newpage
+  \thispagestyle{empty}%
+  \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
+  \vspace*{\stretch{0.1}}%
+  \begin{center}%
+  {%
+    \parttitlefont\parttitlefontsize
+    \partitxt\\[1ex]
+    \partiup\\[2ex]
+  }%
+  \subfont\partisub\\%
+  \vspace*{\stretch{0.3}}%
+  \includegraphics[width=0.6\columnwidth]{images/Blake-The-Ancient-of-Days.jpg}%
+  \vspace*{\stretch{0.3}}%
+  \end{center}%
+  \newpage
 }
 
 \newcommand{\partii}{%
-\tunemarkup{beforepartnewpage}{\newpage}%
-\thispagestyle{empty}%
-\vspace*{\stretch{0.1}}%
-{\parttitlefont\parttitlefontsize\partiitxt\\\partiiup\\[2ex]}
-\begin{center}\subfont\partiisub\end{center}%
-\vspace*{\stretch{0.9}}%
-\bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
-\tunemarkup{afterpartnewpage}{\newpage}%
+  \newpage
+  \thispagestyle{empty}%
+  \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
+  \vspace*{\stretch{0.1}}%
+  \begin{center}%
+  {%
+    \parttitlefont\parttitlefontsize
+    \partiitxt\\[1ex]
+    \partiiup\\[2ex]
+  }%
+  \subfont\partiisub\\
+  \end{center}%
+  \vspace*{\stretch{0.5}}%
+  \newpage
 }
 
 \newcommand{\partiii}{%
-\tunemarkup{beforepartnewpage}{\newpage}%
-\thispagestyle{empty}%
-\vspace*{\stretch{0.1}}%
-{\parttitlefont\parttitlefontsize\partiiitxt\\\partiiiup\\[2ex]}
-\begin{center}\subfont\partiiisub\end{center}%
-\vspace*{\stretch{0.9}}%
-\bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
-\tunemarkup{afterpartnewpage}{\newpage}%
+  \newpage
+  \thispagestyle{empty}%
+  \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
+  \vspace*{\stretch{0.1}}%
+  \begin{center}%
+  {%
+    \parttitlefont\parttitlefontsize
+    \partiiitxt\\[1ex]
+    \partiiiup\\[2ex]
+  }%
+  \subfont\partiiisub\\
+  \end{center}%
+  \vspace*{\stretch{0.5}}%
+  \newpage
 }
 
 \newcommand{\partiv}{%
-\tunemarkup{beforepartnewpage}{\newpage}%
-\thispagestyle{empty}%
-\vspace*{\stretch{0.1}}%
-{\parttitlefont\parttitlefontsize\partivtxt\\\partivup\\[2ex]}
-\begin{center}\subfont\partivsubone\\[2ex]\partivsubtwo\end{center}%
-\vspace*{\stretch{0.9}}%
-\bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
-\tunemarkup{afterpartnewpage}{\newpage}%
+  \newpage
+  \thispagestyle{empty}%
+  \bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
+  \vspace*{\stretch{0.1}}%
+  \begin{center}%
+  {%
+    \parttitlefont\parttitlefontsize
+    \partivtxt\\[1ex]
+    \partivup\\[2ex]
+  }%
+  \subfont
+  \partivsubone\\[1ex]%
+  \partivsubtwo\\%
+  \vspace*{\stretch{0.3}}%
+  \tunemarkup{private}{\includegraphics[width=0.6\columnwidth]{images/Cosmic-Jesus.jpg}}%
+  \vspace*{\stretch{0.3}}%
+  \end{center}%
+  \newpage
 }
