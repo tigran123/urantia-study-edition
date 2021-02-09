@@ -102,7 +102,7 @@ function build_all()
     do
        set_pg${fmt}
        echo -n "$fmt: "
-       make vclean
+       make clean
        make -s
        if [ $? -eq 0 ] ; then
          mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
