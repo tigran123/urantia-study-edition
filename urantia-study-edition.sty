@@ -135,8 +135,7 @@
 % allow inter-paragraph space to grow
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
 
-\setmainfont[WordSpace={1.2,2.5,1.0},Mapping=tex-text]{\urantiamainfont}
-%\setmainfont[WordSpace={1.0,4.0,0.1},Color=000001,Mapping=tex-text]{\urantiamainfont} % WordSpace takes effect only if Color != 000000 for some reason, so we use \fontspec instead
+\setmainfont[WordSpace={1.0,1.6,1.0},Mapping=tex-text]{\urantiamainfont}
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
@@ -819,7 +818,7 @@
 }
 
 \tunemarkup{pgnexus10}{%
-\tolerance=9999
+\tolerance=500
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \setcounter{DefaultLines}{3}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
@@ -845,11 +844,12 @@
 \newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{11}{13}\selectfont}
 \setlength{\minitocafterskip}{-0.15ex}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{17/19}
-\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{14}{16}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\large\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\normalsize\bfseries}
+\renewcommand{\subtitlefont}{\sectiontitlefont\fontsize{15}{19}\selectfont}
+\newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{16.5/19}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+\renewcommand{\bibfnchapsize}{\headerfont\normalsize\bfseries}
+\renewcommand{\bibfnvssize}{\headerfont\small\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{26}{8}\selectfont}%
 }
 
@@ -1107,9 +1107,7 @@
     \partiup\\[2ex]
   }%
   \subfont\partisub\\%
-  \vspace*{\stretch{0.3}}%
-  \includegraphics[width=0.6\columnwidth]{images/Blake-The-Ancient-of-Days.jpg}%
-  \vspace*{\stretch{0.3}}%
+  \vspace*{\stretch{0.5}}%
   \end{center}%
   \newpage
 }
@@ -1162,9 +1160,7 @@
   \subfont
   \partivsubone\\[1ex]%
   \partivsubtwo\\%
-  \vspace*{\stretch{0.3}}%
-  \tunemarkup{private}{\includegraphics[width=0.6\columnwidth]{images/Cosmic-Jesus.jpg}}%
-  \vspace*{\stretch{0.3}}%
+  \vspace*{\stretch{0.5}}%
   \end{center}%
   \newpage
 }
