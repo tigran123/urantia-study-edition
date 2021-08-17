@@ -59,8 +59,8 @@ function set_pg5in()
 
 function set_pg7in()
 {
-    set_tags "coverimage afterpartnewpage papernewpage garamond pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10 pgthinmob"
+    set_tags "afterpartnewpage papernewpage garamond pgkoboaurahd"
+    unset_tags "coverimage beforepartnewpage noquiz pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10 pgthinmob"
 }
 
 function set_pg8in()
@@ -90,8 +90,8 @@ function set_pgtablet()
 
 function set_pgA4()
 {
-    set_tags "coverimage afterpartnewpage papernewpage noquiz basker pgafour"
-    unset_tags "beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
+    set_tags "afterpartnewpage papernewpage noquiz basker pgafour"
+    unset_tags "coverimage beforepartnewpage pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
 }
 
 function build_all()
