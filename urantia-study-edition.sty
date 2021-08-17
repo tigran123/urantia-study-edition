@@ -26,8 +26,8 @@
 \patchcmd{\thebibliography}{\chapter*}{\section*}{}{}
 
 % various font families
-%\tunemarkuptag{basker}
-\tunemarkuptag{garamond}
+\tunemarkuptag{basker}
+%\tunemarkuptag{garamond}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -50,14 +50,11 @@
 % comment out to disable fancy lettrine letters
 %\tunemarkuptag{fancylettrine}
 
-% comment out to disable Introduction
-\tunemarkuptag{introinclude}
-
 % comment out to disable cover image
 %\tunemarkuptag{coverimage}
 
 % comment out to enable Cosmic Citizenship Quiz
-%\tunemarkuptag{noquiz}
+\tunemarkuptag{noquiz}
 
 \setdefaultlanguage{english}
 
@@ -78,9 +75,9 @@
 \tunemarkup{basker}{%
 \def\urantiamainfont{Baskerville 10 Pro}
 \def\urantiaparttitlefont{GoudyHandtooled BT}
-\def\urantiaauthorfont{PF DaVinci Script Pro}
+\def\urantiaauthorfont{Baskerville 10 Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
-\def\urantiaheaderfont{Arial Narrow}
+\def\urantiaheaderfont{Baskerville 10 Pro}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Baskerville 10 Pro}
 }
@@ -117,7 +114,7 @@
 \tunemarkup{pgauraone}{\RequirePackage[dvips,headheight=19pt,headsep=4pt,vmargin={0.25in,0.25in},hmargin={0.07in},twoside=true,papersize={118.0mm,158.0mm}]{geometry}}
 
 % A4 for printed PDF to fit in 2x740 pages
-\tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,vmargin={0.5in,0.5in},hmargin={0.7in,0.5in},twoside=true,a4paper]{geometry}}
+\tunemarkup{pgafour}{\RequirePackage[dvips,headheight=20pt,headsep=7pt,margin=0.5in,twoside=true,a4paper]{geometry}}
 
 % Crown Quart for printing in 3 volumes
 \tunemarkup{pgcrownq}{\RequirePackage[dvips,headheight=12.8pt,headsep=2pt,vmargin={0.4in,0.45in},hmargin={0.8in,0.4in},twoside=true,papersize={7.444in,9.681in}]{geometry}}
@@ -138,7 +135,7 @@
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
-\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=1.2,Mapping=tex-text]{\urantiaheaderfont}
+\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 \newfontfamily\explfont[Mapping=tex-text]{\urantiaexplfont}
@@ -664,6 +661,9 @@
 % for mini-TOC of each paper
 \newcounter{uminitocnum}
 
+\tunemarkuptwo{pgafour}{%
+\newcommand{\uminitoc}[1]{}%
+}{%
 \newcommand{\uminitoc}[1]{%
    {%
     \stepcounter{uminitocnum}%
@@ -672,6 +672,7 @@
     \makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}%
     \makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-0.5ex]%
    }%
+}
 }
 
 % for TOC entries horizontal spacing
@@ -921,10 +922,11 @@
 }
 
 \tunemarkup{pgafour}{%
-\tolerance=9999
-\setcounter{DefaultLines}{4}
+\tolerance=200
+\def\pc{{\fontsize{9}{0}\selectfont§§}\kern4pt}
+\setcounter{DefaultLines}{3}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{18}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{10}{10}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
@@ -932,24 +934,24 @@
 \definecolor{ubdarkblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{48}{48}\selectfont ahb}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{38}{38}\selectfont ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{10.9}{14}\selectfont}
 \newcommand{\subfont}{\fontsize{16}{21}\itshape}
 \newcommand{\parttitlefontsize}{\fontsize{22}{26}\selectfont}
-\renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{12}{15}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
 \newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
 \newcommand{\urantiamainfontsize}{14/17}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{16}{19}\selectfont}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{18}{19}\bfseries}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{15}{15}\selectfont}
+\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{15}{19}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibfnchapsize}{\large\bfseries}
-\renewcommand{\bibfnvssize}{\normalsize\bfseries}
+\renewcommand{\bibfnchapsize}{\normalsize\bfseries}
+\renewcommand{\bibfnvssize}{\small\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \setlength{\minitocafterskip}{-0.5ex}
 }
@@ -1095,7 +1097,7 @@
 }
 
 \newcommand{\parti}{%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
   \thispagestyle{empty}%
   \bibpart{\partitxt. \partiup}{\partimix}{pt1}%
   \vspace*{\stretch{0.1}}%
@@ -1108,11 +1110,11 @@
   \subfont\partisub\\%
   \vspace*{\stretch{0.5}}%
   \end{center}%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
 }
 
 \newcommand{\partii}{%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
   \thispagestyle{empty}%
   \bibpart{\partiitxt. \partiiup}{\partiimix}{pt2}%
   \vspace*{\stretch{0.1}}%
@@ -1125,11 +1127,11 @@
   \subfont\partiisub\\
   \end{center}%
   \vspace*{\stretch{0.5}}%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
 }
 
 \newcommand{\partiii}{%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
   \thispagestyle{empty}%
   \bibpart{\partiiitxt. \partiiiup}{\partiiimix}{pt3}%
   \vspace*{\stretch{0.1}}%
@@ -1142,11 +1144,11 @@
   \subfont\partiiisub\\
   \end{center}%
   \vspace*{\stretch{0.5}}%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
 }
 
 \newcommand{\partiv}{%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
   \thispagestyle{empty}%
   \bibpart{\partivtxt. \partivup}{\partivmix}{pt4}%
   \vspace*{\stretch{0.1}}%
@@ -1161,5 +1163,5 @@
   \partivsubtwo\\%
   \vspace*{\stretch{0.5}}%
   \end{center}%
-  \newpage
+  \tunemarkuptwo{pgafour}{\clp}{\newpage}
 }
