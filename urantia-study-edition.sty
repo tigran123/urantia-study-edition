@@ -84,7 +84,7 @@
 \def\urantiaparttitlefont{GoudyHandtooled BT}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
-\def\urantiaheaderfont{Arial Narrow}
+\def\urantiaheaderfont{Garamond Premier Pro Medium Caption}
 \def\urantiaheadingfont{Arial Narrow Bold}
 \def\urantiaexplfont{Garamond Premier Pro Medium Italic}
 }
@@ -648,8 +648,8 @@
  \def\fnc#1{}
  \def\fnst#1{}
 }{%
- \def\fnc#1{\r{}\stepcounter{nfnc}\fn{#1}}
- \def\fnst#1{\ignorespaces$^*$\stepcounter{nfnst}\fn{#1}}
+ \def\fnc#1{\stepcounter{nfnc}\footnote{#1}}
+ \def\fnst#1{\stepcounter{nfnst}\footnote{#1}}
 }
 
 % for mini-TOC of each paper
@@ -662,9 +662,7 @@
    {%
     \stepcounter{uminitocnum}%
     \bibsectitlefont
-    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}%
-    \makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}%
-    \makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\%
+    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-2ex]%
    }%
 }
 }
@@ -737,7 +735,6 @@
 \tunemarkup{pgkoboaurahd}{%
 \tolerance=3000
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
-\setcounter{DefaultLines}{2}
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
@@ -758,10 +755,10 @@
 \newcommand{\parttitlefontsize}{\Large}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{11}{11}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{7.7}{14}\selectfont}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9}{9}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{18}\selectfont}
-\newcommand{\urantiamainfontsize}{16/18}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
+\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{8}{8}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
+\newcommand{\urantiamainfontsize}{17/19}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \renewcommand{\bibfnchapsize}{\headerfont\normalsize\bfseries}
 \renewcommand{\bibfnvssize}{\headerfont\small\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%

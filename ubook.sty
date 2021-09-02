@@ -41,19 +41,7 @@
 \newcommand{\bibpage}{\pagename}
 \newcommand{\bibcontname}{The Titles of the Papers}
 
-   \long\def\makefootnoteparagraph{\unvbox\footins \makehboxofhboxes
-    \setbox\FN@tempboxa=\hbox{\unhbox\FN@tempboxa \removehboxes}
-    \hsize\textwidth
-    \@parboxrestore
-    \baselineskip=\footnotebaselineskip
-    \noindent
-    \rule{\z@}{\footnotesep}%
-    \unhbox\FN@tempboxa\par
-  }
-  \long\def\@makefntext#1{\leavevmode
-    \@makefnmark\nobreak
-    #1% removed \hskip.5em\relax before #1
-  }
+\long\def\@makefntext#1{\leavevmode\@makefnmark\nobreak\hskip.3em\relax#1}
 
 \RequirePackage{lettrine}
 \setcounter{DefaultLines}{3}
@@ -229,9 +217,6 @@
 \bibnewmark{book}
 
 \newcommand{\clp}{\clearpage{\pagestyle{empty}\cleardoublepage}}
-
-\def\@makefnmark{}
-
 \def\bibdf{\leaders\hbox to 0.7em{\hss.\hss}\hfill}
 \DeclareTextCommandDefault{\textellipsis}{.\kern\fontdimen3\font.\kern\fontdimen3\font.} % corrected \textellipsis
 \newcommand*{\bibemph}[1]{\emph{#1}}
