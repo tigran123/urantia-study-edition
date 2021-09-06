@@ -662,7 +662,7 @@
    {%
     \stepcounter{uminitocnum}%
     \bibsectitlefont
-    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-2ex]%
+    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1ex]%
    }%
 }
 }
@@ -733,6 +733,7 @@
 }
 
 \tunemarkup{pgkoboaurahd}{%
+\setcounter{DefaultLines}{2}
 \tolerance=3000
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \renewcommand{\numw}{0.07\linewidth}
