@@ -18,7 +18,7 @@
 %\tunemarkuptag{pgkindledx}
 %\tunemarkuptag{pgkobomini}
 
-\RequirePackage[figure,curq,nfnst,nfnc]{totalcount}
+\RequirePackage[figure,curq,nfnst]{totalcount}
 \RequirePackage{caption}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
@@ -561,7 +561,6 @@
    \newpage
 }
 
-\newcounter{nfnc}
 \newcounter{nfnst}
 \newcounter{paperqcount}
 \newcounter{curq}
@@ -644,10 +643,8 @@
 \protected\def\print@vssup#1{\makebox[0.9em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.4em\relax}
 
 \tunemarkuptwo{nofnt}{%
- \def\fnc#1{}
  \def\fnst#1{}
 }{%
- \def\fnc#1{\stepcounter{nfnc}\footnote{#1}}
  \def\fnst#1{\stepcounter{nfnst}\footnote{#1}}
 }
 
@@ -675,10 +672,11 @@
 \def\pc{{\fontsize{13}{13}\selectfont§§}\kern3pt}
 
 \tunemarkup{pgkobomini}{%
-\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{14}{20}\selectfont}
+\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{12.6}{20}\selectfont}
 \newcommand{\offontsize}{\fontsize{10}{20}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{16.6}{20}\selectfont}
 \newcommand{\introfontsize}{\fontsize{16}{19}\selectfont}
+\newcommand{\infofontsize}{\fontsize{9}{10}\itshape}
 \tolerance=9999
 \setcounter{DefaultLines}{2}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
@@ -695,9 +693,7 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\Large ahb}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\large ahb}}
 \newcommand{\subfont}{\fontsize{13}{16}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\Large}
 \newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
@@ -713,6 +709,7 @@
 \newcommand{\offontsize}{\fontsize{9}{20}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{9}{20}\selectfont}
 \newcommand{\introfontsize}{\fontsize{16}{19}\selectfont}
+\newcommand{\infofontsize}{\fontsize{8}{10}\itshape}
 \tolerance=9999
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
@@ -726,8 +723,6 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large}
-\renewcommand{\bibfnvssize}{\headerfont\large}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge ahb}}
 \newcommand{\subfont}{\fontsize{10}{9}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\large}
@@ -740,10 +735,11 @@
 }
 
 \tunemarkup{pgkoboaurahd}{%
-\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{15}{20}\selectfont}
+\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{14}{20}\selectfont}
 \newcommand{\offontsize}{\fontsize{12}{20}\selectfont}
-\newcommand{\booksubtitlefontsize}{\fontsize{20}{23}\selectfont}
+\newcommand{\booksubtitlefontsize}{\fontsize{18}{23}\selectfont}
 \newcommand{\introfontsize}{\fontsize{16}{18}\selectfont}
+\newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
 \setcounter{DefaultLines}{2}
 \tolerance=3000
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
@@ -771,8 +767,6 @@
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\normalsize\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\small\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
 
@@ -780,6 +774,7 @@
 \newcommand{\booktitlefontsize}{\parttitlefont\fontsize{15}{20}\selectfont}
 \newcommand{\offontsize}{\fontsize{12}{20}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{20}{22}\selectfont}
+\newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
 \tolerance=3000
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
@@ -796,8 +791,6 @@
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubred}{rgb}{0.0, 0.0, 0.0}
-\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\Large ahb}}
 \newcommand{\subfont}{\fontsize{15}{18}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
@@ -816,6 +809,7 @@
 \newcommand{\offontsize}{\fontsize{14}{28}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{23}{30}\selectfont}
 \newcommand{\introfontsize}{\fontsize{17}{19}\selectfont}
+\newcommand{\infofontsize}{\fontsize{12}{16}\itshape}
 \tolerance=500
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \setcounter{DefaultLines}{3}
@@ -844,16 +838,15 @@
 \newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{16.5/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\normalsize\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\small\bfseries}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{26}{8}\selectfont}%
 }
 
 \tunemarkup{pgthinmob}{%
-\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{13.5}{20}\selectfont}
+\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{12.1}{20}\selectfont}
 \newcommand{\offontsize}{\fontsize{10}{20}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{16}{20}\selectfont}
 \newcommand{\introfontsize}{\fontsize{15}{18}\selectfont}
+\newcommand{\infofontsize}{\fontsize{8}{10}\itshape}
 \tolerance=9999
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
@@ -863,7 +856,7 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
 \definecolor{ubred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubblue}{ahb}}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\large\textcolor{ubblue}{ahb}}}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{15}{17}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
@@ -876,8 +869,6 @@
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
 \newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9}{12}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -886,10 +877,11 @@
 
 
 \tunemarkup{pgnexus7}{%
-\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{13.5}{20}\selectfont}
+\newcommand{\booktitlefontsize}{\parttitlefont\fontsize{12.1}{20}\selectfont}
 \newcommand{\offontsize}{\fontsize{10}{20}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{16}{20}\selectfont}
 \newcommand{\introfontsize}{\fontsize{15}{18}\selectfont}
+\newcommand{\infofontsize}{\fontsize{8}{10}\itshape}
 \tolerance=9999
 \setcounter{DefaultLines}{2}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
@@ -900,7 +892,7 @@
 \definecolor{ubgreen}{rgb}{0.0, 0.4, 0.0}
 \definecolor{ubred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.8}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\huge\textcolor{ubgreen}{ahb}}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\large\textcolor{ubgreen}{ahb}}}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{13}{15}\selectfont}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{15}{17}\bfseries}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.2}{7.2}\selectfont}
@@ -913,8 +905,6 @@
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
 \newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9}{12}\selectfont}
-\renewcommand{\bibfnchapsize}{\headerfont\Large\bfseries}
-\renewcommand{\bibfnvssize}{\headerfont\large\bfseries}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -926,6 +916,7 @@
 \newcommand{\offontsize}{\fontsize{24}{34}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{34}{38}\selectfont}
 \newcommand{\introfontsize}{\fontsize{16}{19}\selectfont}
+\newcommand{\infofontsize}{\large\itshape}
 \tolerance=200
 \def\pc{{\fontsize{9}{0}\selectfont§§}\kern4pt}
 \setcounter{DefaultLines}{3}
@@ -937,7 +928,7 @@
 \definecolor{ubred}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ublinkcolor}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubpagecolor}{rgb}{1.0, 1.0, 1.0}
-\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{38}{38}\selectfont ahb}}
+\newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{30}{30}\selectfont ahb}}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocfont}{\fontsize{10.9}{14}\selectfont}
 \newcommand{\subfont}{\fontsize{16}{21}\itshape}
@@ -953,8 +944,6 @@
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibfnchapsize}{\normalsize\bfseries}
-\renewcommand{\bibfnvssize}{\small\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 }
 
@@ -962,6 +951,7 @@
 \newcommand{\offontsize}{\parttitlefont\fontsize{24}{34}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{30}{38}\selectfont}
 \newcommand{\introfontsize}{\fontsize{14}{17}\selectfont}
+\newcommand{\infofontsize}{\Large\itshape}
 \tolerance=9999
 \setcounter{DefaultLines}{2}
 \renewcommand{\authorfont}{\fontsize{10.1}{9}\bfseries\itshape}%
@@ -987,8 +977,6 @@
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibfnchapsize}{\large\bfseries}
-\renewcommand{\bibfnvssize}{\normalsize\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 }
 
@@ -997,6 +985,7 @@
 \newcommand{\offontsize}{\fontsize{16.5}{32}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{25}{32}\selectfont}
 \newcommand{\introfontsize}{\fontsize{17}{21}\selectfont}
+\newcommand{\infofontsize}{\fontsize{10}{12}\itshape}
 \tolerance=9999
 \renewcommand{\quizlink}{}
 \definecolor{ubblue}{rgb}{0.0, 0.0, 0.0}
@@ -1021,8 +1010,6 @@
 \renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibfnchapsize}{\Large\bfseries}
-\renewcommand{\bibfnvssize}{\large\bfseries}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
