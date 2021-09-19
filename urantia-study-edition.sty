@@ -130,10 +130,10 @@
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
 
 \setmainfont[WordSpace={1.0,1.6,1.0},Mapping=tex-text]{\urantiamainfont}
-\newfontfamily\titlefont[Letters=Uppercase,LetterSpace=1.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
+\newfontfamily\titlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
-\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,Mapping=tex-text]{\urantiaheaderfont}
+\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=3.0,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 
@@ -655,11 +655,8 @@
 \newcommand{\uminitoc}[1]{}%
 }{%
 \newcommand{\uminitoc}[1]{%
-   {%
-    \stepcounter{uminitocnum}%
-    \bibsectitlefont
-    \makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1ex]%
-   }%
+   \stepcounter{uminitocnum}%
+   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\}%
 }
 }
 
@@ -752,8 +749,12 @@
 \newcommand{\subsubtitlefontsize}{\fontsize{11}{13}\itshape}
 \newcommand{\introfontsize}{\fontsize{16}{18}\selectfont}
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
+\renewcommand{\uminitoc}[1]{%
+   \stepcounter{uminitocnum}%
+   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.5ex]}%
+}
 \def\phoenixscale{0.16}
-\setcounter{DefaultLines}{2}
+\setcounter{DefaultLines}{3}
 \tolerance=3000
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \renewcommand{\numw}{0.07\linewidth}
@@ -790,6 +791,10 @@
 \newcommand{\booksubtitlefontsize}{\fontsize{20}{23}\selectfont}
 \newcommand{\subsubtitlefontsize}{\fontsize{12}{14}\itshape}
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
+\renewcommand{\uminitoc}[1]{%
+   \stepcounter{uminitocnum}%
+   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.2ex]}%
+}
 \def\phoenixscale{0.17}
 \tolerance=3000
 \renewcommand{\numw}{0.07\linewidth}
