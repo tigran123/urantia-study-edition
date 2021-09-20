@@ -66,7 +66,6 @@
 
 \RequirePackage{amsmath,amsfonts,amssymb}
 \renewcommand{\vec}[1]{\boldsymbol{#1}}
-
 \renewcommand{\r}{\kern2pt\raisebox{1.5ex}{\circle{2}}}
 
 \def\urantiaheadingfont{Arial Narrow Bold}
@@ -80,14 +79,12 @@
 \def\urantiamainfont{Baskerville 10 Pro}
 \def\urantiaauthorfont{Baskerville 10 Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
-\def\urantiaheaderfont{Baskerville 10 Pro}
 }
 
 \tunemarkup{garamond}{%
 \def\urantiamainfont{Garamond Premier Pro}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
-\def\urantiaheaderfont{Garamond Premier Pro Semibold Caption}
 }
 
 % Samsung Galaxy A70 20:9 aspect ratio
@@ -132,8 +129,6 @@
 \setmainfont[WordSpace={1.0,1.6,1.0},Mapping=tex-text]{\urantiamainfont}
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
-\newfontfamily\headerfont[WordSpace=2.4,Letters=Uppercase,LetterSpace=2.0,Mapping=tex-text]{\urantiaheaderfont}
-\newfontfamily\sectiontitlefont[WordSpace=2.0,Letters=Uppercase,LetterSpace=3.0,Mapping=tex-text]{\urantiaheaderfont}
 \newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 
@@ -220,7 +215,7 @@
      \makebox[0.05\linewidth][r]{#1. }%
      \makebox[0.57\linewidth][l]{#2\bibdf}%
      \makebox[0.29\linewidth][l]{#3\bibdf}%
-     \makebox[0.07\linewidth][r]{\headerfont\bibpr{#4}}%
+     \makebox[0.07\linewidth][r]{\bibpr{#4}}%
    }\vspace{0.6ex}\linebreak
 }
 
@@ -230,7 +225,7 @@
 \def\secname{#1}
     \stepcounter{secnum}%
     \par\raggedbottom\addtolength{\topskip}{0pt plus 20pt}\vspace*{1ex}%
-    {\centering\sectiontitlefont\parbox{\columnwidth}{\mdseries\centering\ifx\secname\ackn\itshape\uppercase{#1}\else\uppercase{\thesecnum.\bibnobreakspace #1}\fi}\\*[3pt]}%
+    {\centering\titlefont\parbox{\columnwidth}{\mdseries\centering\ifx\secname\ackn\itshape\uppercase{#1}\else\uppercase{\thesecnum.\bibnobreakspace #1}\fi}\\*[3pt]}%
 \def\bibnobreakspace{ }
     % XXX for section-level bookmarks uncomment the following line and comment the one after
     \ifx\secname\ackn\else\bib@raise@anchor{\bibpdfbookmark[2]{\thesecnum. #1}{\bkname_\thechnum_\curr@vs}\label{p\thepaper_\thesecnum}\hypertarget{p\thepaper_\thesecnum}{}}\fi%
@@ -700,7 +695,7 @@
 \newcommand{\urantiamainfontsize}{18/20}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{7}{7}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{7}{7}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 }
 
@@ -734,7 +729,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{10}{14}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{6}{12}\selectfont}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{8}{9}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
 \newcommand{\urantiamainfontsize}{14/17}
@@ -751,7 +746,7 @@
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
 \renewcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
-   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.5ex]}%
+   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.6ex]}%
 }
 \def\phoenixscale{0.16}
 \setcounter{DefaultLines}{3}
@@ -777,7 +772,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{11}{11}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{7.7}{15}\selectfont}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{8}{8}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{7.5}{7.5}\selectfont}
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -817,7 +812,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{12}{12}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9.5}{10}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{9.0}{9.0}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{15}{17}\selectfont}
 \newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
 \newcommand{\urantiamainfontsize}{18/20}
@@ -856,9 +851,9 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{11}{13}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{10.4}{10.4}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
-\renewcommand{\subtitlefont}{\sectiontitlefont\fontsize{15}{19}\selectfont}
+\renewcommand{\subtitlefont}{\titlefont\fontsize{15}{19}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{16.5/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -875,7 +870,7 @@
 \newcommand{\infofontsize}{\fontsize{8}{10}\itshape}
 \def\phoenixscale{0.2}
 \tolerance=9999
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
 %\pagecolor{ubpagebg}
@@ -895,7 +890,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{9}{12}\selectfont}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -913,7 +908,7 @@
 \def\phoenixscale{0.2}
 \tolerance=9999
 \setcounter{DefaultLines}{2}
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
 %\pagecolor{ubpagebg}
@@ -933,7 +928,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{9}{12}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{9}{12}\selectfont}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -952,7 +947,7 @@
 \tolerance=200
 \def\pc{{\fontsize{9}{0}\selectfont§§}\kern4pt}
 \setcounter{DefaultLines}{3}
-\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\headerfont\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
+\protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{10}{10}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubblue}{rgb}{0.0, 0.0, 0.0}
@@ -971,7 +966,7 @@
 \newcommand{\urantiamainfontsize}{14/17}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{16}{19}\selectfont}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{18}{19}\bfseries}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{15}{19}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{15}{19}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{13.0}{13.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -1006,7 +1001,7 @@
 \renewcommand{\urantiamainfontsize}{13.9/16}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{17}{20}\bfseries}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{21}{22}\bfseries}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{15}{15}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{15}{15}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{12.0}{12.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -1042,7 +1037,7 @@
 \newcommand{\urantiamainfontsize}{17/19}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{15.0}{18}\bfseries}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{16.0}{19.0}\bfseries}
-\newcommand{\bibsectitlefont}{\sectiontitlefont\fontsize{10}{10}\selectfont}
+\newcommand{\bibsectitlefont}{\titlefont\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{9.6}{9.6}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
