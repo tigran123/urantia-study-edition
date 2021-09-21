@@ -220,16 +220,12 @@
 \include{tex/p194}
 \include{tex/p195}
 \include{tex/p196}
-\tunemarkuptwo{noquiz}{}{\include{tex/quiz}}
+\tunemarkuptwo{noquiz}{}{\include{tex/quiz}\pagestyle{fancy}}
+\normalsize
 \iftotalfigures
-  \clp
-  \fancyhead[C]{\bibheadfont LIST OF FIGURES}
-  \bibpdfbookmark{LIST OF FIGURES}{fig}%
-  \normalsize\listoffigures
+  \clp\fancyhead[C]{\bibheadfont LIST OF FIGURES}\bibpdfbookmark{LIST OF FIGURES}{fig}%
+  \listoffigures
 \fi
-\clp
-\fancyhead[C]{TOPICAL INDEX}
-\bibpdfbookmark[0]{Topical Index}{Idx}
-\indexfontsize
+\clp\fancyhead[C]{\bibheadfont TOPICAL INDEX}\bibpdfbookmark[0]{Topical Index}{Idx}
 \printindex
 \end{document}
