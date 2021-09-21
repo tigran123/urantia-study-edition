@@ -270,7 +270,7 @@
 
 \def\fn#1{%
   \leavevmode\unskip
-  \stepcounter{nnotes}%
+  \stepcounter{nnotes}\ts{*}%
   \ifnum\c@nnotes=1 % first note in this chapter
       \bib@footnotetext{%
         {\bibfnchapsize\thechnum.}{\bibfnvssize\curr@vs}.\nobreakspace#1}%
@@ -367,3 +367,34 @@
 \RequirePackage{datetime}
 \def\DTtoday{\formatdate{\day}{\month}{\year}}
 \def\shorttoday{{\shortdate\showdowfalse\formatdate{\day}{\month}{\year}}}
+
+\newcommand{\switchtobible}{%
+\parvsfalse%
+\def\@makefnmark{}%
+\def\bibchap{\ifnum\c@chnum>1\noindent\doublebox{\normalfont\large\bfseries\thechnum}\nobreakspace\fi}%
+\setlength{\vstotal}{0.3em}
+\setlength{\vskern}{0.2em}
+}
+\newcommand{\bibbook}[4]{%
+  \@ifnextchar[{\@bibbook{#1}{#2}{#3}{#4}}{\@bibbook{#1}{#2}{#3}{#4}[#3]}%
+}
+\def\@bibbook#1#2#3#4[#5]{%
+  % #1 title to go on the first page.
+  % #2 title to go into the heading.
+  % #3 title to go in the PDF bookmark.
+  % #4 anchor for references.
+  % #5 optional TOC entry, if absent then #3 (bookmark name) is used.
+  \newpage
+  \label{#4}%
+  \hypertarget{#4}{}%
+  \bibpdfbookmark[1]{#3}{#4}%
+  \fancyhead[C]{\bibheadfont\MakeUppercase{#2}}%
+  \@writebibtoc{\protect\bibtocline{bibbk}{#5}{#4}}%
+  \begin{center}\bibpapertitlefont\scshape #1\end{center}%
+  \thispagestyle{empty}%
+  \bibmark{book}{#2}%
+  \global\let\curr@ch\@empty
+  \bibbookend
+}
+\newcommand{\bibtitlemain}[1]{\begingroup\vspace{1ex}\Huge\bfseries\MakeUppercase{#1}\endgroup}
+\newcommand{\bibtheend}[1]{\begingroup\vfill\begin{center}\small#1\end{center}\null\vfill\endgroup}
