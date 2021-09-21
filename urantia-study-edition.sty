@@ -54,6 +54,9 @@
 % comment out to enable Cosmic Citizenship Quiz
 %\tunemarkuptag{noquiz}
 
+% comment out to not include the Bible text
+\tunemarkuptag{bible}
+
 \setdefaultlanguage{english}
 
 \newif\ifmultivol
@@ -636,7 +639,11 @@
 
 \newcommand{\hsetoff}{\hspace*{1em}}
 \newcommand{\vsetspace}{\vspace{1ex}}
-\protected\def\print@vssup#1{\makebox[0.9em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.4em\relax}
+\newlength{\vstotal}
+\setlength{\vstotal}{0.9em}
+\newlength{\vskern}
+\setlength{\vskern}{0.4em}
+\protected\def\print@vssup#1{\makebox[\vstotal][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern\vskern\relax}
 
 \tunemarkuptwo{nofnt}{%
  \def\fnst#1{}
