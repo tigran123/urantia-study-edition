@@ -19,7 +19,8 @@
 %\tunemarkuptag{pgkobomini}
 
 \RequirePackage[figure,curq,nfnst]{totalcount}
-\RequirePackage{caption}
+\RequirePackage{caption,imakeidx}
+\RequirePackage[columns=1,font=current]{idxlayout}
 \RequirePackage[\tunemarkup{pgkindledx}{doublecol,}\tunemarkup{pgafour}{doublecol,}\tunemarkup{pgcrownq}{doublecol,}parvs]{ubook}
 
 \RequirePackage{etoolbox}
@@ -130,7 +131,7 @@
 \setmainfont[WordSpace={1.0,1.6,1.0},Mapping=tex-text]{\urantiamainfont}
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
-\newfontfamily\headingfont[LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
+\newfontfamily\headingfont[Numbers=Lining,LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 
 %\newfontfamily\captionfont[Mapping=tex-text]{Linux Libertine O}
@@ -652,7 +653,7 @@
 }{%
 \newcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
-   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\}%
+   {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\}%
 }
 }
 
@@ -696,7 +697,7 @@
 \newcommand{\urantiamainfontsize}{18/20}
 \renewcommand{\bibtocheadfont}{\addfontfeature{LetterSpace=1.2}\fontsize{13}{15}\bfseries}
 \renewcommand{\bibtocfont}{\fontsize{10.5}{17}\selectfont}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{7}{7}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{7}{7}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 }
 
@@ -730,7 +731,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{10}{14}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{6}{12}\selectfont}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{8}{9}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{8}{9}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
 \newcommand{\urantiamainfontsize}{14/17}
@@ -747,7 +748,7 @@
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
 \renewcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
-   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.6ex]}%
+   {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.6ex]}%
 }
 \def\phoenixscale{0.16}
 \setcounter{DefaultLines}{3}
@@ -773,7 +774,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{11}{11}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{7.7}{15}\selectfont}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{7.5}{7.5}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{7.5}{7.5}\selectfont}
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
@@ -789,7 +790,7 @@
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
 \renewcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
-   {\bibsectitlefont\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.2ex]}%
+   {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.2ex]}%
 }
 \def\phoenixscale{0.17}
 \tolerance=3000
@@ -813,7 +814,7 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{12}{12}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{9.0}{9.0}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{9.0}{9.0}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{15}{17}\selectfont}
 \newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
 \newcommand{\urantiamainfontsize}{18/20}
@@ -823,6 +824,7 @@
 
 \tunemarkup{pgnexus10}{%
 \newcommand{\pdftype}{10" Colour}
+\newcommand{\indexfontsize}{\fontsize{19}{28}\selectfont}
 \newcommand{\booktitlefontsize}{\parttitlefont\fontsize{17.3}{28}\selectfont}
 \newcommand{\offontsize}{\fontsize{14}{28}\selectfont}
 \newcommand{\booksubtitlefontsize}{\fontsize{23}{30}\selectfont}
@@ -852,7 +854,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{10.4}{10.4}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{10.4}{10.4}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 \renewcommand{\subtitlefont}{\titlefont\fontsize{15}{19}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
@@ -891,7 +893,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{9}{12}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{9}{12}\selectfont}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -929,7 +931,7 @@
 \renewcommand{\bibheadpagesize}{\fontsize{8}{8}\selectfont}
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{9}{12}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{9}{12}\selectfont}
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
@@ -967,7 +969,7 @@
 \newcommand{\urantiamainfontsize}{14/17}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{16}{19}\selectfont}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{18}{19}\bfseries}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{15}{19}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{15}{19}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{11.0}{11.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -1002,7 +1004,7 @@
 \renewcommand{\urantiamainfontsize}{13.9/16}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{17}{20}\bfseries}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{21}{22}\bfseries}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{15}{15}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{15}{15}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{10}{10}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{12.0}{12.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{10}{10}\selectfont}
@@ -1038,7 +1040,7 @@
 \newcommand{\urantiamainfontsize}{17/19}
 \newcommand{\bibpaperfont}{\titlefont\fontsize{15.0}{18}\bfseries}
 \newcommand{\bibpapertitlefont}{\titlefont\fontsize{16.0}{19.0}\bfseries}
-\newcommand{\bibsectitlefont}{\titlefont\fontsize{10}{10}\selectfont}
+\newcommand{\minitocfontsize}{\headingfont\fontsize{10}{10}\selectfont}
 \renewcommand{\bibheadfont}{\headingfont\addfontfeature{LetterSpace=2.5}\fontsize{9.6}{9.6}\bfseries}
 \newcommand{\bibheadpapersize}{\fontsize{10.0}{10.0}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{9.5}{9.5}\selectfont}
@@ -1187,3 +1189,6 @@
   \end{center}%
   \tunemarkuptwo{pgafour}{\clp}{\newpage}
 }
+
+\renewcommand{\indexname}{Topical Index}
+\makeindex[title=\indexname]

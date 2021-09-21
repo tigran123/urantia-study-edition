@@ -223,7 +223,16 @@
 \tunemarkuptwo{noquiz}{}{\include{tex/quiz}}
 \iftotalfigures
   \clp
+  \fancyhead[C]{\bibheadfont LIST OF FIGURES}
   \bibpdfbookmark{LIST OF FIGURES}{fig}%
   \normalsize\listoffigures
 \fi
+\clp
+\makeatletter
+\bib@raise@anchor{\bibpdfbookmark[0]{Topical Index}{Idx}}%
+\makeatother
+\fancyhead[C]{\bibheadfont\MakeUppercase{\indexname}}
+%\bibpdfbookmark[0]{\indexname}{Idx}
+\indexfontsize
+\printindex
 \end{document}

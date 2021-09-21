@@ -1,23 +1,23 @@
 MOD = urantia-study-edition
-WORKDIR = $(TMPDIR)/$(MOD)
-LATEX = xelatex -output-directory=$(WORKDIR) -halt-on-error $(MOD) < /dev/null > /dev/null 2>&1
+SHELL = /bin/bash
+LATEX = xelatex -halt-on-error $(MOD) < /dev/null > /dev/null 2>&1
 
 all::		$(MOD).pdf
 
 .PHONY:		clean
 
 clean::		
-		@rm -rf $(WORKDIR) select-book.tex missfont.log $(MOD).pdf
+		@rm -f $(MOD)*.{aux,bibtoc,fnchk,idx,ilg,ind,lof,log,out,pdf} select-book.tex missfont.log
 
 $(MOD).pdf:	select-book.tex
-		@mkdir -p $(WORKDIR)
 		$(LATEX)
+		@mv $(MOD).pdf $(MOD)-1.pdf
 ifndef DRAFT
 		$(LATEX)
+		@mv $(MOD).pdf $(MOD)-2.pdf
 		$(LATEX)
-		@if test -s $(WORKDIR)/$(MOD).fnchk; then perl bin/fnchk.pl < $(WORKDIR)/$(MOD).fnchk; fi
+		@if test -s $(MOD).fnchk; then perl bin/fnchk.pl < $(MOD).fnchk; fi
 endif
-		@mv $(WORKDIR)/$(MOD).pdf .
 
 select-book.tex:	
 ifdef LIST
