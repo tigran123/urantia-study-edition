@@ -374,6 +374,32 @@
 \def\bibchap{\ifnum\c@chnum>1\noindent\doublebox{\normalfont\large\bfseries\thechnum}\nobreakspace\fi}%
 \setlength{\vstotal}{0.3em}
 \setlength{\vskern}{0.2em}
+\tunemarkuptwo{pgafour}{\clp}{\newpage}
+\vspace*{\stretch{0.1}}
+\thispagestyle{empty}
+\begin{center}
+\scshape
+\LARGE the\\
+\huge
+{\bfseries holy bible}\\*[1ex]
+\large
+containing the\\
+\LARGE
+old and new testaments\\*[2ex]
+\normalsize translated out of the original tongues\\[2pt]
+and with the former translations\\[2pt]
+diligently compared and revised\\[2pt]
+by his majesty's special command\\
+\vspace{\stretch{0.5}}
+\itshape Appointed to be read in Churches\\
+\vspace{\stretch{2}}
+\titlesepbig\\
+\end{center}
+\vspace*{\stretch{0.1}}
+
+\titleframe
+
+\newpage
 }
 \newcommand{\bibbook}[4]{%
   \@ifnextchar[{\@bibbook{#1}{#2}{#3}{#4}}{\@bibbook{#1}{#2}{#3}{#4}[#3]}%
