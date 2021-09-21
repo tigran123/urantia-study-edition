@@ -11,10 +11,8 @@ clean::
 
 $(MOD).pdf:	select-book.tex
 		$(LATEX)
-		@mv $(MOD).pdf $(MOD)-1.pdf
 ifndef DRAFT
 		$(LATEX)
-		@mv $(MOD).pdf $(MOD)-2.pdf
 		$(LATEX)
 		@if test -s $(MOD).fnchk; then perl bin/fnchk.pl < $(MOD).fnchk; fi
 endif
