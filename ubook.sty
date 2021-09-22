@@ -372,6 +372,12 @@
 \parvsfalse%
 \def\@makefnmark{}%
 \def\bibchap{\ifnum\c@chnum>1\noindent\doublebox{\normalfont\large\bfseries\thechnum}\nobreakspace\fi}%
+\def\vs@range{%
+  \@ifundefined{mark@vs@\thepage}{}{%
+    \bibheadpapersize\expandafter\expandafter\expandafter
+      \vs@range@a\csname mark@vs@\thepage\endcsname
+  }%
+}
 \setlength{\vstotal}{0.3em}
 \setlength{\vskern}{0.2em}
 \tunemarkuptwo{pgafour}{\clp}{\newpage}
