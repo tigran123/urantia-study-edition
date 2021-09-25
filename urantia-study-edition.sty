@@ -79,6 +79,7 @@
 \def\chinesefontname{Code2000}
 
 \tunemarkup{basker}{%
+\def\urantiamdheadingfont{Baskerville 10 Pro}
 \def\urantiaheadingfont{Baskerville 10 Pro}
 \def\urantiamainfont{Baskerville 10 Pro}
 \def\urantiaauthorfont{Baskerville 10 Pro}
@@ -86,6 +87,7 @@
 }
 
 \tunemarkup{garamond}{%
+\def\urantiamdheadingfont{Garamond Premier Pro Medium Caption}
 \def\urantiaheadingfont{Garamond Premier Pro Semibold Caption}
 \def\urantiamainfont{Garamond Premier Pro}
 \def\urantiaauthorfont{PF DaVinci Script Pro}
@@ -134,6 +136,8 @@
 \setmainfont[WordSpace={1.0,1.6,1.0},Mapping=tex-text]{\urantiamainfont}
 \newfontfamily\titlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiatitlefont}
 \newfontfamily\parttitlefont[Letters=Uppercase,LetterSpace=3.0,WordSpace=2.0,Mapping=tex-text]{\urantiaparttitlefont}
+\newfontfamily\tocparttitlefont[Letters=Uppercase,LetterSpace=2.0,WordSpace=1.0,Mapping=tex-text]{\urantiaparttitlefont}
+\newfontfamily\mdheadingfont[Numbers=Lining,LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiamdheadingfont}
 \newfontfamily\headingfont[Numbers=Lining,LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
 \newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 
@@ -169,7 +173,7 @@
 \newcommand{\upartheader}[1]{%
    \par\vspace{3ex}\pagebreak[3]%
    {
-   \titlefont\bibtocheadfont
+   \tocparttitlefont\bibtocheadfont
     \ifnum #1=1
        \partitxt.~\partiup
     \fi
@@ -188,7 +192,7 @@
 \newcommand{\upartheadercont}[1]{%
    \par\vspace{3ex}\pagebreak[3]%
    {
-   \titlefont\bibtocheadfont
+   \tocparttitlefont\bibtocheadfont
     \ifnum #1=1
        \partitxt.~\partiup~\textit{\continuedtxt}
     \fi
@@ -206,6 +210,7 @@
 
 \newcommand{\upapertitleheader}[3]{%
    \mbox{%
+     \headingfont
      \makebox[0.04\linewidth][c]{\#}%
      \makebox[0.58\linewidth][l]{\textsc{#1}}%
      \makebox[0.30\linewidth][l]{\textsc{#2}}%
@@ -216,6 +221,7 @@
 \newcommand{\upapertitle}[4]{%
    {
      \pagebreak[3]%
+     \mdheadingfont
      \makebox[0.05\linewidth][r]{#1. }%
      \makebox[0.57\linewidth][l]{#2\bibdf}%
      \makebox[0.29\linewidth][l]{#3\bibdf}%
@@ -701,7 +707,7 @@
 \newcommand{\urantiamainfontsize}{18/20}
 \newcommand{\bibtocsuperheadfont}{\fontsize{13}{13}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{10}{10}\selectfont}
-\renewcommand{\bibtocfont}{\fontsize{6.8}{9}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{6.5}{13}\selectfont}
 \newcommand{\minitocfontsize}{\headingfont\fontsize{7}{7}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 }
@@ -958,7 +964,7 @@
 \newcommand{\titlesepbig}{{\usefont{U}{webo}{xl}{n}\fontsize{24}{24}\selectfont ahb}}
 \newcommand{\bibtocsuperheadfont}{\fontsize{30}{30}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{19}{19}\mdseries}
-\renewcommand{\bibtocfont}{\fontsize{12.3}{20}\selectfont}
+\renewcommand{\bibtocfont}{\fontsize{14}{22}\selectfont}
 \newcommand{\subfont}{\fontsize{19}{24}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\fontsize{24}{24}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{12}{15}\selectfont}
