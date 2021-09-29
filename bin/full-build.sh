@@ -47,50 +47,50 @@ function unset_tags()
 function set_pg5in()
 {
     set_tags "bible afterpartnewpage papernewpage garamond pgkobomini"
-    unset_tags "beforepartnewpage noquiz basker pghanlin pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
+    unset_tags "beforepartnewpage noquiz basker baskerthin pghanlin pgcrownq pgkindledx pgkoboaurahd pgauraone pgafour pgnexus7 pgnexus10 pgthinmob"
 }
 
 function set_pg7in()
 {
     set_tags "bible afterpartnewpage papernewpage garamond pgkoboaurahd"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgafour basker pgnexus7 pgauraone pgnexus10 pgthinmob"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgafour basker baskerthin pgnexus7 pgauraone pgnexus10 pgthinmob"
 }
 
 function set_pg6in()
 {
     set_tags "bible afterpartnewpage papernewpage basker pghanlin"
-    unset_tags "beforepartnewpage noquiz pgcrownq pgkoboaurahd pgkobomini pgkindledx pgafour garamond pgnexus7 pgauraone pgnexus10 pgthinmob"
+    unset_tags "beforepartnewpage noquiz pgcrownq pgkoboaurahd pgkobomini pgkindledx pgafour garamond baskerthin pgnexus7 pgauraone pgnexus10 pgthinmob"
 }
 
 function set_pg8in()
 {
-    set_tags "bible afterpartnewpage papernewpage garamond pgauraone"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
+    set_tags "bible afterpartnewpage papernewpage baskerthin pgauraone"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx garamond basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
 }
 
 function set_pgthinmob()
 {
     set_tags "bible afterpartnewpage papernewpage ntroinclude garamond pgthinmob"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgnexus7"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker baskerthin pgauraone pgafour pgnexus10 pgnexus7"
 }
 
 
 function set_pgmobile()
 {
     set_tags "bible afterpartnewpage papernewpage ntroinclude garamond pgnexus7"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus10 pgthinmob"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker baskerthin pgauraone pgafour pgnexus10 pgthinmob"
 }
 
 function set_pgtablet()
 {
     set_tags "bible afterpartnewpage papernewpage ntroinclude garamond pgnexus10"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker pgauraone pgafour pgnexus7 pgthinmob"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx pgkoboaurahd basker baskerthin pgauraone pgafour pgnexus7 pgthinmob"
 }
 
 function set_pgA4()
 {
     set_tags "afterpartnewpage papernewpage noquiz basker pgafour"
-    unset_tags "bible beforepartnewpage pghanlin pgcrownq pgkobomini pgkindledx garamond pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
+    unset_tags "bible beforepartnewpage pghanlin pgcrownq pgkobomini pgkindledx garamond baskerthin pgkoboaurahd pgauraone pgnexus7 pgnexus10 pgthinmob"
 }
 
 function build_all()
