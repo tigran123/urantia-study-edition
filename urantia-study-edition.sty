@@ -81,7 +81,7 @@
 
 \tunemarkup{baskerthin}{%
 \def\urantiamdheadingfont{Baskerville 120 Pro}
-\def\urantiaheadingfont{Baskerville 120 Pro}
+\def\urantiaheadingfont{Baskerville 120 Pro Medium}
 \def\urantiamainfont{Baskerville 120 Pro}
 \def\urantiaauthorfont{Baskerville 120 Pro}
 \def\urantiatitlefont{Baskerville 120 Pro}
@@ -136,8 +136,8 @@
 % for typesetting fractions: 1/2, 1/6, etc.
 \newcommand{\bibfrac}[2]{{\addfontfeature{Fractions=On}#1/#2}}
 % for fonts which have no support for fractions uncomment these two lines
-\RequirePackage{nicefrac}
-\renewcommand{\bibfrac}[2]{\nicefrac{#1}{#2}}
+%\RequirePackage{nicefrac}
+%\renewcommand{\bibfrac}[2]{\nicefrac{#1}{#2}}
 
 % allow inter-paragraph space to grow
 \setlength{\parskip}{2pt plus 5pt minus 2pt}
@@ -834,8 +834,8 @@
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
 \newcommand{\minitocfontsize}{\headingfont\fontsize{8.2}{8.2}\selectfont}
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
-\newcommand{\bibbookend}{\fontsize{15}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{15/19}
+\newcommand{\bibbookend}{\fontsize{16}{19.5}\selectfont}
+\newcommand{\urantiamainfontsize}{16/19.5}
 \newcommand{\authorfont}{\authorfontfamily\fontsize{13}{13}\bfseries\itshape}%
 \newcommand{\introfontsize}{\bibbookend}
 }
