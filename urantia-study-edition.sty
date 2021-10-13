@@ -28,7 +28,6 @@
 
 % various font families
 %\tunemarkuptag{basker}
-%\tunemarkuptag{baskerthin}
 \tunemarkuptag{garamond}
 
 % comment out for NO page break BEFORE Part title
@@ -78,14 +77,6 @@
 \def\greekfontname{SBL Greek}
 \def\armenianfontname{ArTarumianGrqiBardzr_U}
 \def\chinesefontname{Code2000}
-
-\tunemarkup{baskerthin}{%
-\def\urantiamdheadingfont{Baskerville 120 Pro}
-\def\urantiaheadingfont{Baskerville 120 Pro Medium}
-\def\urantiamainfont{Baskerville 120 Pro}
-\def\urantiaauthorfont{Baskerville 120 Pro}
-\def\urantiatitlefont{Baskerville 120 Pro}
-}
 
 \tunemarkup{basker}{%
 \def\urantiamdheadingfont{Baskerville 10 Pro}
@@ -805,7 +796,7 @@
 \newcommand{\offontsize}{\fontsize{12}{20}\selectfont}
 \newcommand{\subsubtitlefontsize}{\fontsize{12}{14}\itshape}
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
-\def\pc{{\fontsize{9}{9}\selectfont§§}\kern2pt}
+\def\pc{{\fontsize{10}{10}\selectfont§§}\kern3pt}
 \renewcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
    {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.2ex]}%
@@ -832,11 +823,11 @@
 \newcommand{\bibtocsuperheadfont}{\fontsize{17}{17}\selectfont}
 \renewcommand{\bibtocheadfont}{\fontsize{12}{12}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
-\newcommand{\minitocfontsize}{\headingfont\fontsize{8.2}{8.2}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
-\newcommand{\bibbookend}{\fontsize{16}{19.5}\selectfont}
-\newcommand{\urantiamainfontsize}{16/19.5}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{13}{13}\bfseries\itshape}%
+\newcommand{\minitocfontsize}{\headingfont\fontsize{9.2}{9.2}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+\newcommand{\bibbookend}{\fontsize{17}{20}\selectfont}
+\newcommand{\urantiamainfontsize}{17/20}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{25}{25}\selectfont}%
 \newcommand{\introfontsize}{\bibbookend}
 }
 
