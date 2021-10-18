@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="6in thinmob mobile 5in 7in 8in A4 tablet"
+FORMATS="8in 6in thinmob mobile 5in 7in A4 tablet"
 
 function set_tag()
 {
@@ -65,7 +65,7 @@ function set_pg6in()
 function set_pg8in()
 {
     set_tags "bible afterpartnewpage papernewpage garamond pgauraone"
-    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx garamond basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
+    unset_tags "beforepartnewpage noquiz pghanlin pgcrownq pgkobomini pgkindledx basker pgafour pgnexus7 pgkoboaurahd pgnexus10 pgthinmob"
 }
 
 function set_pgthinmob()
