@@ -65,6 +65,8 @@ function convert_text($text) {
    $search = ['/\\\\pc /u',
               '/\\\\sum\\\\limits\_{k=1}\^7/u',
               '/\\\\bibnobreakspace/u',
+              '/\\\\nobreakspace/u',
+              '/\\\\kern0.3em /u',
               '/\\\\tunemarkup{pg[^}]*}{[^}]*}/u',
               '/\\\\index{[^}]*}/u',
               '/\\\\bibdf/u',
@@ -133,6 +135,8 @@ function convert_text($text) {
               '/\\\\tunemarkup{(pictures|private)}{.*images\/([^}]*)}.*\\\\caption{([^}]*)}\\\end{figure}}$/u'];
    $replace = ['§§ ',
                '∑<sub>k=1</sub><sup>7</sup>',
+               '',
+               '',
                '',
                '',
                '',
