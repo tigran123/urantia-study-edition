@@ -1,12 +1,12 @@
 <?php
 ini_set('memory_limit','300M');
 
-system("rm -rf 1 tex ; mkdir 1 tex ; cp ../tex/p???.tex tex");
+system("rm -rf 1 ; mkdir 1");
 
 $nfilename = "1/notes.html";
 
 for ($i = 0; $i <= 196; $i++) {
-   $ifilename = sprintf("tex/p%03d.tex", $i);
+   $ifilename = sprintf("../tex/p%03d.tex", $i);
    $ofilename = sprintf("1/p%03d.html", $i);
    $ilines = file($ifilename);
    $olines = [];
