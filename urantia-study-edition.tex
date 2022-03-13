@@ -18,7 +18,7 @@
 \tunemarkup{pgafour}{\clp\include{tex/paper-titles}}
 \tunemarkup{pgcrownq}{\include{tex/paper-titles}}
 \tunemarkuptwo{pgafour}{\clp}{}
-\include{tex/intro}
+\tunemarkuptwo{nointro}{}{\include{tex/intro}}
 \parti
 \include{tex/p000}
 \include{tex/p001}
@@ -292,6 +292,7 @@
 \include{tex/Jud}
 \include{tex/Rev}
 }
+\tunemarkuptwo{nofnt}{}{%
 \normalsize
 \iftotalfigures
   \clp\fancyhead[C]{\bibheadfont LIST OF FIGURES}\bibpdfbookmark{LIST OF FIGURES}{fig}%
@@ -299,4 +300,5 @@
 \fi
 \clp\fancyhead[C]{\bibheadfont TOPICAL INDEX}\bibpdfbookmark[0]{Topical Index}{Idx}
 \printindex
+}
 \end{document}

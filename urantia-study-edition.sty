@@ -60,6 +60,9 @@
 % uncomment to disable Bibliographies
 %\tunemarkuptag{nobiblio}
 
+% uncomment to disable Introduction
+%\tunemarkuptag{nointro}
+
 \setdefaultlanguage{english}
 
 \newif\ifmultivol
@@ -761,6 +764,12 @@
 \setcounter{DefaultLines}{3}
 \tolerance=3000
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+% comment the following for plaintext edition
+%\protected\def\print@vssup#1{}
+%\def\pc{}
+%\setlength\parindent{18\p@}
+%\newcommand{\authorfont}{\fontsize{13}{9}\bfseries\itshape}%
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{6.9}{6.9}\selectfont}
@@ -785,7 +794,6 @@
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgauraone}{%
@@ -801,6 +809,12 @@
 }
 \def\phoenixscale{0.15}
 \tolerance=3000
+% comment the following for plaintext edition
+%\protected\def\print@vssup#1{}
+%\def\pc{}
+%\setlength\parindent{18\p@}
+%\newcommand{\authorfont}{\fontsize{15}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\authorfontfamily\fontsize{25}{25}\selectfont}%
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{9}{9}\bfseries}
@@ -825,7 +839,6 @@
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{25}{25}\selectfont}%
 \newcommand{\introfontsize}{\bibbookend}
 }
 
@@ -839,6 +852,12 @@
 \def\phoenixscale{0.17}
 \tolerance=500
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{26}{8}\selectfont}%
+% comment the following for plaintext edition
+%\protected\def\print@vssup#1{}
+%\def\pc{}
+%\setlength\parindent{18\p@}
+%\newcommand{\authorfont}{\fontsize{17}{8}\bfseries\itshape}%
 \setcounter{DefaultLines}{3}
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
@@ -865,7 +884,6 @@
 \newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{16.5/19}
 \renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{26}{8}\selectfont}%
 }
 
 \tunemarkup{pgthinmob}{%
@@ -915,6 +933,12 @@
 \tolerance=9999
 \setcounter{DefaultLines}{2}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
+\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
+% comment the following for plaintext edition
+%\protected\def\print@vssup#1{}
+%\def\pc{}
+%\setlength\parindent{18\p@}
+%\newcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
 \definecolor{ubpagecolor}{rgb}{0.0, 0.0, 0.2}
 %\definecolor{ubpagebg}{rgb}{1.0, 1.0, 0.7}
 %\pagecolor{ubpagebg}
@@ -938,7 +962,6 @@
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgafour}{%
