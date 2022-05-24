@@ -29,6 +29,7 @@
 % various font families
 %\tunemarkuptag{basker}
 \tunemarkuptag{garamond}
+%\tunemarkuptag{caslon}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -99,6 +100,15 @@
 \def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 }
+
+\tunemarkup{caslon}{%
+\def\urantiamdheadingfont{Adobe Caslon Pro}
+\def\urantiaheadingfont{Adobe Caslon Pro}
+\def\urantiamainfont{Adobe Caslon Pro}
+\def\urantiaauthorfont{PF DaVinci Script Pro}
+\def\urantiatitlefont{Adobe Caslon Pro Semibold}
+}
+
 
 % Samsung Galaxy A70 20:9 aspect ratio
 \tunemarkup{pgthinmob}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={90.0mm,200mm}]{geometry}}
@@ -797,6 +807,7 @@
 }
 
 \tunemarkup{pgauraone}{%
+\setcounter{DefaultLines}{2}
 \newcommand{\pdftype}{8" eInk}
 \newcommand{\booktitlefontsize}{\parttitlefont\fontsize{19}{26}\selectfont}
 \newcommand{\offontsize}{\fontsize{12}{20}\selectfont}
@@ -836,9 +847,14 @@
 \renewcommand{\bibtocheadfont}{\fontsize{12}{12}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
 \newcommand{\minitocfontsize}{\headingfont\fontsize{9.2}{9.2}\selectfont}
-\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+% Garamond
 \newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{17/19}
+\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+% Caslon
+%\newcommand{\bibbookend}{\fontsize{18}{20}\selectfont}
+%\newcommand{\urantiamainfontsize}{18/20}
+%\renewcommand{\footnotesize}{\fontsize{15}{17}\selectfont}
 \newcommand{\introfontsize}{\bibbookend}
 }
 
