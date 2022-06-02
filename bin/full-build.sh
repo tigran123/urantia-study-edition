@@ -103,7 +103,7 @@ function build_all()
        set_pg${fmt}
        echo -n "$fmt: "
        make clean
-       /usr/bin/time -f 'real: %E, user: %Us, system: %Ss' make -s
+       /usr/bin/time -f 'real: %es, user: %Us, system: %Ss' make -s
        if [ $? -eq 0 ] ; then
          mv -f ${MOD}.pdf ${outdir}/${OUTFILE}-${fmt}.pdf
        else
