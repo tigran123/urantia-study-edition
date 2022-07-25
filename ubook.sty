@@ -127,7 +127,7 @@
   \setcounter{chnum}{#2}%
   \if@firstvs@ch
       \par\if@vs@dc@do\else\leavevmode\fi
-      \ifx\curr@ch\vs@zero\else\bib@raise@anchor{\pdfbookmark[2]{\thesecnum. \secname}{\bkname_\thechnum_\curr@vs}\label{p\thepaper_\thesecnum}\hypertarget{p\thepaper_\thesecnum}{}}\fi%
+      \ifx\curr@ch\vs@zero\else\bib@raise@anchor{\pdfbookmark[2]{\ifbiblemode Chapter \curr@ch\else\thesecnum. \secname\fi}{\bkname_\thechnum_\curr@vs}\label{p\thepaper_\thesecnum}\hypertarget{p\thepaper_\thesecnum}{}}\fi%
   \else\hspace{0.2ex}\fi
   \if@vs@dc@do
     \expandafter\vs@test@emph
@@ -371,7 +371,11 @@
 \def\DTtoday{\formatdate{\day}{\month}{\year}}
 \def\shorttoday{{\shortdate\showdowfalse\formatdate{\day}{\month}{\year}}}
 
+\newif\ifbiblemode
+\biblemodefalse
+
 \newcommand{\switchtobible}{%
+\biblemodetrue%
 \parvsfalse%
 \def\@makefnmark{}%
 \def\bibchap{\ifnum\c@chnum>1\noindent\doublebox{\normalfont\large\bfseries\thechnum}\nobreakspace\fi}%
