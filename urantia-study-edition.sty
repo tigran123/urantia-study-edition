@@ -7,9 +7,9 @@
 \def\tunemarkuptwo#1#2#3{\@ifundefined{tune@markup@#1}{#3}{#2}}
 
 % various page sizes
-%\tunemarkuptag{pghanlin}
+\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
-\tunemarkuptag{pgnexus10}
+%\tunemarkuptag{pgnexus10}
 %\tunemarkuptag{pgthinmob}
 %\tunemarkuptag{pgkoboaurahd}
 %\tunemarkuptag{pgauraone}
@@ -29,7 +29,6 @@
 % various font families
 %\tunemarkuptag{basker}
 \tunemarkuptag{garamond}
-%\tunemarkuptag{caslon}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -89,7 +88,6 @@
 \def\urantiamdheadingfont{Baskerville 10 Pro}
 \def\urantiaheadingfont{Baskerville 10 Pro}
 \def\urantiamainfont{Baskerville 10 Pro}
-\def\urantiaauthorfont{Baskerville 10 Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
 }
 
@@ -97,18 +95,8 @@
 \def\urantiamdheadingfont{Garamond Premier Pro Medium Caption}
 \def\urantiaheadingfont{Garamond Premier Pro Semibold Caption}
 \def\urantiamainfont{Garamond Premier Pro}
-\def\urantiaauthorfont{PF DaVinci Script Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 }
-
-\tunemarkup{caslon}{%
-\def\urantiamdheadingfont{Adobe Caslon Pro}
-\def\urantiaheadingfont{Adobe Caslon Pro}
-\def\urantiamainfont{Adobe Caslon Pro}
-\def\urantiaauthorfont{PF DaVinci Script Pro}
-\def\urantiatitlefont{Adobe Caslon Pro Semibold}
-}
-
 
 % Samsung Galaxy A70 20:9 aspect ratio
 \tunemarkup{pgthinmob}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={90.0mm,200mm}]{geometry}}
@@ -155,7 +143,6 @@
 \newfontfamily\tocparttitlefont[Letters=Uppercase,LetterSpace=2.0,WordSpace=1.0,Mapping=tex-text]{\urantiaparttitlefont}
 \newfontfamily\mdheadingfont[Numbers=Lining,LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiamdheadingfont}
 \newfontfamily\headingfont[Numbers=Lining,LetterSpace=1.2,WordSpace=1.2,Mapping=tex-text]{\urantiaheadingfont}
-\newfontfamily\authorfontfamily[Mapping=tex-text]{\urantiaauthorfont}
 
 \DeclareCaptionFormat{capfont}{\captionfont\large#1#2#3}
 \captionsetup{format=capfont,labelfont=bf,margin={0cm,0cm},justification=justified,singlelinecheck=off}
@@ -698,7 +685,7 @@
 \newcommand{\infofontsize}{\fontsize{9}{10}\itshape}
 \def\phoenixscale{0.15}
 \tolerance=9999
-\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{19}{9}\bfseries\itshape}%
 \renewcommand{\bibheadfont}{\headingfont\fontsize{6.9}{6.9}\selectfont}
 \newcommand{\bibheadpapersize}{\fontsize{8}{8}\selectfont}
 \renewcommand{\bibheadchapsize}{\fontsize{8}{8}\selectfont}
@@ -756,7 +743,7 @@
 \renewcommand{\footnotesize}{\fontsize{13}{15}\selectfont}
 \newcommand{\bibbookend}{\fontsize{14}{17}\selectfont}
 \newcommand{\urantiamainfontsize}{14/17}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{9.7}{9.7}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{9.7}{9.7}\bfseries\itshape}%
 }
 
 \tunemarkup{pgkoboaurahd}{%
@@ -774,7 +761,7 @@
 \setcounter{DefaultLines}{3}
 \tolerance=9999
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{12}{9}\bfseries\itshape}%
 % comment the following for plaintext edition
 %\protected\def\print@vssup#1{}
 %\def\pc{}
@@ -826,8 +813,7 @@
 %\protected\def\print@vssup#1{}
 %\def\pc{}
 %\setlength\parindent{18\p@}
-%\newcommand{\authorfont}{\fontsize{15}{9}\bfseries\itshape}%
-\newcommand{\authorfont}{\authorfontfamily\fontsize{25}{25}\selectfont}%
+\newcommand{\authorfont}{\fontsize{15}{9}\bfseries\itshape}%
 \renewcommand{\numw}{0.07\linewidth}
 \renewcommand{\txtw}{0.85\linewidth}
 \renewcommand{\bibheadfont}{\headingfont\fontsize{9}{9}\bfseries}
@@ -865,7 +851,7 @@
 \def\phoenixscale{0.17}
 \tolerance=500
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{26}{8}\selectfont}%
+\newcommand{\authorfont}{\fontsize{17}{8}\bfseries\itshape}%
 % comment the following for plaintext edition
 %\protected\def\print@vssup#1{}
 %\def\pc{}
@@ -932,7 +918,7 @@
 \newcommand{\bibbookend}{\fontsize{19}{21}\selectfont}
 \newcommand{\urantiamainfontsize}{19/21}
 \renewcommand{\footnotesize}{\fontspec[WordSpace={1.0,4.0,0.1},Mapping=tex-text]{\urantiamainfont}\fontsize{16}{18}\selectfont}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
 }
 
 \tunemarkup{pgnexus7}{%
@@ -946,7 +932,7 @@
 \tolerance=9999
 \setcounter{DefaultLines}{2}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{10}{10}\selectfont#1}}\kern0.2em\relax}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{19}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{11}{9}\bfseries\itshape}%
 % comment the following for plaintext edition
 %\protected\def\print@vssup#1{}
 %\def\pc{}
@@ -989,7 +975,7 @@
 \def\pc{{\fontsize{9}{0}\selectfont§§}\kern4pt}
 \setcounter{DefaultLines}{3}
 \protected\def\print@vssup#1{\makebox[0.2em][r]{\@textsuperscript{\fontsize{7}{7}\selectfont#1}}\kern0.2em\relax}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{10}{10}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{10}{10}\bfseries\itshape}%
 \renewcommand{\quizlink}{}
 \definecolor{ubblue}{rgb}{0.0, 0.0, 0.0}
 \definecolor{ubgreen}{rgb}{0.0, 0.0, 0.0}
@@ -1083,7 +1069,7 @@
 \renewcommand{\bibheadversesize}{\fontsize{9}{9}\selectfont}
 \renewcommand{\bibheadpagesize}{\fontsize{10}{10}\selectfont}
 \newcommand{\bibtocsuperheadfont}{\fontsize{20}{22}\selectfont}
-\newcommand{\authorfont}{\authorfontfamily\fontsize{22}{9}\bfseries\itshape}%
+\newcommand{\authorfont}{\fontsize{22}{9}\bfseries\itshape}%
 }
 
 \newcommand{\vsetoff}{\vspace*{1ex}}%
