@@ -7,12 +7,12 @@
 \def\tunemarkuptwo#1#2#3{\@ifundefined{tune@markup@#1}{#3}{#2}}
 
 % various page sizes
-\tunemarkuptag{pghanlin}
+%\tunemarkuptag{pghanlin}
 %\tunemarkuptag{pgnexus7}
 %\tunemarkuptag{pgnexus10}
 %\tunemarkuptag{pgthinmob}
 %\tunemarkuptag{pgkoboaurahd}
-%\tunemarkuptag{pgauraone}
+\tunemarkuptag{pgauraone}
 %\tunemarkuptag{pgafour}
 %\tunemarkuptag{pgcrownq}
 %\tunemarkuptag{pgkindledx}
@@ -797,18 +797,19 @@
 }
 
 \tunemarkup{pgauraone}{%
+\setcounter{DefaultLines}{2}
 \newcommand{\pdftype}{8" eInk}
 \newcommand{\booktitlefontsize}{\parttitlefont\fontsize{19}{26}\selectfont}
 \newcommand{\offontsize}{\fontsize{12}{20}\selectfont}
 \newcommand{\subsubtitlefontsize}{\fontsize{12}{14}\itshape}
 \newcommand{\infofontsize}{\fontsize{9}{11}\itshape}
-\def\pc{{\fontsize{10}{10}\selectfont§§}\kern3pt}
+\def\pc{{\fontsize{12}{12}\selectfont§§}\kern3pt}
 \renewcommand{\uminitoc}[1]{%
    \stepcounter{uminitocnum}%
    {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.2ex]}%
 }
 \def\phoenixscale{0.15}
-\tolerance=3000
+\tolerance=9999
 % comment the following for plaintext edition
 %\protected\def\print@vssup#1{}
 %\def\pc{}
@@ -835,9 +836,9 @@
 \renewcommand{\bibtocheadfont}{\fontsize{12}{12}\mdseries}
 \renewcommand{\bibtocfont}{\fontsize{8.6}{15}\selectfont}
 \newcommand{\minitocfontsize}{\headingfont\fontsize{9.2}{9.2}\selectfont}
-\newcommand{\bibbookend}{\fontsize{17}{19}\selectfont}
-\newcommand{\urantiamainfontsize}{17/19}
-\renewcommand{\footnotesize}{\fontsize{14}{16}\selectfont}
+\newcommand{\bibbookend}{\fontsize{18.5}{21}\selectfont}
+\newcommand{\urantiamainfontsize}{18.5/21}
+\renewcommand{\footnotesize}{\fontsize{15}{17}\selectfont}
 \newcommand{\introfontsize}{\bibbookend}
 }
 
