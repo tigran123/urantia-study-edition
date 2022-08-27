@@ -4,7 +4,7 @@ MOD=urantia-study-edition
 STYFILE=${MOD}.sty
 OUT=pdf
 OUTFILE=Revelation
-FORMATS="8in 6in thinmob mobile 5in 7in A4 tablet"
+FORMATS="tablet 8in 7in 6in 5in thinmob mobile A4"
 
 function set_tag()
 {
