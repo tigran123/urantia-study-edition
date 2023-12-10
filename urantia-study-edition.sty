@@ -29,6 +29,7 @@
 % various font families
 %\tunemarkuptag{basker}
 \tunemarkuptag{garamond}
+%\tunemarkuptag{jenson}
 
 % comment out for NO page break BEFORE Part title
 %\tunemarkuptag{beforepartnewpage}
@@ -97,6 +98,14 @@
 \def\urantiamainfont{Garamond Premier Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
 }
+
+\tunemarkup{jenson}{%
+\def\urantiamdheadingfont{Adobe Jenson Pro}
+\def\urantiaheadingfont{Adobe Jenson Pro}
+\def\urantiamainfont{Adobe Jenson Pro}
+\def\urantiatitlefont{Adobe Jenson Pro}
+}
+
 
 % Samsung Galaxy A70 20:9 aspect ratio
 \tunemarkup{pgthinmob}{\RequirePackage[dvips,headheight=19pt,headsep=2pt,vmargin={0.2in,0.15in},hmargin={0.1in},twoside=true,papersize={90.0mm,200mm}]{geometry}}
@@ -758,7 +767,7 @@
    {\minitocfontsize\makebox[0.08\linewidth][r]{\theuminitocnum.\,}\makebox[0.85\linewidth][l]{\uppercase{#1}\bibdf}\makebox[0.06\linewidth][r]{\bibpr{p\thepaper_\theuminitocnum}}\\[-1.6ex]}%
 }
 \def\phoenixscale{0.15}
-\setcounter{DefaultLines}{3}
+\setcounter{DefaultLines}{2}
 \tolerance=9999
 \protected\def\print@vssup#1{\makebox[0.4em][l]{\@textsuperscript{\fontsize{7}{7}\bfseries#1}}\kern0.3em\relax}
 \newcommand{\authorfont}{\fontsize{12}{9}\bfseries\itshape}%
