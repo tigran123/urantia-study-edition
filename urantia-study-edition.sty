@@ -53,10 +53,10 @@
 %\tunemarkuptag{coverimage}
 
 % comment out to enable Cosmic Citizenship Quiz
-%\tunemarkuptag{noquiz}
+\tunemarkuptag{noquiz}
 
 % comment out to not include the Bible text
-\tunemarkuptag{bible}
+%\tunemarkuptag{bible}
 
 % uncomment to disable Bibliographies
 %\tunemarkuptag{nobiblio}
@@ -90,6 +90,7 @@
 \def\urantiaheadingfont{Baskerville 10 Pro}
 \def\urantiamainfont{Baskerville 10 Pro}
 \def\urantiatitlefont{Baskerville 10 Pro}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 }
 
 \tunemarkup{garamond}{%
@@ -97,6 +98,7 @@
 \def\urantiaheadingfont{Garamond Premier Pro Semibold Caption}
 \def\urantiamainfont{Garamond Premier Pro}
 \def\urantiatitlefont{Garamond Premier Pro Semibold Display}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 }
 
 \tunemarkup{jenson}{%
@@ -104,6 +106,7 @@
 \def\urantiaheadingfont{Adobe Jenson Pro}
 \def\urantiamainfont{Adobe Jenson Pro}
 \def\urantiatitlefont{Adobe Jenson Pro}
+\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\bfseries}
 }
 
 
@@ -888,7 +891,6 @@
 \newcommand{\subfont}{\fontsize{14}{17}\itshape}
 \newcommand{\parttitlefontsize}{\parttitlefont\LARGE}
 \newcommand{\minitocfontsize}{\headingfont\fontsize{10.4}{10.4}\selectfont}
-\renewcommand{\bibheadfont}{\headingfont\fontsize{7.7}{7.7}\selectfont}
 \renewcommand{\subtitlefont}{\titlefont\fontsize{15}{19}\selectfont}
 \newcommand{\bibbookend}{\fontsize{16.5}{19}\selectfont}
 \newcommand{\urantiamainfontsize}{16.5/19}
