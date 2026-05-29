@@ -1,1 +1,9 @@
 select-book.tex
+images/
+*.aux
+*.bibtoc
+*.fnchk
+*.lof
+*.log
+*.out
+*.pdf
